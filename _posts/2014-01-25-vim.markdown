@@ -1,0 +1,26 @@
+---
+author: expobrain
+comments: true
+date: 2014-01-25 00:28:42+00:00
+layout: post
+slug: vim
+title: Vim
+wordpress_id: 1857
+categories:
+- Various things
+tags:
+- github
+- vim
+---
+
+New year, new programming languages, new technologies and new IDE. I finally switched to [Vim](http://www.vim.org/) as a primary editor for Python, JavaScript, HTML and CSS.                                    
+
+                                                                  
+
+The learning curve of Vim is not so steep as you think, the main roadblock is not the editor itself but the correct configuration of the editor and the installation of the best set of plugins to match your needs. Once you done that Vim becomes a friendly developer's environment.                                 
+
+Vim works in any Unix and Windows environment, the memory footprint is insignificant compared to other IDEs and it can be used over a SSH connection as well as locally on your machine. The configuration of Vim is stored in a single file _.vimrc_ in your home directory so you can configure another  
+installation of Vim in a different machine just by copying over the file.
+
+In my case I preferred to put the _.vimrc_ file into a GitHub repository so it will be easier to share and chage the configuration file over different machines. If anyone is interested my personal configuration can be found [here](https://github.com/expobrain/vimrc).         
+
