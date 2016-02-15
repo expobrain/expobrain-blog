@@ -16,9 +16,9 @@ tags:
 
 In this blog I usually write posts related to information technology, but I stumble upon this [post](http://noisefromamerika.org/articolo/disuguaglianza-ricchezza-societ-uguali) on NoiseFromAmerika (an italian blog about politics and economics) and I was surprised about how a concept backed by the common sense it's so wrong when it's analysed with scientific method.
 
-I made a translation from italian to english of the post to be able to explain the concept and the analysis to anyone. The post is rather long and initially has references to political events in happened in Italy in 2011, but the core topic itself is politically and culturally agnostic. 
+I made a translation from italian to english of the post to be able to explain the concept and the analysis to anyone. The post is rather long and initially has references to political events in happened in Italy in 2011, but the core topic itself is politically and culturally agnostic.
 
-I hope you'll enjoy it. 
+I hope you'll enjoy it.
 
 <!-- more -->
 
@@ -64,7 +64,7 @@ Upper Rawlsand is a society where all citizens are perfect equals to each others
 
 As I said, all the citizens are exactly equal. In particular, when they work the earn 100 rawlos per year; 30 ralwso are spent to pay taxes for pension's funds and other expenses for young citizens, 70 rawlso are left in the citizen's pocket. When a citizen reachs the pension age he'll earn 40 ralwso which are not taxed.
 
-Not only their ability to produce wealth is equal, but also their taste is equal. Every citizen tries to maintain a constant level of consumption (the higher as possible) for his whole life. Because every citizen has the same income in the whole life, even their consumption is exactly the same. No one leaves inheritance to the next generation because in Upper Rawsland the inheritance taxes are equal to the 100% and there's no possibility to avoid them. 
+Not only their ability to produce wealth is equal, but also their taste is equal. Every citizen tries to maintain a constant level of consumption (the higher as possible) for his whole life. Because every citizen has the same income in the whole life, even their consumption is exactly the same. No one leaves inheritance to the next generation because in Upper Rawsland the inheritance taxes are equal to the 100% and there's no possibility to avoid them.
 
 The society is going like that since a long time. Because is a static society the citizens in adulthood are equally divided between different age sets: 1/60th are 20-years old, 1/60th are 21-years old, and so on. There are no doubts about the equality of this society at all levels. We can prove it by watching at the consumptions. Any citizen consumes the same amount of wealth and the inequality, in any way you measure it, is zero. If we look at the income the only inequality is between wages and pensions. But the inequality between wages is exactly zero. And zero is the inequality between the income earned in the whole life time.
 
@@ -72,7 +72,7 @@ And what about the wealth? The wealth is evolving with the age. Remember all cit
 
 With this interests rate the citizen can support a constant consumption of 63.61 rawslo per year [only for nerds: this number is obtained by equalise the actual value of the constant's cash flow times 60 years reduced by 2% with the actual value of the income of 70 rawslo times 40 years and 40 rawslo for the next 20 years reduced by 2% too]. When a citizen is working he's saving 70 - 63.61 = 6.39 rawslo per year. At the end of the first year his wealth will be 6.39. At the end of the second year it'll be 6.39 * 1.02 + 6.39, the wealth accumulated the first year increased by the interests rate plus the saving in the second year. And so one. The path of the wealth accumulation is shown in this graph:
 
-![chart_1](http://www.expobrain.net/wp-content/uploads/2013/07/chart_1.png)
+![chart_1]({{ site.url }}/assets/2013/07/chart_1.png)
 
 The wealth increases during the whole working age reaching its maximum at 60 years (the last year of employment). Since that point the wealth is "eaten" to allow the citizen to continue to consume 63.61 rawslo despite the 40 rawlso pension. In this society the most richest citizens are in a age around the pension age (just before and after) and the most poorest citizens are the ones which had just started to work, the one at the start of the process of wealth accumulation, and the ones at the end of their life, the one at the process of de-accumulation. If you put the data into a spreadsheet you will discover at the 60th year, the richest year, his wealth will be 386 rawlso.
 
@@ -90,11 +90,11 @@ In Lower Rawlsland the citizens are also equals but their wages are not constant
 
 The initial value of the wage (the wage of the first year of work) is chosen in the way I'll generate the same amount of consumption flow of the previous example: it's 53.65 rawslo. As the wages increase byt a 1.5% per year, when the citizen reach the pension age he'll have a salary of 95.88 rawlso. This income stream can support a constant consumption flow of 63.61 rawlso per year. Again if we look at the inequality in the consumption, it's simply doesn't exists. So anyone consume, in every year of his life, the same amount of monies. Obviously the income will be not equal than the previous example, the older citizens will earn more than the youngest citizens. But remember the dynamic of the income is equal for all the citizens, so the actual amount if income per life cycle is the same for everyone.
 
-And now talking about the wealth. This is a little more complicated than the previous example because at the start of the working career the consumption is greater than the income. To maintain constant the consumption flow is necessary to make debt when they are young, with a low salary, so to pay back the debt when they become older with an higher income. We suppose the citizen is paying, on top of his debt, the same interest rate (2%)  he can obtain over his investments. We know that's not a realistic hypothesis, but for the moment take it as valid; I'll discuss later what's happend when a citizen can't make debts.  
+And now talking about the wealth. This is a little more complicated than the previous example because at the start of the working career the consumption is greater than the income. To maintain constant the consumption flow is necessary to make debt when they are young, with a low salary, so to pay back the debt when they become older with an higher income. We suppose the citizen is paying, on top of his debt, the same interest rate (2%)  he can obtain over his investments. We know that's not a realistic hypothesis, but for the moment take it as valid; I'll discuss later what's happend when a citizen can't make debts.
 
 Here the graph which represent the evolution of the wealth in Lower Rawlsland:
 
-[![chart_2](http://www.expobrain.net/wp-content/uploads/2013/07/chart_2.png)](http://www.expobrain.net/wp-content/uploads/2013/07/chart_2.png)
+[![chart_2]({{ site.url }}/assets/2013/07/chart_2.png)]({{ site.url }}/assets/2013/07/chart_2.png)
 
 Every citizen make debts until his salary reach a level of 63.61 rawlso, which happens at 33-years old. Since that time the income is greater than the consumption so he'll start to save monies. Until 45-years old he'll pay back the debts, and since then he'll start to accumulate wealth. The accumulation process last until the 60th year and it's quick-paced because now the salary is much grater. When he'll go into pension he'll start to de-accumulate wealth to maintain the same consumption.
 
@@ -102,7 +102,7 @@ In this society a consistent part of the population (all citizens between 21 to 
 
 In this society the concentration of the wealth is higher than the previous society. The 40.34% is not a figure far away than the 45% which raised so much complains by people. The wage's inequality is higher too. But this is in fact a fair society where everyone consume the same amount f monies at every age and the sum of the income flow in the whole life cycle if the same for everyone. Even in this case using the wealth as a parameter is extremely misleading.
 
-We saw how a rising salary profile its a good "trick" to increase the inequality of wealth in a society of equals. Another "trick" to increase the concentration of wealth if this set of examples is to suppose the population will increase instead of to remain static. If the population does increase there will be more younger than older citizens. The effect is just an "optical effect". The society is still a society of equals. 
+We saw how a rising salary profile its a good "trick" to increase the inequality of wealth in a society of equals. Another "trick" to increase the concentration of wealth if this set of examples is to suppose the population will increase instead of to remain static. If the population does increase there will be more younger than older citizens. The effect is just an "optical effect". The society is still a society of equals.
 
 
 
@@ -130,7 +130,7 @@ It's also possible to built examples of societies where the wealth is higher and
 
 In this society the wealth evolution is this:
 
-![chart_3](http://www.expobrain.net/wp-content/uploads/2013/07/chart_3.png)
+![chart_3]({{ site.url }}/assets/2013/07/chart_3.png)
 
 The important point is the total wealth, equal to 7,916 rawlso, is higher than the case where the younger citizens can make debt (5,242 rawlso). But in this society _the life-style is worse_. The citizens want to maintain a constant level of consumption but they cannot afford it because they cannot make debts. The higher level of wealth is generated by this form of financial constraint, which doesn't produce any increment in the welfare.
 
@@ -146,7 +146,7 @@ Now suppose that while earning 100 in the first life cycle is certain, there is 
 
 The question related to the usefulness to look at the Italy wealth's distribution in 2011 can be reduced to this question: is Italy more like Rawlsland or Lacandonia? That is, it's a country where the wealth is mainly obtained by savings or by inheritance? We'll discuss more deeply about it in the next post about empirical evidence, here I'll raise just a simple observation.
 
-In Rawlsland the wealth is proportional to the age of the citizen: it grows until the pension age and then decrease. In Lacandonia the wealth is static throughout the whole life cycle, because the wealth is inherited and no one save monies. Here are the result of the [income's investigation by Banca D'Italia](http://www.bancaditalia.it/statistiche/indcamp/bilfait/boll_stat/suppl_08_10_corr.pdf) about the median value of the net wealth by age classes (Tav. E2 pag. 73):  
+In Rawlsland the wealth is proportional to the age of the citizen: it grows until the pension age and then decrease. In Lacandonia the wealth is static throughout the whole life cycle, because the wealth is inherited and no one save monies. Here are the result of the [income's investigation by Banca D'Italia](http://www.bancaditalia.it/statistiche/indcamp/bilfait/boll_stat/suppl_08_10_corr.pdf) about the median value of the net wealth by age classes (Tav. E2 pag. 73):
 
 |                     | Media value of net wealth |
 | --------------------|:-------------------------:|

@@ -19,7 +19,7 @@ tags:
 - snow leopard
 ---
 
-![](http://www.expobrain.net/wp-content/uploads/2010/07/extra64bit.png)
+![]({{ site.url }}/assets/2010/07/extra64bit.png)
 
 A couple fo days ago Python 2.7 was release as a first stable release. Looking at the Mac OS X ports I found the new official 64-bit release and I installed it. But now the Qt Python bindings stops working because they are compiled as 32-bit binaries.
 

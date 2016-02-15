@@ -25,7 +25,7 @@ When you build a Windows executable with py2exe all goes fine but when you run t
 
 Digging in the code i found the source of the problem in `localedata.py` file at line 33:
 
-    
+
     _dirname = os.path.join(os.path.dirname(__file__), 'localedata')
 
 
@@ -33,10 +33,10 @@ As you can see Babel use the `__file__` module attribute  to get the path of th
 
 A simple and fast solution is to check if Babel is running in a frozen environment and thus return a different path using `sys.executable` value:
 
-    
-    
+
+
     import sys
-    
+
     if hasattr( sys, 'frozen' ):
         _dirname = os.path.join(os.path.dirname(sys.executable), 'localedata')
     else:
@@ -45,8 +45,8 @@ A simple and fast solution is to check if Babel is running in a frozen environme
 
 Now the only thing left is to add the `localedata `folder to the `data_files` collection in the py2exe' setup script:
 
-    
-    
+
+
     data_files = [
         ...your data files...
         ( "localedata",

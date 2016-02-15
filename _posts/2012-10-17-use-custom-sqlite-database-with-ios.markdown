@@ -36,24 +36,24 @@ Expand the _Copy Bundle Resources_ section and add your SQLite database to the l
 
 Now we need a method to retrieve the full path and filename of our database from the app bundle:
 
-    
-    
+
+
     - (NSString *)databasePath {
         return [[NSBundle mainBundle] pathForResource:@"marsuite" ofType:@"sqlite"];
     }
-    
+
 
 
 Pretty easy! With the filename we can finally access the database and query it:
 
-    
-    
+
+
         sqlite3 *database;
         if (sqlite3_open([[self databasePath] UTF8String], &database;)) {
             sqlite3_close(database);
             NSAssert(0, @"Failed opening the database");
         }
-    
+
         NSString *query = @"your query here";
         sqlite3_stmt *statement;
         if (sqlite3_prepare_v2(database, [query UTF8String], -1, &statement;, nil) == SQLITE_OK) {
@@ -64,9 +64,9 @@ Pretty easy! With the filename we can finally access the database and query it:
             }
             sqlite3_finalize(statement);
         }
-    
+
         sqlite3_close(database);
-    
+
 
 
 This piece of code is a standard pattern to load data from SQLite in C, you will just need to implement your custom code inside the inner `while`.
