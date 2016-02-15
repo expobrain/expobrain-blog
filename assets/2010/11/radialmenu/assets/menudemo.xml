@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<root>
+	<menuitems>
+		<menuitem id="1">
+			<icon>assets/menu1.png</icon>
+			<title>Item 1</title>
+			<tooltip>This is the first item</tooltip>
+			<menuitems>
+				<menuitem id="11">
+					<icon>assets/menu1.png</icon>
+					<title>Item 11</title>
+					<tooltip>This is the first item</tooltip>
+					<menuitems>
+						<menuitem id="111">
+							<icon>assets/menu1.png</icon>
+							<title>Item 111</title>
+							<tooltip>This is the first item</tooltip>
+							<menuitems>
+								<menuitem id="1111">
+									<icon>assets/menu1.png</icon>
+									<title>Item 1111</title>
+									<tooltip>This item must be ignored !!!</tooltip>
+								</menuitem>
+							</menuitems>
+						</menuitem>
+						<menuitem id="112">
+							<icon>assets/menu2.png</icon>
+							<title>Item 112</title>
+							<tooltip>This is the first item</tooltip>
+						</menuitem>
+						<menuitem id="113">
+							<icon>assets/menu3.png</icon>
+							<title>Item 113</title>
+							<tooltip>This is the first item</tooltip>
+						</menuitem>
+					</menuitems>
+				</menuitem>
+				<menuitem id="12">
+					<icon>assets/menu2.png</icon>
+					<title>Item 12</title>
+					<tooltip>This is the first item</tooltip>
+				</menuitem>
+				<menuitem id="13">
+					<icon>assets/menu3.png</icon>
+					<title>Item 13</title>
+					<tooltip>This is the first item</tooltip>
+					<menuitems>
+						<menuitem id="133">
+							<icon>assets/menu3.png</icon>
+							<title>Item 133</title>
+							<tooltip>This is the first item</tooltip>
+						</menuitem>
+					</menuitems>
+				</menuitem>
+			</menuitems>
+		</menuitem>
+		<menuitem id="2">
+			<icon>assets/menu2.png</icon>
+			<title>Item 2</title>
+			<tooltip>This is the second item</tooltip>
+			<menuitems>
+				<menuitem id="21">
+					<icon>assets/menu2.png</icon>
+					<title>Item 1</title>
+					<tooltip>This is the first item</tooltip>
+				</menuitem>
+			</menuitems>
+		</menuitem>
+		<menuitem id="3">
+			<icon>assets/menu3.png</icon>
+			<title>Item 3</title>
+			<tooltip>This is the third item</tooltip>
+			<menuitems>
+				<menuitem id="31">
+					<icon>assets/menu3.png</icon>
+					<title>Item 31</title>
+					<tooltip>This is the first item</tooltip>
+				</menuitem>
+			</menuitems>
+		</menuitem>
+	</menuitems>
+</root>
