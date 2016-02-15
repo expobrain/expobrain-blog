@@ -17,7 +17,7 @@ tags:
 - x86-64
 ---
 
-Today we look at the disassembly of a functions involving floats and SSE2 instructions. As I stated in the first post [Disassembly C code for fun: part 1](http://www.expobrain.net/2013/06/16/disassembly-c-code-for-fun-part-1/) the C code is compiled for a x86-64 architecture which means the CPU has the SSE/SSE2 instructions sets by default.
+Today we look at the disassembly of a functions involving floats and SSE2 instructions. As I stated in the first post [Disassembly C code for fun: part 1]({{ site.url }}/2013/06/16/disassembly-c-code-for-fun-part-1/) the C code is compiled for a x86-64 architecture which means the CPU has the SSE/SSE2 instructions sets by default.
 
 <!-- more -->
 
@@ -30,36 +30,36 @@ Today we look at the disassembly of a functions involving floats and SSE2 instru
 The code used in this post (copied from [The C Programming Language](http://en.wikipedia.org/wiki/The_C_Programming_Language) 2dn Edition, Chapter 1, Section 1.4 Symbolic Constants) outputs the Fahrenheit's temperature range between 0° and 300° with a step of 20° into Celsius values:
 
 
-    
-    
+
+
     #include <stdio.h>
-    
+
     #define LOWER 0 /* lower limit of table */
     #define UPPER 300 /* upper limit */
     #define STEP 20 /* step size */
-    
+
     int main()
     {
         int fahr;
         float celsius;
-        
+
         for (fahr = LOWER; fahr <= UPPER; fahr += STEP) {
             celsius = (5.0/9.0) * (fahr - 32);
-        
+
             printf("%3d %6.1f\n", fahr, celsius);
         }
-        
+
         return 0;
     }
-    
+
 
 
 
 Just for your information the output of the above code is this one:
 
 
-    
-    
+
+
       0  -17.8
      20   -6.7
      40    4.4
@@ -76,7 +76,7 @@ Just for your information the output of the above code is this one:
     260  126.7
     280  137.8
     300  148.9
-    
+
 
 
 
@@ -89,8 +89,8 @@ Just for your information the output of the above code is this one:
 Lets look at the disassembly, but this time I'll skip the instructions to compile the code and I'll remove the prologue and epilogue form the disassembly output:
 
 
-    
-    
+
+
     0x0000000100000eb8 <main+8>:	movl   $0x0,-0x4(%rbp)
     0x0000000100000ebf <main+15>:	movl   $0x0,-0x8(%rbp)
     0x0000000100000ec6 <main+22>:	cmpl   $0x12c,-0x8(%rbp)
@@ -113,26 +113,26 @@ Lets look at the disassembly, but this time I'll skip the instructions to compil
     0x0000000100000f15 <main+101>:	mov    %eax,-0x8(%rbp)
     0x0000000100000f18 <main+104>:	jmpq   0x100000ec6 <main+22>
     0x0000000100000f1d <main+109>:	mov    $0x0,%eax
-    
+
 
 
 
 The first instructions from 0x100000eb8 to 0x100000ebf stores the return value of the `main()` function and the initial value and the initial value of the `fahr` variable (which is also the initialisation of the for-loop).
 
 
-    
-    
+
+
     0x0000000100000ec6 <main+22>:	cmpl   $0x12c,-0x8(%rbp)
     0x0000000100000ecd <main+29>:	jg     0x100000f19 <main+105>
-    
 
 
- 
-This is the termination's condition of the loop, the current value of `fahr` (RBP-8) is compared with 0x12c (300 base 10) and if it's greater jump to the end of the main loop at 0x100000f19. 
 
 
-    
-    
+This is the termination's condition of the loop, the current value of `fahr` (RBP-8) is compared with 0x12c (300 base 10) and if it's greater jump to the end of the main loop at 0x100000f19.
+
+
+
+
     0x0000000100000eda <main+42>:	movsd  0x76(%rip),%xmm0        # 0x100000f58
     0x0000000100000ee2 <main+50>:	mov    -0x8(%rbp),%eax
     0x0000000100000ee5 <main+53>:	sub    $0x20,%eax
@@ -140,21 +140,21 @@ This is the termination's condition of the loop, the current value of `fahr` (RB
     0x0000000100000eee <main+62>:	mulsd  %xmm1,%xmm0
     0x0000000100000ef2 <main+66>:	cvtsd2ss %xmm0,%xmm0
     0x0000000100000ef6 <main+70>:	movss  %xmm0,-0xc(%rbp)
-    
 
 
 
-This is the Fahrenheit to Celsius conversion, first loads the pre-calculated result of the 5.0/9.0 division into XMM0 (0x100000eda) and the current value of the `fahr` variable into EAX (0x100000ee2), subtracting 0x20 (32 base 10) from EAX. 
 
-Now at 0x100000eea cast the content of EAX form a integer into a double-precision float storing it into XMM1, multiply XMM1 by XMM0 (0x100000eee), cast the result from a double- to a single-precision float (0x100000ef2) and store the result back into the memory location of the `celsius` variable at RBP-10 (0x100000ef6). 
+This is the Fahrenheit to Celsius conversion, first loads the pre-calculated result of the 5.0/9.0 division into XMM0 (0x100000eda) and the current value of the `fahr` variable into EAX (0x100000ee2), subtracting 0x20 (32 base 10) from EAX.
+
+Now at 0x100000eea cast the content of EAX form a integer into a double-precision float storing it into XMM1, multiply XMM1 by XMM0 (0x100000eee), cast the result from a double- to a single-precision float (0x100000ef2) and store the result back into the memory location of the `celsius` variable at RBP-10 (0x100000ef6).
 
 The whole expression in our test code has been rewritten by the compiler into this one:
 
 
-    
-    
+
+
     fahr = (fahr - 32) * 0.55555555555555558
-    
+
 
 
 
@@ -163,10 +163,10 @@ So the compiler has pre-calculated the expression 5.0/9.0 and it's using the SSE
 The same code compiled without the SSE/SSE2 instruction set will be longer (and slower I reckon); if the current disassembly if 119-bytes long the one without SSE/SSE2 is 19-bytes longer. If you want to see the disassembly of the latter, pass the `-mno-sse` parameter to the compiler:
 
 
-    
-    
+
+
     $ cc -g -mno-sse main.c
-    
+
 
 
 
@@ -176,16 +176,16 @@ The same code compiled without the SSE/SSE2 instruction set will be longer (and 
 
 
 
-Wee are at the end of the code. We skip the instructions between 0x100000efb and 0x100000f0a which are related to the `printf()` function call and we analyse the for-loop's increment statement:  
+Wee are at the end of the code. We skip the instructions between 0x100000efb and 0x100000f0a which are related to the `printf()` function call and we analyse the for-loop's increment statement:
 
 
-    
-    
+
+
     0x0000000100000f0d <main+93>:	mov    -0x8(%rbp),%eax
     0x0000000100000f10 <main+96>:	add    $0x14,%eax
     0x0000000100000f15 <main+101>:	mov    %eax,-0x8(%rbp)
     0x0000000100000f18 <main+104>:	jmpq   0x100000ec6 <main+22>
-    
+
 
 
 
