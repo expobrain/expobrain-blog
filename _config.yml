@@ -16,3 +16,4 @@ github_username:  expobrain
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title
+highlighter: pygments
