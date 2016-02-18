@@ -20,7 +20,7 @@ Google’s [Protocol Buffer](https://developers.google.com/protocol-buffers) is 
 
 
 
-There is already a [list](https://github.com/google/protobuf/wiki/Third-Party-Add-ons) of plugins to support third party languages however you can write your how plugin to output custom code tailored for your needs. In this post I’m going show an example of a plugin written in Python. 
+There is already a [list](https://github.com/google/protobuf/wiki/Third-Party-Add-ons) of plugins to support third party languages however you can write your how plugin to output custom code tailored for your needs. In this post I’m going show an example of a plugin written in Python.
 
 
 
@@ -38,19 +38,17 @@ There is already a [list](https://github.com/google/protobuf/wiki/Third-Party-Ad
 
 Before start writing the plugin we need to install the Protocol Buffer compiler:
 
-
-
-[code lang="bash"] apt-get install protobuf
-[/code]
-
-
+{% highlight bash %}
+apt-get install protobuf
+{% endhighlight %}
 
 to be able to compile ore `.proto` file through our plugin and the Python [Protobuf](https://pypi.python.org/pypi/protobuf) package:
 
 
 
-[code lang="bash"] pip install protobuf
-[/code]
+{% highlight bash %}
+pip install protobuf
+{% endhighlight %}
 
 
 
@@ -72,7 +70,8 @@ The interface between the `protoc` compiler is pretty simple: the compiler will 
 
 
 
-[code lang="python"]#!/usr/bin/env python
+{% highlight python %}
+#!/usr/bin/env python
 
 import sys
 
@@ -102,11 +101,11 @@ if __name__ == '__main__':
 
     # Write to stdout
     sys.stdout.write(output)
-[/code]
+{% endhighlight %}
 
 
 
-The `protoc` compiler follows a naming convention for the name of the plugins, as state [protobuf-plugin][here] you can save the code above in a file called `protoc-gen-custom` in your `PATH` or save it with any name you prefer (like `my-plugin.py`) and pass the plugin’s name and path to the `--plugin` command line option. 
+The `protoc` compiler follows a naming convention for the name of the plugins, as state [protobuf-plugin][here] you can save the code above in a file called `protoc-gen-custom` in your `PATH` or save it with any name you prefer (like `my-plugin.py`) and pass the plugin’s name and path to the `--plugin` command line option.
 
 
 
@@ -116,8 +115,9 @@ We are choosing the second option so we’ll save our plugin as `my-plugin.py`, 
 
 
 
-[code lang="python"] protoc --plugin=protoc-gen-custom=my-plugin.py --custom_out=./build hello.proto
-[/code]
+{% highlight bash %}
+protoc --plugin=protoc-gen-custom=my-plugin.py --custom_out=./build hello.proto
+{% endhighlight %}
 
 
 
@@ -125,7 +125,8 @@ The content of `hello.proto` file is simply this:
 
 
 
-[code lang="text"]enum Greeting {
+{% highlight text %}
+enum Greeting {
     NONE = 0;
     MR = 1;
     MRS = 2;
@@ -136,7 +137,7 @@ message Hello {
     required Greeting greeting = 1;
     required string name = 2;
 }
-[/code]
+{% endhighlight %}
 
 
 
@@ -158,7 +159,8 @@ Lets modify the `generate_code()` function to generate a JSON representation of 
 
 
 
-[code lang="python"]def traverse(proto_file):
+{% highlight python %}
+def traverse(proto_file):
 
     def _traverse(package, items):
         for item in items:
@@ -178,7 +180,7 @@ Lets modify the `generate_code()` function to generate a JSON representation of 
         _traverse(proto_file.package, proto_file.enum_type),
         _traverse(proto_file.package, proto_file.message_type),
     )
-[/code]
+{% endhighlight %}
 
 
 
@@ -186,7 +188,8 @@ And now the new `generate_code()`function:
 
 
 
-[code lang="python"]import itertools
+{% highlight python %}
+import itertools
 import json
 
 from google.protobuf.descriptor_pb2 import DescriptorProto, EnumDescriptorProto
@@ -224,7 +227,7 @@ def generate_code(request, response):
         f = response.file.add()
         f.name = proto_file.name + '.json'
         f.content = json.dumps(output, indent=2)
-[/code]
+{% endhighlight %}
 
 
 
@@ -238,7 +241,8 @@ If you run again the protobuf compiler it will output a file named `hello.proto.
 
 
 
-[code lang="javascript"][
+{% highlight javascript %}
+[
   {
     "type": "Enum",
     "filename": "hello.proto",
@@ -280,7 +284,7 @@ If you run again the protobuf compiler it will output a file named `hello.proto.
     "package": "&lt;root&gt;"
   }
 ]
-[/code]
+{% endhighlight %}
 
 
 

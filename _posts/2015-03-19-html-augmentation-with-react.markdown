@@ -28,7 +28,7 @@ These days is all about [React](http://facebook.github.io/react/). Most of the p
 
 Let's start with the example code taken directly form the react [documentation](http://facebook.github.io/react/):
 
-[code lang="javascript"]
+{% highlight javascript %}
 var Timer = React.createClass({
   getInitialState: function() {
     return {secondsElapsed: 0};
@@ -50,13 +50,13 @@ var Timer = React.createClass({
 });
 
 React.render(<Timer />, document.getElementById("timer"));
-[/code]
+{% endhighlight %}
 
 this will tender client-side the number of seconds since the load of the page.
 
 Now we prepare a simple static page with the same content as static HTML:
 
-[code lang="html"]
+{% highlight html %}
 <html>
     <head>
         <script src="build/react.js"></script>
@@ -67,7 +67,7 @@ Now we prepare a simple static page with the same content as static HTML:
         <script src="build/Timer.js"></script>
     </body>
 </html>
-[/code]
+{% endhighlight %}
 
 Nothing exciting here but juts a small but important consideration: this page can be seen by a crawler (so indexed) and by any browser without Javascript.
 
@@ -82,7 +82,7 @@ How this sample page is render by the browser and what the crawler can see?
 
 Let's start with the content returned by the HTTP request:
 
-[code lang="html"]
+{% highlight html %}
 <html>
     <head>
         <script src="build/react.js"></script>
@@ -93,13 +93,13 @@ Let's start with the content returned by the HTTP request:
         <script src="build/Timer.js"></script>
     </body>
 </html>
-[/code]
+{% endhighlight %}
 
 Now, if someone was expecting something else please got to review the basics about how the World Wide Web works :-)
 
 So now lets see if or React code can augment this HTML without extra work form us:
 
-[code lang="HTML"]
+{% highlight html %}
 <html>
     <head>
         <script src="build/react.js"></script>
@@ -115,7 +115,7 @@ So now lets see if or React code can augment this HTML without extra work form u
         <script src="build/Timer.js"></script>
     </body>
 </html>
-[/code]
+{% endhighlight %}
 
 Something happened to our HTML: the original content `div` element is replaced with a new `div` element and a couple of span elements and all of them has a `data-reactid` attribute. This attribute is used by react to keep track of the DOM and apply changes as a diff between the internal virtual representation and the current DOM in the browser.
 

@@ -44,78 +44,85 @@ All the source code is available on [GitHub](https://github.com/expobrain/javasc
 Let's start with the encoder in `src/net.expobrain/js2png/js2png.go`. First we need a buffer to store the bitmap in RGBA format:
 
 
-    
-    
-    var buffer = new(bytes.Buffer)
-    
+
+{% highlight go %}
+var buffer = new(bytes.Buffer)
+{% endhighlight %}
+
 
 
 
 Now we need to write the size of the payload:
 
 
-    
-    
-    var payload_sz = len(src)
-    
-    buffer.WriteByte(0)
-    buffer.WriteByte(uint8(payload_sz >> 56 & 0xff))
-    buffer.WriteByte(uint8(payload_sz >> 48 & 0xff))
-    buffer.WriteByte(255)
-    buffer.WriteByte(uint8(payload_sz >> 40 & 0xff))
-    buffer.WriteByte(uint8(payload_sz >> 32 & 0xff))
-    buffer.WriteByte(uint8(payload_sz >> 24 & 0xff))
-    buffer.WriteByte(255)
-    buffer.WriteByte(uint8(payload_sz >> 16 & 0xff))
-    buffer.WriteByte(uint8(payload_sz >> 8 & 0xff))
-    buffer.WriteByte(uint8(payload_sz & 0xff))
-    buffer.WriteByte(255)
-    
+
+
+{% highlight go %}
+var payload_sz = len(src)
+
+buffer.WriteByte(0)
+buffer.WriteByte(uint8(payload_sz >> 56 & 0xff))
+buffer.WriteByte(uint8(payload_sz >> 48 & 0xff))
+buffer.WriteByte(255)
+buffer.WriteByte(uint8(payload_sz >> 40 & 0xff))
+buffer.WriteByte(uint8(payload_sz >> 32 & 0xff))
+buffer.WriteByte(uint8(payload_sz >> 24 & 0xff))
+buffer.WriteByte(255)
+buffer.WriteByte(uint8(payload_sz >> 16 & 0xff))
+buffer.WriteByte(uint8(payload_sz >> 8 & 0xff))
+buffer.WriteByte(uint8(payload_sz & 0xff))
+buffer.WriteByte(255)
+{% endhighlight %}
+
 
 
 
 The payload's size is stored as a little-endian 64-bit unsigned integer right-aligned on 9 bytes and interleaved with a `255` byte which represent the alpha channel.
 
-The right alignment is just for convenience and easy debugging so the first 3 pixels contains the length of the content and the content itself will start from the R channel of the 4th pixel. 
+The right alignment is just for convenience and easy debugging so the first 3 pixels contains the length of the content and the content itself will start from the R channel of the 4th pixel.
 
-The alpha channel is set to `255` so on saving the bitmap the values of the RGB channels will be same even after been multiplied by the alpha channel. For instance, with an alpha channel set to `0` the resulting RGB value will be `0x000000`, with and alpha channel of `128` all the RGB values will halved, and so on. 
+The alpha channel is set to `255` so on saving the bitmap the values of the RGB channels will be same even after been multiplied by the alpha channel. For instance, with an alpha channel set to `0` the resulting RGB value will be `0x000000`, with and alpha channel of `128` all the RGB values will halved, and so on.
 
 Time to write the payload into the buffer, still interleaved by a `255` every 3 bytes:
 
 
-    
-    
-    var data_sz = int(math.Ceil(float64(payload_sz) / 3))
-    
-    for i := 0; i < data_sz; i++ {
-        p := i * 3
-    
-        _, err := buffer.Write(src[p:p + 3])
-        if err!= nil { panic(err) }
-    
-        buffer.WriteByte(255)
-    }
-    
+
+
+{% highlight go %}
+var data_sz = int(math.Ceil(float64(payload_sz) / 3))
+
+for i := 0; i < data_sz; i++ {
+    p := i * 3
+
+    _, err := buffer.Write(src[p:p + 3])
+    if err!= nil { panic(err) }
+
+    buffer.WriteByte(255)
+}
+{% endhighlight %}
+
 
 
 
 Now that we have the buffer complete with size and payload we can copy it into a square bitmap:
 
 
-    
-    
-    // Create bitmap to fit the payload
-    var bitmap_sz = int(buffer.Len() / 4)
-    w := int(math.Ceil(math.Sqrt(float64(bitmap_sz))))
-    h := int(math.Ceil(float64(bitmap_sz) / float64(w)))
-    
-    rect := image.Rect(0, 0, w, h)
-    img := image.NewNRGBA(rect)
-    img.Pix = make([]uint8, w * h * 4)
-    
-    // Copy payload into bitmap
-    copy(img.Pix, buffer.Bytes())
-    
+
+
+{% highlight go %}
+// Create bitmap to fit the payload
+var bitmap_sz = int(buffer.Len() / 4)
+w := int(math.Ceil(math.Sqrt(float64(bitmap_sz))))
+h := int(math.Ceil(float64(bitmap_sz) / float64(w)))
+
+rect := image.Rect(0, 0, w, h)
+img := image.NewNRGBA(rect)
+img.Pix = make([]uint8, w * h * 4)
+
+// Copy payload into bitmap
+copy(img.Pix, buffer.Bytes())
+{% endhighlight %}
+
 
 
 
@@ -124,13 +131,15 @@ The extra unused space in the final bitmap is padded with zeros. In theory the f
 Last step is writing the PNG to disk:
 
 
-    
-    dst, err := os.Create(dst_filename)
-    if err != nil { panic(err) }
-    defer dst.Close()
-    
-    png.Encode(dst, img)
-    
+
+{% highlight go %}
+dst, err := os.Create(dst_filename)
+if err != nil { panic(err) }
+defer dst.Close()
+
+png.Encode(dst, img)
+{% endhighlight %}
+
 
 
 
@@ -145,87 +154,97 @@ That's all for the encoder.
 The JavaScript loader in `html/js/loader.js` is triggered on the `load` event of the `payload` element aka our PNG image:
 
 
-    
-    
-    var img = document.getElementById("payload");
-    
-    img.addEventListener("load", function () {
-        ...loader...
-    }
-    
+
+
+{% highlight javascript %}
+var img = document.getElementById("payload");
+
+img.addEventListener("load", function () {
+    ...loader...
+}
+{% endhighlight %}
+
 
 
 
 We cannot read pixel data straight from the image so we render the image on a HTML5 `canvas` element:
 
 
-    
-    
-    var context, canvas;
-    
-    canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
-    
-    context = canvas.getContext("2d");
-    context.drawImage(img, 0, 0);
-    
+
+
+{% highlight javascript %}
+var context, canvas;
+
+canvas = document.createElement("canvas");
+canvas.width = img.width;
+canvas.height = img.height;
+
+context = canvas.getContext("2d");
+context.drawImage(img, 0, 0);
+{% endhighlight %}
+
 
 
 
 Reading back the size of the payload:
 
 
-    
-    
-    // Read image's data
-    var data;
-    
-    data = context.getImageData(0, 0, img.width, img.height).data;
-    
-    // Read size of the payload
-    var size = 0;
-    
-    size += data[1] << 56;
-    size += data[2] << 48;
-    size += data[4] << 40;
-    size += data[5] << 32;
-    size += data[6] << 24;
-    size += data[8] << 16;
-    size += data[9] << 8;
-    size += data[10];
-    
+
+
+{% highlight javascript %}
+// Read image's data
+var data;
+
+data = context.getImageData(0, 0, img.width, img.height).data;
+
+// Read size of the payload
+var size = 0;
+
+size += data[1] << 56;
+size += data[2] << 48;
+size += data[4] << 40;
+size += data[5] << 32;
+size += data[6] << 24;
+size += data[8] << 16;
+size += data[9] << 8;
+size += data[10];
+{% endhighlight %}
+
 
 
 
 and the payload itself:
 
 
-    
-    
-    // Read payload into string
-    var payload = '';
-    
-    for (var i = 12; i < data.length; i++) {
-        if ((i + 1) % 4) {
-            var char = data[i];
-    
-            if (char >= 32) {  // Strip any non-ASCII to keep eval() happy
-                payload += String.fromCharCode(char);
-            }
+
+
+{% highlight javascript %}
+// Read payload into string
+var payload = '';
+
+for (var i = 12; i < data.length; i++) {
+    if ((i + 1) % 4) {
+        var char = data[i];
+
+        if (char >= 32) {  // Strip any non-ASCII to keep eval() happy
+            payload += String.fromCharCode(char);
         }
     }
-    
+}
+{% endhighlight %}
+
 
 
 
 Now that we have the original code stored into the `payload` variable we can execute it by a simple:
 
 
-    
-    
-    eval(payload);
-    
+
+
+{% highlight javascript %}
+eval(payload);
+{% endhighlight %}
+
 
 
 
