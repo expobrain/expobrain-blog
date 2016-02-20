@@ -17,7 +17,7 @@ tags:
 - gdb
 ---
 
-Now that I have a spare machine where I can do all my experiments, I can start again to write posts about [Disassembly C code for fun](http://www.expobrain.net/category/disassembly/) but, wait, my current hardware is a 32-bit Pentium-M CPU and I want to build and disassembly 64-bit code!
+Now that I have a spare machine where I can do all my experiments, I can start again to write posts about [Disassembly C code for fun](http://www.expobrain.net/tag/disassembly/) but, wait, my current hardware is a 32-bit Pentium-M CPU and I want to build and disassembly 64-bit code!
 
 Let's set up my Ubuntu for 64-bit cross-compilation.
 

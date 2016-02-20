@@ -17,3 +17,7 @@ github_username:  expobrain
 markdown: kramdown
 permalink: /:year/:month/:day/:title
 highlighter: pygments
+
+# Plugins
+tag_page_layout: tag_page
+tag_page_dir: tag
