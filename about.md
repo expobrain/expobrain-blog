@@ -1,15 +1,20 @@
 ---
-layout: page
+layout: about
 title: About the site, the author, the life, the universe and everything more.
 permalink: about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+![Daniele Esposti]({{ site.url }}/assets/images/icon.jpg){: .profile-image }
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+I'm a developer writing in Python, JavaScript and sometimes Rust and Go.
 
-You can find more code and samples on my [Github](https://github.com/expobrain) account.
+My professional experience comes from developing desktop applications in Qt, but now I'm working on web applications and Big Data.
 
-Follow me on [Twitter](https://twitter.com/expobrain)
+This is my personal space where I share anything that can be useful to myself an to others; I hope that you will find, or maybe you already found, something cool and useful for you too.
+
+You can find more code and samples on my <span class="genericon genericon-github"></span> [Github](https://github.com/expobrain) account.
+
+Follow me on <span class="genericon genericon-twitter"></span> [Twitter](https://twitter.com/expobrain)
+
+And of cours have a look at my <span class="genericon genericon-linkedin"></span> [Linkedin](https://www.linkedin.com/in/danieleesposti) profile.
+
