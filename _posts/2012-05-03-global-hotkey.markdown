@@ -241,4 +241,4 @@ Run the code and when you will press the hotkey combination (SHIFT+CTRL) the win
 
 Well, anyway I didn't all this work just to change a window's backgrounds :-)!
 
-[Here](http://www.expobrain.net/assets/2012/05/global_hotkey.tar.gz) you can download the source code of this article. Have fun with it!
+[Here](http://www.expobrain.net/media/2012/05/global_hotkey.tar.gz) you can download the source code of this article. Have fun with it!

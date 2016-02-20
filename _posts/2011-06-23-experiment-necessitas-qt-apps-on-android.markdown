@@ -28,14 +28,14 @@ Unfortunately the installation of Necessitas on Mac OS X is done by an online in
 
 Now you can start the Necessitas version of Qt Creator inside the `QtCreator/bin` folder and select _Qt Widget Project > Qt Gui Application_ to create a new empty project.
 
-[![]({{ site.url }}/assets/2011/06/necessitas_android_1-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_1.png)
+[![]({{ site.url }}/media/2011/06/necessitas_android_1-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_1.png)
 
 Choose name for your project, i.e. Android, and the folder where the project tree will be created. You can set up that folder as your default folder for your future Qt projects if you wish.
 
 
 
 
-[![]({{ site.url }}/assets/2011/06/necessitas_android_2-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_2.png)
+[![]({{ site.url }}/media/2011/06/necessitas_android_2-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_2.png)
 
 
 
@@ -45,7 +45,7 @@ Now select Android as a build target
 
 
 
-[![]({{ site.url }}/assets/2011/06/necessitas_android_3-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_3.png)
+[![]({{ site.url }}/media/2011/06/necessitas_android_3-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_3.png)
 
 
 
@@ -55,7 +55,7 @@ Next step the creation of the class for the main application and window, the def
 
 
 
-[![]({{ site.url }}/assets/2011/06/necessitas_android_4-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_4.png)
+[![]({{ site.url }}/media/2011/06/necessitas_android_4-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_4.png)
 
 
 
@@ -65,7 +65,7 @@ The last step asks you to select which version control system do you want to use
 
 
 
-[![]({{ site.url }}/assets/2011/06/necessitas_android_5-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_5.png)
+[![]({{ site.url }}/media/2011/06/necessitas_android_5-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_5.png)
 
 
 
@@ -75,7 +75,7 @@ Now we have our Android test project ready, we must create a new virtual device 
 
 
 
-![]({{ site.url }}/assets/2011/06/necessitas_android_6-150x150.png) [![]({{ site.url }}/assets/2011/06/necessitas_android_7-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_7.png)
+![]({{ site.url }}/media/2011/06/necessitas_android_6-150x150.png) [![]({{ site.url }}/media/2011/06/necessitas_android_7-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_7.png)
 
 
 
@@ -86,7 +86,7 @@ Close the _Manage device configurations_ window, expand the _Package configurati
 
 
 
-[![]({{ site.url }}/assets/2011/06/necessitas_android_8-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_8.png)
+[![]({{ site.url }}/media/2011/06/necessitas_android_8-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_8.png)
 
 
 
@@ -96,7 +96,7 @@ Now expand the _Deploy configurations panel_, check the _Install Ministro system
 
 
 
-[![]({{ site.url }}/assets/2011/06/necessitas_android_9-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_9.png)
+[![]({{ site.url }}/media/2011/06/necessitas_android_9-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_9.png)
 
 
 
@@ -106,7 +106,7 @@ Now you are ready to run your empty project into the emulator. When you run it f
 
 
 
-[![]({{ site.url }}/assets/2011/06/necessitas_android_10-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_10.png) [![]({{ site.url }}/assets/2011/06/necessitas_android_11-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_11.png)
+[![]({{ site.url }}/media/2011/06/necessitas_android_10-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_10.png) [![]({{ site.url }}/media/2011/06/necessitas_android_11-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_11.png)
 
 
 
@@ -116,7 +116,7 @@ And at the end you will see your empty project in action
 
 
 
-[![]({{ site.url }}/assets/2011/06/necessitas_android_12-150x150.png)]({{ site.url }}/assets/2011/06/necessitas_android_12.png)
+[![]({{ site.url }}/media/2011/06/necessitas_android_12-150x150.png)]({{ site.url }}/media/2011/06/necessitas_android_12.png)
 
 
 

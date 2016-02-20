@@ -279,4 +279,4 @@ Increasing the number of active workers to a number greater of the number of cor
 
 Last note, in this example 4 processes are started on a CPU with only 2 physical cores but the execution time is bound only to the number of thumbnail generator workers because the producer and the sink doesn't have a big impact on the CPU (they spend more time in disk I/O operations).
 
-The code used in this post can be download [here]({{ site.url }}/assets/2013/02/processing.py_.zip).
+The code used in this post can be download [here]({{ site.url }}/media/2013/02/processing.py_.zip).

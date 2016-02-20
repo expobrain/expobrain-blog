@@ -340,6 +340,6 @@ I'm going to rotate the device so I need to fix the screen orientation; in the A
 
 
 
-That's all. If you want to play with this example just download the source code from [here]({{ site.url }}/assets/2012/05/android2d.tar.gz).
+That's all. If you want to play with this example just download the source code from [here]({{ site.url }}/media/2012/05/android2d.tar.gz).
 
 Enjoy it!
