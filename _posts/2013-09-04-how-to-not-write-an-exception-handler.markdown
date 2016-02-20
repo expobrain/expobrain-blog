@@ -1,17 +1,14 @@
 ---
 author: admin
+categories: [Troubleshooting]
 comments: true
-date: 2013-09-04 16:28:18+00:00
+date: 2013-09-04 16:28:18
+image: {url: /media/2013/09/try_catch_fail.png}
 layout: post
 slug: how-to-not-write-an-exception-handler
+tags: [bugs, exceptions, python]
 title: How to NOT write an exception handler
 wordpress_id: 1643
-categories:
-- Troubleshooting
-tags:
-- bugs
-- exceptions
-- python
 ---
 
 Exception handlers are important but more important is to code them in the correct way. Today I'll show you an example of how to NOT write an exception handler. This example is taken from a real piece of code I found laying around in the code base, so "True story bro!" :-)

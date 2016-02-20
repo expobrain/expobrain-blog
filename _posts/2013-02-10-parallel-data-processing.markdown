@@ -1,22 +1,14 @@
 ---
 author: admin
+categories: [Guides]
 comments: true
-date: 2013-02-10 00:34:45+00:00
+date: 2013-02-10 00:34:45
+image: {url: /media/2013/05/algorithms_small_logo.png}
 layout: post
 slug: parallel-data-processing
+tags: [consumer, gil, multicore, multiprocessing, producer, python, queues, threads]
 title: Parallel data processing
 wordpress_id: 1219
-categories:
-- Guides
-tags:
-- consumer
-- gil
-- multicore
-- multiprocessing
-- producer
-- python
-- queues
-- threads
 ---
 
 Developing an application or script which process data is a straight-forward pattern: data is collected, processed and the result is provided to be stored in a file or database. Those three blocks (collect, process, store) forms a pipeline and in the old days this pipeline is implemented in a series of synchronous function calls passing the data (or the pointer to the data) from one step to the next.

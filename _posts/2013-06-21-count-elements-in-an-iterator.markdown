@@ -1,16 +1,14 @@
 ---
 author: admin
+categories: [Troubleshooting]
 comments: true
-date: 2013-06-21 14:36:19+00:00
+date: 2013-06-21 14:36:19
+image: {url: /media/2013/05/algorithms_small_logo.png}
 layout: post
 slug: count-elements-in-an-iterator
+tags: [iterators, python]
 title: Count elements in an iterator
 wordpress_id: 1373
-categories:
-- Troubleshooting
-tags:
-- iterators
-- python
 ---
 
 Counting elements in a list, tuple or dictionary in Python is trivial, count the elements in a iterator is not. Because of the nature of a generator it's not possibile to know how many elements will be returned from the iterator, only one element is returned at time and the next element is not guarantee to exist.

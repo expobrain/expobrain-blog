@@ -1,17 +1,14 @@
 ---
 author: expobrain
+categories: [Guides]
 comments: true
-date: 2015-09-13 16:43:57+00:00
+date: 2015-09-13 16:43:57
+image: {url: /media/2014/01/javascript_code.jpg}
 layout: post
 slug: create-a-plugin-for-google-protocol-buffer
+tags: [json, protocol buffers, python]
 title: Create a plugin for Google Protocol Buffer
 wordpress_id: 2029
-categories:
-- Guides
-tags:
-- json
-- protocol buffers
-- python
 ---
 
 Google’s [Protocol Buffer](https://developers.google.com/protocol-buffers) is a library to encode and decode messages in a binary format optimised for compactness and portability between different platforms. At the moment the core library can generate code for C/C++, Java and Python but additional languages can be implemented by writing a plugin for the Protobuf’s compiler.

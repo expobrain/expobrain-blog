@@ -1,18 +1,14 @@
 ---
 author: admin
+categories: [Guides]
 comments: true
-date: 2013-09-04 16:30:03+00:00
+date: 2013-09-04 16:30:03
+image: {url: /media/2013/09/hardening.jpg}
 layout: post
 slug: simple-hardening-of-the-python-interpreter
+tags: [bytecode, hardening, python, reverse engineering]
 title: Simple hardening of the Python interpreter
 wordpress_id: 1644
-categories:
-- Guides
-tags:
-- bytecode
-- hardening
-- python
-- reverse engineering
 ---
 
 For companies protecting their source code form reverse engineering is between very to vitally important. Using languages based on virtual machines easily expose the bytecode to simple un-compile techniques which revert the op-codes back to human readable code. One solution involves obfuscating the source code but with Python this is really hard because renaming function names, class methods and attributes can break code which access them by literals (i.e. a `getattr(obj, "attribute")` can fail if the attribute name is changed by the obfuscator).

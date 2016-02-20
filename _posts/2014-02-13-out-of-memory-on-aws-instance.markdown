@@ -1,16 +1,14 @@
 ---
 author: expobrain
+categories: [Troubleshooting]
 comments: true
-date: 2014-02-13 00:51:29+00:00
+date: 2014-02-13 00:51:29
+image: {url: /media/2014/02/aws_cloud.png}
 layout: post
 slug: out-of-memory-on-aws-instance
+tags: [amazon web services, linux]
 title: Out of Memory on AWS instance
 wordpress_id: 1897
-categories:
-- Troubleshooting
-tags:
-- amazon web services
-- linux
 ---
 
 Do you have a _micro_ instance on Amazon Web Services and you run out of RAM and you don't want to upgrade to a _small_ one? Or do you need just extra RAM to compile Numpy, Scipy and Pandas only once? Here a simple and dirty solution.

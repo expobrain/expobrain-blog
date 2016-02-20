@@ -1,18 +1,14 @@
 ---
 author: admin
+categories: [Guides, Troubleshooting]
 comments: true
-date: 2013-12-13 00:38:12+00:00
+date: 2013-12-13 00:38:12
+image: {url: /media/2013/12/git-logo.jpg}
 layout: post
 slug: git-rebase-no-jutsu
+tags: [command line, git, rebase]
 title: Git-rebase no jutsu
 wordpress_id: 1787
-categories:
-- Guides
-- Troubleshooting
-tags:
-- command line
-- git
-- rebase
 ---
 
 In a DVCS [rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing) is the action performed by re-applying all the commits done on the current active branch since it diverged from a remote branch. That is, all the commits are taken away and re-applied over the latest version of the remote branch. 

@@ -1,17 +1,14 @@
 ---
 author: admin
+categories: [Troubleshooting]
 comments: true
-date: 2013-07-12 20:05:52+00:00
+date: 2013-07-12 20:05:52
+image: {url: /media/2013/07/date_and_time.jpg}
 layout: post
 slug: timestamp-and-microseconds-on-windows-platforms
+tags: ['2.7', python, timestamp]
 title: Timestamp and microseconds on Windows platforms
 wordpress_id: 1487
-categories:
-- Troubleshooting
-tags:
-- '2.7'
-- python
-- timestamp
 ---
 
 The [datetime.datetime](http://docs.python.org/2/library/datetime.html#datetime-objects) object can return the current date and time with a resolution up to [microseconds](http://docs.python.org/2/library/datetime.html#datetime.datetime) which is true on *nix platforms but not completely true on Windows platforms.

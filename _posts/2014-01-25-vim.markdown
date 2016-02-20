@@ -1,16 +1,14 @@
 ---
 author: expobrain
+categories: [Various things]
 comments: true
-date: 2014-01-25 00:28:42+00:00
+date: 2014-01-25 00:28:42
+image: {url: /media/2014/01/vim_splash_screen.png}
 layout: post
 slug: vim
+tags: [github, vim]
 title: Vim
 wordpress_id: 1857
-categories:
-- Various things
-tags:
-- github
-- vim
 ---
 
 New year, new programming languages, new technologies and new IDE. I finally switched to [Vim](http://www.vim.org/) as a primary editor for Python, JavaScript, HTML and CSS.                                    

@@ -1,19 +1,14 @@
 ---
 author: admin
+categories: [Disassembly, Guides]
 comments: true
-date: 2013-07-02 20:38:27+00:00
+date: 2013-07-02 20:38:27
+image: {url: /media/2013/09/assembler.gif}
 layout: post
 slug: disassembly-c-code-for-fun-part-5-if-statement
-title: 'Disassembly C code for fun – Part 5: if statement'
+tags: [asm, c/c++, gdb, x86-64]
+title: "Disassembly C code for fun \u2013 Part 5: if statement"
 wordpress_id: 1414
-categories:
-- Disassembly
-- Guides
-tags:
-- asm
-- c/c++
-- gdb
-- x86-64
 ---
 
 Time to disassembly the `if..then` conditional statement. I'll say in this post will be not exciting like the previous ones (except when we'll disassembly the optimised code) but the `if..then` block is one of the base statements of every language so it's important to know how it's translate to assembly code.

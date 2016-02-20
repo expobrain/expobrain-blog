@@ -1,17 +1,14 @@
 ---
 author: admin
+categories: [Guides]
 comments: true
-date: 2013-07-12 16:00:32+00:00
+date: 2013-07-12 16:00:32
+image: {url: /media/2013/07/batch-files-command.png}
 layout: post
 slug: for-loops-in-windows-command-line
+tags: [batch files, command line, windows]
 title: For loops in Windows command line
 wordpress_id: 1494
-categories:
-- Guides
-tags:
-- batch files
-- command line
-- windows
 ---
 
 I'm working on a script on Windows to automatically install Python packages listed in a text file like [`pip`](http://www.pip-installer.org/en/latest/cookbook.html#requirements-files) does.

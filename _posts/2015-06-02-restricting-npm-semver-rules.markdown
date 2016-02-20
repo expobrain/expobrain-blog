@@ -1,17 +1,14 @@
 ---
 author: expobrain
+categories: [Troubleshooting]
 comments: true
-date: 2015-06-02 18:28:51+00:00
+date: 2015-06-02 18:28:51
+image: {url: /media/2015/06/wombat-by-night.png}
 layout: post
 slug: restricting-npm-semver-rules
+tags: [javascript, npm, semver]
 title: Restricting npm semver rules
 wordpress_id: 2023
-categories:
-- Troubleshooting
-tags:
-- javascript
-- npm
-- semver
 ---
 
 The `npm` package manager uses `semver` to declare the version of the external dependancies of your package in a more flexible way. Unfortunately the current version of `npm` by default uses the _caret ^_ as a default prefix for package's versions which means the required package must have the same MAJOR version but can have a different MINOR and HOTFIX versions; this can lead to a broken code if a change in the MINOR version of the dependancy introduce an incompatibility with your code. Replacing manually all the carets with the _tilde ~_ is tedious and error prone so we need a way to set `npm` to use the tilde by default.

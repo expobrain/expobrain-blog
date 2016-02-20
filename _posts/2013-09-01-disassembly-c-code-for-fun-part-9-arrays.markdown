@@ -1,19 +1,14 @@
 ---
 author: admin
+categories: [Disassembly, Guides]
 comments: true
-date: 2013-08-31 23:16:45+00:00
+date: 2013-09-01
+image: {url: /media/2013/09/assembler.gif}
 layout: post
 slug: disassembly-c-code-for-fun-part-9-arrays
-title: 'Disassembly C code for fun – Part 9: arrays'
+tags: [asm, c/c++, disassembly, gdb]
+title: "Disassembly C code for fun \u2013 Part 9: arrays"
 wordpress_id: 1628
-categories:
-- Disassembly
-- Guides
-tags:
-- asm
-- c/c++
-- disassembly
-- gdb
 ---
 
 Arrays are a list of fixed number of elements of the same type stored into a continuos block of memory. String are a type of array with a fixed number of `char` with a NULL as the last element of the array.

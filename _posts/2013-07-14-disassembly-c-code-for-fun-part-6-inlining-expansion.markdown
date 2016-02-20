@@ -1,20 +1,14 @@
 ---
 author: admin
+categories: [Disassembly, Guides]
 comments: true
-date: 2013-07-14 16:56:35+00:00
+date: 2013-07-14 16:56:35
+image: {url: /media/2013/09/assembler.gif}
 layout: post
 slug: disassembly-c-code-for-fun-part-6-inlining-expansion
-title: 'Disassembly C code for fun – Part 6: inlining expansion'
+tags: [asm, c/c++, gdb, inline expansion, x86-64]
+title: "Disassembly C code for fun \u2013 Part 6: inlining expansion"
 wordpress_id: 1515
-categories:
-- Disassembly
-- Guides
-tags:
-- asm
-- c/c++
-- gdb
-- inline expansion
-- x86-64
 ---
 
 Today we will talk about code inlining which means the ability of the compiler to replace a function call with the body of the called function.

@@ -1,16 +1,14 @@
 ---
 author: admin
+categories: [Troubleshooting]
 comments: true
-date: 2012-03-07 19:03:28+00:00
+date: 2012-03-07 19:03:28
+image: {url: /media/2012/03/webm.png}
 layout: post
 slug: build-google-webm-library-under-windows
+tags: [visual studio 2008, webm]
 title: Build Google WebM library under Windows
 wordpress_id: 781
-categories:
-- Troubleshooting
-tags:
-- visual studio 2008
-- webm
 ---
 
 Google [WebM](http://www.webmproject.org/) is the new lossy encoder for images (and videos) which promise a better compression than the old and well known JPEG format. The source code is available anche can be build on Linux, Mac OS X and Windows as well.

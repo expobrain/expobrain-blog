@@ -1,20 +1,14 @@
 ---
 author: admin
+categories: [Guides, Troubleshooting]
 comments: true
-date: 2013-08-11 10:35:43+00:00
+date: 2013-08-11 10:35:43
+image: {url: /media/2013/08/ubuntu_install.png}
 layout: post
 slug: install-ubuntu-without-pae-support
+tags: [32-bit, old hardware, pae, pentium-m, ubuntu]
 title: Install Ubuntu without PAE support
 wordpress_id: 1560
-categories:
-- Guides
-- Troubleshooting
-tags:
-- 32-bit
-- old hardware
-- pae
-- pentium-m
-- ubuntu
 ---
 
 Last night I brought to a new life my old laptop to be used during my commuting time to write posts, to experiments some technologies and last but not least show how old hardware can be recycled and used efficiently.

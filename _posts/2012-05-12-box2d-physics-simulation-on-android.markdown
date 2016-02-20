@@ -1,19 +1,14 @@
 ---
 author: admin
+categories: [Guides]
 comments: true
-date: 2012-05-12 16:53:25+00:00
+date: 2012-05-12 16:53:25
+image: {url: /media/2012/05/Google-Android.png}
 layout: post
 slug: box2d-physics-simulation-on-android
+tags: [android, box2d, cocos2d, java, phsysics]
 title: Box2D physics simulation on Android
 wordpress_id: 849
-categories:
-- Guides
-tags:
-- android
-- box2d
-- cocos2d
-- java
-- phsysics
 ---
 
 It was a rainy and cold afternoon and I had nothing to do except to play around with Box2D on my Android device. I will show you the another-ball-bouncing example using [Box2D](http://box2d.org/) and [Cocos2D](http://cocos2d.org/).

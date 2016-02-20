@@ -1,18 +1,14 @@
 ---
 author: admin
+categories: [Troubleshooting, Various things]
 comments: true
-date: 2013-08-15 11:43:45+00:00
+date: 2013-08-15 11:43:45
+image: {url: /media/2013/08/power_of_2.jpg}
 layout: post
 slug: detect-if-a-number-is-power-of-2
+tags: [algorithm, c/c++, complexity]
 title: Detect if a number is power of 2
 wordpress_id: 1557
-categories:
-- Troubleshooting
-- Various things
-tags:
-- algorithm
-- c/c++
-- complexity
 ---
 
 Easy post today: simple method to detect if a number is a power of 2 in O(1) complexity.

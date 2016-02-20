@@ -1,19 +1,14 @@
 ---
 author: admin
+categories: [Guides, Troubleshooting]
 comments: true
-date: 2013-10-21 18:10:22+00:00
+date: 2013-10-21 18:10:22
+image: {url: /media/2013/10/busy1.png}
 layout: post
 slug: restore-mysql-database-with-progress-bar
+tags: [command line, mysql, pipe, unix]
 title: Restore MySQL database with progress bar
 wordpress_id: 1743
-categories:
-- Guides
-- Troubleshooting
-tags:
-- command line
-- mysql
-- pipe
-- unix
 ---
 
 Restoring a copy of a medium/big database can be a boring task, it can be worse when the process takes some times (let's say more than 10 minutes) and you don't have any idea of the state of the restore process and/or it's ETA.

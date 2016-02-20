@@ -1,17 +1,14 @@
 ---
 author: admin
+categories: [Various things]
 comments: true
-date: 2013-07-08 22:08:26+00:00
+date: 2013-07-09
+image: {url: /media/2013/07/unequal_soup.jpg}
 layout: post
 slug: distribution-of-wealth-in-a-society-of-equals
+tags: [distribution of wealth, economics, scientific method]
 title: Distribution of wealth in a society of equals
 wordpress_id: 1417
-categories:
-- Various things
-tags:
-- distribution of wealth
-- economics
-- scientific method
 ---
 
 In this blog I usually write posts related to information technology, but I stumble upon this [post](http://noisefromamerika.org/articolo/disuguaglianza-ricchezza-societ-uguali) on NoiseFromAmerika (an italian blog about politics and economics) and I was surprised about how a concept backed by the common sense it's so wrong when it's analysed with scientific method.

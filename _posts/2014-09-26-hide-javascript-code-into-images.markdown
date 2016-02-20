@@ -1,18 +1,14 @@
 ---
 author: expobrain
+categories: [Various things]
 comments: true
-date: 2014-09-25 23:27:31+00:00
+date: 2014-09-26
+image: {url: /media/2014/01/javascript_code.jpg}
 layout: post
 slug: hide-javascript-code-into-images
+tags: [go, hacking, html5, javascript]
 title: Hide JavaScript code into images
 wordpress_id: 1896
-categories:
-- Various things
-tags:
-- go
-- hacking
-- html5
-- javascript
 ---
 
 In this post I'm going to explain how it's possible to hide JavaScript code into a PNG image and executing it into the browser without leaving any trace in the HTML document. This kind of hiding technique can be used to load JavaScript code into the browser bypassing the common scanning for malicious files because usually the content of an image is considered to be pixel's information and not executable code.

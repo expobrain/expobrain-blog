@@ -1,20 +1,14 @@
 ---
 author: admin
+categories: [Disassembly, Guides]
 comments: true
-date: 2013-07-01 23:47:07+00:00
+date: 2013-07-02
+image: {url: /media/2013/09/assembler.gif}
 layout: post
 slug: disassembly-c-code-for-fun-part-4-floats-and-sse2
-title: 'Disassembly C code for fun – Part 4: floats and SSE2'
+tags: [asm, c/c++, gdb, sse2, x86-64]
+title: "Disassembly C code for fun \u2013 Part 4: floats and SSE2"
 wordpress_id: 1394
-categories:
-- Disassembly
-- Guides
-tags:
-- asm
-- c/c++
-- gdb
-- sse2
-- x86-64
 ---
 
 Today we look at the disassembly of a functions involving floats and SSE2 instructions. As I stated in the first post [Disassembly C code for fun: part 1]({{ site.url }}/2013/06/16/disassembly-c-code-for-fun-part-1/) the C code is compiled for a x86-64 architecture which means the CPU has the SSE/SSE2 instructions sets by default.

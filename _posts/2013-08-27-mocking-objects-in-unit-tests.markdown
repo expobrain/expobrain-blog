@@ -1,17 +1,14 @@
 ---
 author: admin
+categories: [Guides]
 comments: true
-date: 2013-08-27 18:49:31+00:00
+date: 2013-08-27 18:49:31
+image: {url: /media/2013/08/unit_test_mocking.jpg}
 layout: post
 slug: mocking-objects-in-unit-tests
+tags: [mock, python, unit tests]
 title: Mocking objects in unit tests
 wordpress_id: 1542
-categories:
-- Guides
-tags:
-- mock
-- python
-- unit tests
 ---
 
 Unit testing is important to ensure the stability and the correctness of the code throughout all lifespan of the project. However, testing some code requires a connection to external services (like SMTP, web, etc.) which in all cases must be avoided to simplify the test and development environment and to not add external variables which can alter the result of the tests.

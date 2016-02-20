@@ -1,22 +1,14 @@
 ---
 author: admin
+categories: [Disassembly, Guides]
 comments: true
-date: 2013-06-18 23:17:00+00:00
+date: 2013-06-19
+image: {url: /media/2013/09/assembler.gif}
 layout: post
 slug: disassembly-c-code-for-fun-part-2
+tags: [asm, c/c++, clang, gdb, hello world, instruction pointer, x86-64]
 title: 'Disassembly C code for fun: part 2'
 wordpress_id: 1344
-categories:
-- Disassembly
-- Guides
-tags:
-- asm
-- c/c++
-- clang
-- gdb
-- hello world
-- instruction pointer
-- x86-64
 ---
 
 So, in the previous post [Disassembly C code for fun: part 1]({{ site.url }}/2013/06/16/disassembly-c-code-for-fun-part-1/) I didn't used as example the well known "Hello World!" code, but for a good reason: I need to explain some basics of the disassembly process (prologue, epilogue, stack, etc.) before proceed any further.

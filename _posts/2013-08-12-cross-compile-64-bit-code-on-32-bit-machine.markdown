@@ -1,20 +1,14 @@
 ---
 author: admin
+categories: [Troubleshooting]
 comments: true
-date: 2013-08-12 18:29:02+00:00
+date: 2013-08-12 18:29:02
+image: {url: /media/2013/08/32-bit_64-bit.jpg}
 layout: post
 slug: cross-compile-64-bit-code-on-32-bit-machine
+tags: [32-bit, 64-bit, c/c++, disassembly, gcc, gdb]
 title: Cross-compile 64-bit code on 32-bit machine
 wordpress_id: 1571
-categories:
-- Troubleshooting
-tags:
-- 32-bit
-- 64-bit
-- c/c++
-- disassembly
-- gcc
-- gdb
 ---
 
 Now that I have a spare machine where I can do all my experiments, I can start again to write posts about [Disassembly C code for fun](http://www.expobrain.net/tag/disassembly/) but, wait, my current hardware is a 32-bit Pentium-M CPU and I want to build and disassembly 64-bit code!

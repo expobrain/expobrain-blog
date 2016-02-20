@@ -1,18 +1,14 @@
 ---
 author: admin
+categories: [Guides]
 comments: true
-date: 2012-10-17 22:26:43+00:00
+date: 2012-10-18
+image: {url: /media/2012/10/iOS-4-1-4-0-3-May-Arrive-as-Early-as-This-Week-2.png}
 layout: post
 slug: use-custom-sqlite-database-with-ios
+tags: [c/c++, ios, object-c, sqlite]
 title: 'Use custom SQLite database with iOS '
 wordpress_id: 919
-categories:
-- Guides
-tags:
-- c/c++
-- ios
-- object-c
-- sqlite
 ---
 
 Core Data is the framework available on iOS to allow to store data on the device using a common API without worrying about the storage backend. It's very powerful but if you are creating and managing the data from your app. However, if you are providing your custom SQLite database bundled within the app, using Core Data directly will be difficult.

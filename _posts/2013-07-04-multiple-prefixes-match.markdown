@@ -1,16 +1,14 @@
 ---
 author: admin
+categories: [Troubleshooting]
 comments: true
-date: 2013-07-04 20:51:15+00:00
+date: 2013-07-04 20:51:15
+image: {url: /media/2013/07/regula_exp.jpg}
 layout: post
 slug: multiple-prefixes-match
+tags: [python, string manipulation]
 title: Multiple prefixes match
 wordpress_id: 1429
-categories:
-- Troubleshooting
-tags:
-- python
-- string manipulation
 ---
 
 I'm not using often string manipulation (I usually handle SQLAlchemy's queries and sometime XML/XHTML manipulation with the `lxml` library) but sometimes I need to analyse some paths expressed with a dotted notation comparing every path with a predefined list of path prefixes. The obvious solution is to compare in a for cycle every input path against the predefined prefix list returning at the first positive match.

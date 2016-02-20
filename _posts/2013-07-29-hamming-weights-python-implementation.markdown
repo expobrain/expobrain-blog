@@ -1,17 +1,14 @@
 ---
 author: admin
+categories: [Troubleshooting]
 comments: true
-date: 2013-07-29 18:45:31+00:00
+date: 2013-07-29 18:45:31
+image: {url: /media/2013/07/circuit.gif}
 layout: post
 slug: hamming-weights-python-implementation
+tags: [hamming weight, popcount, python]
 title: Hamming weight's Python implementation
 wordpress_id: 1544
-categories:
-- Troubleshooting
-tags:
-- hamming weight
-- popcount
-- python
 ---
 
 Counting the number of 1's in a binary representation of a number (aka [Hamming weight](https://en.wikipedia.org/wiki/Hamming_weight) aka _popcount_ when binary numbers are involved) with Python using different implementations (naive implementations are obviously excluded :-) ).

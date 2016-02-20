@@ -1,20 +1,14 @@
 ---
 author: admin
+categories: [Disassembly, Guides]
 comments: true
-date: 2013-08-23 22:22:06+00:00
+date: 2013-08-24
+image: {url: /media/2013/09/assembler.gif}
 layout: post
 slug: disassembly-c-code-for-fun-part-8-strings
-title: 'Disassembly C code for fun – Part 8: strings'
+tags: [asm, c/c++, disassembly, hello world, x86-64]
+title: "Disassembly C code for fun \u2013 Part 8: strings"
 wordpress_id: 1583
-categories:
-- Disassembly
-- Guides
-tags:
-- asm
-- c/c++
-- disassembly
-- hello world
-- x86-64
 ---
 
 Following the last post about the [buffer overflow protection]({{ site.url }}/2013/07/19/disassembly-c-code-for-fun-part-7-buffer-overflow-protection/), today we finally talk about strings.

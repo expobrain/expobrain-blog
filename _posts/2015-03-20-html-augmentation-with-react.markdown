@@ -1,17 +1,14 @@
 ---
 author: expobrain
+categories: [Various things]
 comments: true
-date: 2015-03-19 23:44:12+00:00
+date: 2015-03-20
+image: {url: /media/2015/03/logo_og.png}
 layout: post
 slug: html-augmentation-with-react
+tags: [html, javascript, react]
 title: HTML augmentation with React
 wordpress_id: 1999
-categories:
-- Various things
-tags:
-- html
-- javascript
-- react
 ---
 
 These days is all about [React](http://facebook.github.io/react/). Most of the people are leaving the bandwagon of AngularJS in favour of the React's bandwagon for a lot of different technical and not-technical reasons (_#TROLLING_ they switch because is the new JavaScript _Toy of the Year_). But today and here I'll not talk about that, however I'll talk about if it's possible to use React to augment a static or server-side rendered page; this is necessary to allow search engines to crawl and index your website (remember that crawlers doesn't run Javascript code). The long answer is [TL;RL](http://www.urbandictionary.com/define.php?term=tl%3Brl), the short answer is _"keep reading"_.
