@@ -59,7 +59,7 @@ article: true
 {% unless footer_style %}
 	{% capture footer_style %}{% if page.dark %}dark{% else %}clean{% endif %}{% endcapture %}
 {% endunless %}
-<footer class="{{ footer_style }}" style="background-image: url({% if footer_image %}{{ footer_image }}{% else %}{{ site.cover }}{% endif %}); height: 35%; min-height: 250px; {% if site.parallax != true %}background-attachment: scroll;{% endif %}" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="50">
+<footer class="{{ footer_style }}" style="background-image: url({% if footer_image %}{{ footer_image }}{% else %}{{ site.cover }}{% endif %}); height: 35%; min-height: 250px; {% if site.parallax != true %}background-attachment: scroll;{% endif %} background-position: center" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="50">
 	<div id="nav-icon" style="top: 60px;" data-stellar-ratio="0.8">
 		<a class="scroll" data-speed="500" href="#article"><span class="genericon genericon-collapse"></span></a>
 	</div>
@@ -69,6 +69,5 @@ article: true
 			<h1>{{ footer_title }}</h1>
 		</a>
 	</div>
-	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>. <a href="{{ site.copyright.type_url }}" target="_blank">{{ site.copyright.type_title }}</a>.</p>
 </footer>
 <script src="{{ site.baseurl }}/assets/js/smooth-scroll.js"></script>
