@@ -3,7 +3,7 @@ layout: default
 article: true
 ---
 
-<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.image.url %}{{ page.image.url }}{% else %}{{ site.cover }}{% endif %}); height: 100%; {% if site.parallax != true %}background-attachment: scroll;{% endif %}" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
+<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.image.url %}{{ page.image.url }}{% else %}{{ site.cover }}{% endif %}); height: 50%; background-position: center; {% if site.parallax != true %}background-attachment: scroll;{% endif %}" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
 	{% if page.video %}
 		<video id="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" data-stellar-ratio="0.5">
 		{% for format in page.video %}
@@ -12,13 +12,6 @@ article: true
 		</video>
 	{% endif %}
 	{% include top.html %}
-	<div id="post-info" data-stellar-ratio="0.7">
-		<h1>{{ page.title }}</h1>
-		{% if page.quote %}
-			<h2>{{ page.quote }}</h2>
-		{% endif %}
-		<a class="site-title" href="{{ site.url }}{{ site.baseurl }}"><div class="site-icon-small" style="background-image: url({{ site.icon }});"></div>{{ site.title }}</a>, in {{ page.date | date_to_long_string }}
-	</div>
 	{% if page.image.source %}
 	<div id="img-info" data-stellar-ratio="0.5">
 		<a href="{{ page.image.source }}" target="_blank" title="{% if page.video %}Vídeo{% else %}Image{% endif %} Source"><span class="genericon genericon-link"></span></a>
@@ -30,6 +23,14 @@ article: true
 </header>
 <div id="middle">
 	<div id="article">
+		<h1>{{ page.title }}</h1>
+		{% if page.quote %}
+			<h2>{{ page.quote }}</h2>
+		{% endif %}
+		<a class="site-title" href="{{ site.url }}{{ site.baseurl }}"><div class="site-icon-small" style="background-image: url({{ site.icon }});"></div>{{ site.title }}</a>, in {{ page.date | date_to_long_string }}
+
+		<hr class="post" />
+
 		{{ content }}
 	</div>
 	{% if site.commentsystem %}{% if page.comments != false %}
@@ -58,7 +59,7 @@ article: true
 {% unless footer_style %}
 	{% capture footer_style %}{% if page.dark %}dark{% else %}clean{% endif %}{% endcapture %}
 {% endunless %}
-<footer class="{{ footer_style }}" style="background-image: url({% if footer_image %}{{ footer_image }}{% else %}{{ site.cover }}{% endif %}); height: 75%; min-height: 500px; {% if site.parallax != true %}background-attachment: scroll;{% endif %}" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="50">
+<footer class="{{ footer_style }}" style="background-image: url({% if footer_image %}{{ footer_image }}{% else %}{{ site.cover }}{% endif %}); height: 35%; min-height: 250px; {% if site.parallax != true %}background-attachment: scroll;{% endif %}" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="50">
 	<div id="nav-icon" style="top: 60px;" data-stellar-ratio="0.8">
 		<a class="scroll" data-speed="500" href="#article"><span class="genericon genericon-collapse"></span></a>
 	</div>
@@ -66,9 +67,6 @@ article: true
 		<h3>{{ footer_message }}</h3>
 		<a href="{{ footer_url }}">
 			<h1>{{ footer_title }}</h1>
-			{% if footer_quote %}
-				<h2>{{ footer_quote }}</h2>
-			{% endif %}
 		</a>
 	</div>
 	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>. <a href="{{ site.copyright.type_url }}" target="_blank">{{ site.copyright.type_title }}</a>.</p>

@@ -252,6 +252,23 @@ hr {
 	border: 0;
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #fff;
+    text-align: center;
+}
+
+/* Glyph, by Harry Roberts */
+hr.post {
+    top: 20px;
+}
+
+hr.post:after {
+	color: #eee;
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
 }
 
 abbr {
