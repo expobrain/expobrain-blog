@@ -17,7 +17,9 @@ disqus:           expbrain
 #   url:            https://google.com/+IanCamporezBrunelli
 
 paginate:         5
-gems:             [jekyll-paginate]
+gems:
+- jekyll-paginate
+- jekyll-sitemap
 
 # Custom vars
 icon:             /assets/images/profile.jpg

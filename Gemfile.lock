@@ -144,6 +144,7 @@ DEPENDENCIES
   github-pages (>= 28)
   html-proofer (>= 1.4.0)
   jekyll-paginate (= 1.1.0)
+  jekyll-sitemap (= 0.10.0)
   jekyll-tagging (= 1.0.1)
 
 BUNDLED WITH
