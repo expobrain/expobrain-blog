@@ -7,10 +7,10 @@ permalink: /:year/:month/:day/:title
 title:            Daniele Esposti's Blog
 # tagline:          'blog'
 description:      'My personal blog.'
-url:              http://www.expobrain.net/
+url:              http://www.expobrain.net
 baseurl:
-# commentsystem:    google
-disqus:           expbrain
+commentsystem:    disqus
+disqus:           expobrain
 
 # author:
 #   name:           Ian Brunelli

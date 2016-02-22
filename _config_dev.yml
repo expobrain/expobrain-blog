@@ -7,10 +7,10 @@ permalink: /:year/:month/:day/:title
 title:            Daniele Esposti's Blog
 # tagline:          'blog'
 description:      'My personal blog.'
-url:              http://localhost:4000/
+url:              http://localhost:4000
 baseurl:
-# commentsystem:    google
-disqus:           expbrain
+commentsystem:    disqus
+disqus:           expobrain
 
 # author:
 #   name:           Ian Brunelli
