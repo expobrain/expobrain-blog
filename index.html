@@ -20,7 +20,7 @@ title: Home
 			<span class="post-date">{{ post.date | date_to_long_string }}</span>
 			<p class="post-description">{% if post.quote %}{{ post.quote }}{% else %}{{ post.content | strip_html | truncatewords: 50 }}{% endif %}</p>
 		</div>
-		<br>
+		<hr class="post" />
 	{% endfor %}
 </div>
 <nav class="pagination" role="navigation">
