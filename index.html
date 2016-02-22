@@ -16,8 +16,8 @@ title: Home
 <div id="post-list">
 	{% for post in paginator.posts %}
 		<div>
-			<span class="post-date">{{ post.date | date_to_long_string }}</span>
 			<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+			<span class="post-date">{{ post.date | date_to_long_string }}</span>
 			<p class="post-description">{% if post.quote %}{{ post.quote }}{% else %}{{ post.content | strip_html | truncatewords: 50 }}{% endif %}</p>
 		</div>
 		<br>

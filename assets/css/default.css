@@ -21,7 +21,7 @@ header, footer {
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Fenix, Georgia, "Times New Roman", serif;
 }
 
 header a, footer a {
@@ -416,7 +416,7 @@ pre code {
 }
 
 .menu-content {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Fenix, Georgia, "Times New Roman", serif;
 	background-color: rgba(26, 26, 26, 1);
 	text-align: center;
 	z-index: 5;
@@ -467,7 +467,7 @@ pre code {
 	position: relative;
 	margin-top: 30px;
 	text-align: center;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Fenix, Georgia, "Times New Roman", serif;
 	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -520,7 +520,7 @@ pre code {
 }
 
 #post-list {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Fenix, Georgia, "Times New Roman", serif;
 	top: 50px;
 	padding-bottom: 80px;
 	font-weight: 400;
@@ -531,16 +531,8 @@ pre code {
 	position: relative;
 }
 
-#post-list h1 {
-	font-weight: bold;
-	font-size: 30pt;
-	line-height: 44px;
-	margin-top: 0px;
-	margin-bottom: 8px;
-}
-
 #post-list a {
-	color: #555;
+	color: #515151;
 	text-decoration: none;
 	transition-duration: .5s;
 }
@@ -551,9 +543,7 @@ pre code {
 }
 
 .post-description {
-	color: #777;
-	font-size: 15pt;
-	font-family: Fenix, Georgia, "Times New Roman", serif;
+	font-size: 20px;
 }
 
 .post-date {
