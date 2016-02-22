@@ -88,6 +88,8 @@ GEM
     jekyll-seo-tag (1.0.0)
       jekyll (>= 2.0)
     jekyll-sitemap (0.10.0)
+    jekyll-tagging (1.0.1)
+      ruby-nuggets
     jekyll-textile-converter (0.1.0)
       RedCloth (~> 4.0)
     jekyll-watch (1.3.1)
@@ -109,6 +111,7 @@ GEM
     net-dns (0.8.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    nuggets (1.0.0)
     octokit (4.2.0)
       sawyer (~> 0.6.0, >= 0.5.3)
     parallel (1.6.1)
@@ -119,6 +122,8 @@ GEM
     rdiscount (2.1.8)
     redcarpet (3.3.3)
     rouge (1.10.1)
+    ruby-nuggets (1.0.0)
+      nuggets (= 1.0.0)
     safe_yaml (1.0.4)
     sass (3.4.21)
     sawyer (0.6.0)
@@ -139,6 +144,7 @@ DEPENDENCIES
   github-pages (>= 28)
   html-proofer (>= 1.4.0)
   jekyll-paginate (= 1.1.0)
+  jekyll-tagging (= 1.0.1)
 
 BUNDLED WITH
    1.11.2

@@ -60,3 +60,8 @@ google_analytics:
 
 # Default Theme Color for Chrome on Android Lollipop (Use RGB ColorCode without `#`, e.g.: `db5945`)
 theme_color:       7E9576
+
+# Tagging
+tag_page_layout: tag_page
+tag_page_dir: tag
+
