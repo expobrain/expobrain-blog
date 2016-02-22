@@ -4,7 +4,7 @@ title: About the site, the author, the life, the universe and everything more.
 permalink: about/
 ---
 
-![Daniele Esposti]({{ site.url }}/assets/images/icon.jpg){: .profile-image }
+![Daniele Esposti]({{ site.url }}/assets/images/profile.jpg){: .profile-image }
 
 I'm a developer writing in Python, JavaScript and sometimes Rust and Go.
 

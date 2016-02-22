@@ -20,7 +20,7 @@ paginate:         5
 gems:             [jekyll-paginate]
 
 # Custom vars
-icon:             /assets/images/icon.jpg
+icon:             /assets/images/profile.jpg
 cover:            /assets/images/cover.jpg
 
 social:
@@ -31,6 +31,10 @@ social:
   - icon:         github
     url:          https://github.com/expobrain
     desc:         Fork me on github
+
+  - icon:         linkedin
+    url:          https://www.linkedin.com/in/danieleesposti
+    desc:         Look at me on linkedin
 
   # - icon:         googleplus-alt
   #   url:          https://google.com/+IanCamporezBrunelli

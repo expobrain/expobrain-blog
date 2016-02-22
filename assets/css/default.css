@@ -115,15 +115,6 @@ h3 {
 	height: 150px;
 	background-size: 150px;
 	margin: -75px 0 0 -75px;
-	opacity: .9;
-}
-
-.site-icon-home:hover {
-	width: 160px;
-	height: 160px;
-	background-size: 160px;
-	margin: -80px 0 0 -80px;
-	opacity: 1;
 }
 
 .site-icon-page {
