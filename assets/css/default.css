@@ -104,6 +104,12 @@ h3 {
 	z-index: 1;
 }
 
+.site-title-home {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+}
+
 .site-icon-home {
 	width: 150px;
 	height: 150px;
