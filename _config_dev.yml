@@ -1,7 +1,7 @@
 # Dependencies
 markdown:	kramdown
 # Permalinks
-permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title/
 
 # Setup
 title:            Daniele Esposti's Blog
