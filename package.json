@@ -1,0 +1,17 @@
+{
+  "name": "expobrain-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "jekyll server -d build/dev --config _config_dev.yaml",
+    "build": "jekyll build -d build/public_html",
+    "upload": "rsync -avSz --delete --exclude download build/public_html/",
+    "check": "find media "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expobrain/expobrain-blog.git"
+  },
+  "author": "Daniele Esposti"
+}
