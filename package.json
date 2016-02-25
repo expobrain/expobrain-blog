@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "jekyll server -d build/dev --config _config_dev.yaml",
+    "serve": "jekyll server -d build/dev --config _config_dev.yml",
     "build": "jekyll build -d build/public_html",
     "upload": "rsync -avSz --delete --exclude download build/public_html/",
     "check": "find media "
