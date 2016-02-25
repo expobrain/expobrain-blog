@@ -6,7 +6,7 @@
 */
 var disqus_config = function () {
 this.page.url = '{{ site.url }}{{ page.url }}';
-this.page.identifier = '{{ page.wordpress_id }} {{ page.url }}';
+this.page.identifier = '{% if page.wordpress_id %}{{ page.wordpress_id }} {% endif %}{{ page.url }}';
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
