@@ -6,8 +6,7 @@
   "scripts": {
     "serve": "jekyll server -d build/dev --config _config_dev.yml",
     "build": "jekyll build -d build/public_html",
-    "upload": "rsync -avSz --delete --exclude download build/public_html/",
-    "check": "find media "
+    "upload": "rsync -avSz --delete --exclude download build/public_html/"
   },
   "repository": {
     "type": "git",
