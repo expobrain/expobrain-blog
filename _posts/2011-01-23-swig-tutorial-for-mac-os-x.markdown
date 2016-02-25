@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2011-01-22 22:28:12+00:00
+date: 2011-01-23
 layout: post
 slug: swig-tutorial-for-mac-os-x
 title: SWIG tutorial for Mac OS X

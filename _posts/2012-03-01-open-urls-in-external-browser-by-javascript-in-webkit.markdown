@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2012-02-29 23:15:46+00:00
+date: 2012-03-01
 layout: post
 slug: open-urls-in-external-browser-by-javascript-in-webkit
 title: Open URLs in external browser by Javascript in WebKit
@@ -23,18 +23,18 @@ It's very simple with the QtWebKit APIs to open an link with your default browse
 
 Let's start with a simple window with a WebKit view:
 
-    
-    
+
+
     MainWindow::MainWindow(QWidget *parent) :
     	QMainWindow(parent)
     {
     	browser = new QWebView(this);
-    
+
     	browser->setHtml("<button onclick="window.open('http://www.google.com')">click me</button>");
-    
+
     	setCentralWidget(browser);
     }
-    
+
 
 
 This is just a page with a button which should open Google's website into a new window. In our needs the new windows should be the default browser on our system.
@@ -45,50 +45,50 @@ Before showing the code, lets recap the sequence when a `window.open()` function
 
 
 
-	
+
   1. The user clicks the button and the `onclick()` event's code will be executed
 
-	
+
   2. QWebView calls `QWebPage::createWindow()` which returns a new QWebPage instance to be used to load the URL http://google.com
 
-	
+
   3. QWebView calls `QWebPage::acceptNavigationRequest()` to proceed or abort the URL loading by the boolean value returned by the method
 
-	
+
   4. If returns true it loads the URL else abort
 
 
 We create a new `Page` class and override both `QWebPage::createWindow()` and `QWebPage::acceptNavigationRequest()`. The header file:
 
-    
-    
+
+
     #include <qwebpage>
-    
+
     class Page : public QWebPage
     {
     	Q_OBJECT
     public:
     	explicit Page(QWidget *parent = 0);
-    
+
     	bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request;, NavigationType type);
     	QWebPage * createWindow(WebWindowType type);
-    
+
     };
-    
+
 
 
 And the source file:
 
-    
-    
+
+
     #include <qnetworkrequest>
     #include <qdesktopservices>
-    
+
     Page::Page(QWidget *parent) :
     	QWebPage(parent)
     {
     }
-    
+
     bool Page::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request;, NavigationType type) {
     	if (type == NavigationTypeOther) {
     		QDesktopServices::openUrl(request.url());
@@ -97,14 +97,14 @@ And the source file:
     		return true;
     	}
     }
-    
+
     QWebPage * Page::createWindow(WebWindowType type) {
     	return new Page();
     }
-    
 
 
-The `createWindow()` method simply returns a new `Page` instance. 
+
+The `createWindow()` method simply returns a new `Page` instance.
 
 In the `acceptNavigationRequest()` method instead we check if the type of the request is a `QWebPage::NavigationTypeOther` and then we open the URL in the external browser, returning False to stop WebKit loading the page.
 
