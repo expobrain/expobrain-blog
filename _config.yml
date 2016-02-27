@@ -68,6 +68,9 @@ google_analytics:  UA-423458-1
 theme_color:       7E9576
 
 # Tagging
-tag_page_layout: tag_page
-tag_page_dir: tag
+tag_page_layout:  tag_page
+tag_page_dir:     tag
 
+exclude:          ['Gemfile', 'Gemfile.lock',
+                    'package.json', 'npm-debug.log',
+                    'build/']
