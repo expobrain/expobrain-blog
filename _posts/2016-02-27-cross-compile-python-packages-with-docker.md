@@ -6,7 +6,7 @@ image: {url: /media/2016/02/docker-logo.png}
 layout: post
 slug: cross-compile-python-packages-with-docker
 tags: [docker, python, compilation, pip, wheel]
-title: Cross-compile Python packages with docker
+title: Cross-compile Python packages with Docker
 ---
 
 Cross-compiling is the action of building a package or a binary for a different system thatn the current used for the compilation process; for example compiling ARM binaries on a x86 architecture. In this post I'm going to cross-compile Python packages for a specific Linux distribution using Docker as a virtualisation layer.
