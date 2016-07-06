@@ -237,8 +237,8 @@ int main(int argc, char *argv[])
 }
 {% endhighlight %}
 
-Run the code and when you will press the hotkey combination (SHIFT+CTRL) the windows' background will change to green.
+Run the code and when you will press the hotkey combination (SHIFT+CTRL or SHIFT+CMD on macOS) the windows' background will change to green.
 
 Well, anyway I didn't all this work just to change a window's backgrounds :-)!
 
-[Here](http://www.expobrain.net/media/2012/05/global_hotkey.tar.gz) you can download the source code of this article. Have fun with it!
+[Here](https://github.com/expobrain/global-hotkey-qt) you can download the source code of this article. Have fun with it!
