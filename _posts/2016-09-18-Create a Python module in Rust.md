@@ -9,7 +9,7 @@ tags: [rust, python, compilation]
 title: Create a Python module in Rust
 ---
 
-[Rust](https://www.rust-lang.org) is a new language which aims to be fas a C/C++ but safer and more expressive. Writing code in Rust is not just fun but it also can be useful to write modules for Python to replace CPU-bound code with it's counterpart in Rust.
+[Rust](https://www.rust-lang.org) is a new language which aims to be fast a C/C++ but safer and more expressive. Writing code in Rust is not just fun but it also can be useful to write modules for Python to replace CPU-bound code with it's counterpart in Rust.
 
 Thanks to the [rust-cpython](https://github.com/dgrunwald/rust-cpython) project it's possible to execute Python code from Rust and vice-versa build a module in Rust for Python. However the given examples and documentation shows you only how to execute Python from Rust, where in this post I'll show you how to build a module in Rust to be called by Python code.
 
@@ -18,7 +18,7 @@ Thanks to the [rust-cpython](https://github.com/dgrunwald/rust-cpython) project 
 
 The code examples in this post uses Python 2.7 or 3.x indifferently and Rust 1.11+.
 
-If you need to compile this code for Python 2.7 a small change must be made in the `Cargo.toml` file, it will be exmplained further down in the post.
+If you need to compile this code for Python 2.7 a small change must be made in the `Cargo.toml` file, it will be explained further down in the post.
 
 I'll assume that you already have a shallow knowledge about Rust and its [pattern matching](https://doc.rust-lang.org/book/patterns.html), if not don't be scared and have a look at the official [documentation](https://doc.rust-lang.org/book/).
 
@@ -33,7 +33,7 @@ fn hello(py: Python) -> PyResult<PyString> {
 }
 {% endhighlight %}
 
-The first notable thing is that all the functions which will be called by the Python code needs to receive as the first parameter and instance of the current Python interpreter (argument `py` of type `Python` and if they return a value it should be wrapped in a `PyResult` type (an alias to the `Result` type). Other functions not exposed to the Python code don't need these constraints.
+The first notable thing is that all the functions which will be called by the Python code needs to receive as the first parameter an instance of the current Python interpreter (argument `py` of type `Python` and if they return a value it should be wrapped in a `PyResult` type (an alias to the `Result` type). Other functions not exposed to the Python code don't need these constraints.
 
 The second thing is that the return value is a Python string and not a Rust `String` or `str` type, this is possible because the `rust-cpython` crate expose to you the Python built-in types in Rust so you don't need to return a C string and convert into into a Python string later. This is a big boost in performances because the compiler will optimise the creation of `PyString` instance and the Python code can use the instance as is without any overhead.
 
@@ -142,7 +142,7 @@ features = ["python27-sys"]
 
 ## Conclusion
 
-Rust is a very promising system language which gives you the ability to product very fast binary code with a relatively easy syntax. Using Rust to replace CPU-bound Python code give you a boost in performace with no overhead at all on calling the Rust code from Python code; instead of calling C functions using `cffi` or `ctypes` and convert the C data types into Python data types `rust-cpython` provides Python data types in Rust directly. Optimisations applied by the compiler also generates optimal code in term of speed and memory usage.
+Rust is a very promising system language which gives you the ability to produce very fast binary code with a relatively easy syntax. Using Rust to replace CPU-bound Python code give you a boost in performace with no overhead at all on calling the Rust code from Python code; instead of calling C functions using `cffi` or `ctypes` and convert the C data types into Python data types `rust-cpython` provides Python data types in Rust directly. Optimisations applied by the compiler also generates optimal code in term of speed and memory usage.
 
 Building a Python module is pretty easy as well and projects like [rust-python-ext](https://github.com/novocaine/rust-python-ext) are trying to integrate the compilation of the Rust code with Python's setuptools to make the entire distribution and deploy process smoother as possible.
 
