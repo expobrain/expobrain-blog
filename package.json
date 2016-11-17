@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "jekyll server -d build/dev --config _config_dev.yml",
-    "build": "jekyll build -d build/public_html && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\;",
-    "upload": "rsync -avSz --delete --exclude download build/public_html/"
+    "build": "jekyll build -d build/prod && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\;",
+    "upload": "rsync -avSz --delete build/prod/"
   },
   "repository": {
     "type": "git",
