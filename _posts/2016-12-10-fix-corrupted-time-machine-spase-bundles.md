@@ -9,15 +9,15 @@ tags: [timemachine, mac-os-x]
 title: Fix corrupted Time Machine sparse bundles
 ---
 
-I know that on the Internet there is an unlimited amout of artciles and posts about how to solve
+I know that on the Internet there is an unlimited amout of articles and posts about how to solve
 the issue about corrupted Time Machine backups on our NASs. I have tried a lot of them when my
 backup has been corrupted but even following religiously their steps I didn't get back a working
 backup.
 
-This probably because Mac OS X introduced some change during every release on how Time Machine
-works making some repair process obsolete or not effective anymore. In this post I'll describe the
+This probably because Mac OS X introduced some changes during every release on how Time Machine
+works, making some repair process obsolete or not effective anymore. In this post I'll describe the
 steps I took to fix my backup, bare in mind that it worked for me with Mac OS X 10.12.1 Sierra and
-I cannot guarantee that it'll work with previous and future versions of the OS.
+I cannot guarantee that it'll work with the previous and future versions of the OS.
 
 <!-- more -->
 
@@ -30,8 +30,8 @@ First become `root` to speed up the next steps:
 sudo su -
 {% endhighlight %}
 
-then reset the immutable flags form your sparsebundle, replacing `network_share` with where your
-sparsebundle reside and `backup_name` with the name of the spasebundle to fix:
+then reset the immutable flags in your sparsebundle, replacing `network_share` with where your
+sparsebundle resides and `backup_name` with the name of the spasebundle to fix:
 
 {% highlight bash %}
 chflags -R nouchg /Volumes/<network_share>/<backup_name>.sparsebundle
@@ -75,7 +75,7 @@ then looking at the output search for the `Apple_HFSX` entry:
 {% endhighlight %}
 
 and launch the filesystem recovery tool against `/dev/diskXs2`, note that this step will take hours
-to complete s it's best to let it run overnight:
+to complete so it's better to let it run overnight:
 
 {% highlight xml %}
 fsck_hfs -drfy /dev/diskXs2
