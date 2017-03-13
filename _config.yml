@@ -71,6 +71,7 @@ theme_color:       '000000'
 tag_page_layout:  tag_page
 tag_page_dir:     tag
 
-exclude:          ['Gemfile', 'Gemfile.lock',
-                    'package.json', 'npm-debug.log',
-                    'build/']
+exclude:          ['media/',
+                   'Gemfile', 'Gemfile.lock',
+                   'package.json', 'npm-debug.log', 'yarn.lock',
+                   'build/', 'node_modules/']

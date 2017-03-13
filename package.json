@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "serve": "jekyll server -d build/dev --config _config_dev.yml",
-    "build": "jekyll build -d build/prod && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\;",
+    "build:media": "imagemin ./media/**/*.* --out-dir=./build/prod/media/",
+    "build:jekyll": "jekyll build -d build/prod && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\;",
+    "build": "rm -rf ./buid/prod/* && mkdir -p ./build/prod && npm run build:jekyll && npm run build:media",
     "upload": "rsync -avSz --delete build/prod/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/expobrain/expobrain-blog.git"
   },
-  "author": "Daniele Esposti"
+  "author": "Daniele Esposti",
+  "devDependencies": {
+    "imagemin-cli": "^3.0.0"
+  }
 }
