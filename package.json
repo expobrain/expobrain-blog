@@ -8,7 +8,7 @@
     "build:media": "imagemin ./media/**/*.* --out-dir=./build/prod/media/",
     "build:jekyll": "jekyll build -d build/prod && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\;",
     "build": "rm -rf ./buid/prod/* && mkdir -p ./build/prod && npm run build:jekyll && npm run build:media",
-    "upload": "rsync -avSz --delete build/prod/"
+    "upload": "rsync -avSz --delete-after build/prod/"
   },
   "repository": {
     "type": "git",
