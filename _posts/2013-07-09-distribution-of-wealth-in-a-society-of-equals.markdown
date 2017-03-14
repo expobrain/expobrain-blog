@@ -21,11 +21,9 @@ I hope you'll enjoy it.
 
 TL;DR
 
-
-
-<blockquote>From now on the post is the translation from italian to english of the original post [La disuguaglianza della ricchezza in una societa di uguali](http://noisefromamerika.org/articolo/disuguaglianza-ricchezza-societ-uguali), Sandro Brusco</blockquote>
-
-
+> From now on the post is the translation from italian to english of the original post
+> [La disuguaglianza della ricchezza in una societa di uguali](http://noisefromamerika.org/articolo/disuguaglianza-ricchezza-societ-uguali)
+> by Sandro Brusco
 
 In a society of equals the wealth is equally distributed, right? Wrong, a lot wrong. A didactic post who try to explain about the distribution of wealth.
 
@@ -41,7 +39,8 @@ The discussion, as far as I can say, started with a bizarre episode of late disc
 
 
 
-<blockquote>We should thank the investigative offices of Banca d'Italia which today remembers us how **the wealth** of our country since years is still **bad distributed**</blockquote>
+> We should thank the investigative offices of Banca d'Italia which today remembers us how
+> **the wealth** of our country since years is still **bad distributed**
 
 
 
