@@ -257,4 +257,4 @@ As you can see we get two MyEvent.RESPOND events for the MyEvent.ASK event becau
 
 Develop a simple event dispatcher mini-framework is really straight forward, and is some situations is more simple to use a custom event dispatcher system than try to adapt a third-party one.
 If you want to learn more about event driven system, take a look at PubSub, [Qt Signals and Slots](http://doc.trolltech.com/4.6/signalsandslots.html) and [wxPython](http://www.wxpython.org/tut-part1.php). The documentation for Qt Signals and Slots reports examples in C++ but if you use [PyQt](http://www.riverbankcomputing.co.uk) or [PySide](http://www.pyside.org/) the classes, methods and logic is the same.
-[Here]({{ site.url }}/media/2010/07/eventdispatcher.py.zip) you can download the source code for the Event and EventDisatcher classes with also the example code.
+[Here]({{ site.url }}/media/eventdispatcher.py.zip) you can download the source code for the Event and EventDisatcher classes with also the example code.

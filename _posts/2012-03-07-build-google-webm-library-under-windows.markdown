@@ -3,7 +3,7 @@ author: admin
 categories: [Troubleshooting]
 comments: true
 date: 2012-03-07 19:03:28
-image: {url: /media/2012/03/webm.png}
+image: {url: /media/webm.png}
 layout: post
 slug: build-google-webm-library-under-windows
 tags: [visual studio 2008, webm]
@@ -15,12 +15,12 @@ Google [WebM](http://www.webmproject.org/) is the new lossy encoder for images (
 
 Anyway, on Windows if you follow the instructions in the README you'll ended up with this error message:
 
-    
-    
+
+
     cwebp.obj : error LNK2019: unresolved external symbol _GUID_WICPixelFormat32bppRGBA referenced in function _ReadPictureWithWIC
     output\release-static\x86\bin\cwebp.exe : fatal error LNK1120: 1 unresolved externalsNMAKE : fatal error U1077: '"C:\Program Files\Microsoft Visual Studio 9.0\VC\BIN\link.exe"' : return code '0x460'
     Stop.
-    
+
 
 
 <!-- more -->That's happen because Windows SDK 7.0 is missing on your system.

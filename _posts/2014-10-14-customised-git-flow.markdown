@@ -3,7 +3,7 @@ author: expobrain
 categories: [Guides]
 comments: true
 date: 2014-10-14
-image: {url: /media/2014/10/0377-02_git_tip_learn_branching.png}
+image: {url: /media/0377-02_git_tip_learn_branching.png}
 layout: post
 slug: customised-git-flow
 tags: [git, github]

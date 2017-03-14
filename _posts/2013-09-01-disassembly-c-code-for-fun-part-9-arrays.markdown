@@ -3,7 +3,7 @@ author: admin
 categories: [Disassembly, Guides]
 comments: true
 date: 2013-09-01
-image: {url: /media/2013/09/assembler.gif}
+image: {url: /media/assembler.gif}
 layout: post
 slug: disassembly-c-code-for-fun-part-9-arrays
 tags: [asm, c/c++, disassembly, gdb]

@@ -3,7 +3,7 @@ author: admin
 categories: [Troubleshooting]
 comments: true
 date: 2013-07-12 20:05:52
-image: {url: /media/2013/07/date_and_time.jpg}
+image: {url: /media/date_and_time.jpg}
 layout: post
 slug: timestamp-and-microseconds-on-windows-platforms
 tags: ['2.7', python, timestamp]

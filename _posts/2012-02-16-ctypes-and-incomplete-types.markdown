@@ -3,7 +3,7 @@ author: admin
 categories: [Guides, Troubleshooting]
 comments: true
 date: 2012-02-16
-image: {url: /media/2012/02/pylogo.png}
+image: {url: /media/pylogo.png}
 layout: post
 slug: ctypes-and-incomplete-types
 tags: [c/c++, ctypes, incomplete types, python]

@@ -3,7 +3,7 @@ author: expobrain
 categories: [Various things]
 comments: true
 date: 2015-03-20
-image: {url: /media/2015/03/logo_og.png}
+image: {url: /media/logo_og.png}
 layout: post
 slug: html-augmentation-with-react
 tags: [html, javascript, react]

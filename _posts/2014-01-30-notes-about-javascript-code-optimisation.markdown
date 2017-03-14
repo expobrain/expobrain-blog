@@ -3,7 +3,7 @@ author: expobrain
 categories: [Guides]
 comments: true
 date: 2014-01-30 18:55:47
-image: {url: /media/2014/01/javascript_code.jpg}
+image: {url: /media/javascript_code.jpg}
 layout: post
 slug: notes-about-javascript-code-optimisation
 tags: [garbage collector, google chrome, javascript, performances, talk]

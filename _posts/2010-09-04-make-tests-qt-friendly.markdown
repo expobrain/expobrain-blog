@@ -17,7 +17,7 @@ tags:
 - unittest
 ---
 
-![]({{ site.url }}/media/2010/06/QT4Logo.jpg)
+![]({{ site.url }}/media/QT4Logo.jpg)
 
 Testing Qt code with the Python `unittest` module is simple as ever.
 

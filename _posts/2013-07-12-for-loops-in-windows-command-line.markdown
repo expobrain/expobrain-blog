@@ -3,7 +3,7 @@ author: admin
 categories: [Guides]
 comments: true
 date: 2013-07-12 16:00:32
-image: {url: /media/2013/07/batch-files-command.png}
+image: {url: /media/batch-files-command.png}
 layout: post
 slug: for-loops-in-windows-command-line
 tags: [batch files, command line, windows]
@@ -22,17 +22,17 @@ The idea is to read the content of `requirements.txt` and execute `easy_install`
 The final script looks like this:
 
 
-    
-    
+
+
     for /f "tokens=*" %%p in (requirements.txt) do (
         easy_install %%p
-    
+
         if %errorlevel% gtr 1 (
             echo %errorlevel%
             exit /b 2
         )
     )
-    
+
 
 
 

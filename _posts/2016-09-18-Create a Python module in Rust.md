@@ -2,7 +2,7 @@
 author: expobrain
 comments: true
 date: 2016-09-18
-image: {url: /media/2016/09/rust-code.png}
+image: {url: /media/rust-code.png}
 layout: post
 slug: create-python-module-in-rust
 tags: [rust, python, compilation]

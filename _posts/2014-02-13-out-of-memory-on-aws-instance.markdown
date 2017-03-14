@@ -3,7 +3,7 @@ author: expobrain
 categories: [Troubleshooting]
 comments: true
 date: 2014-02-13 00:51:29
-image: {url: /media/2014/02/aws_cloud.png}
+image: {url: /media/aws_cloud.png}
 layout: post
 slug: out-of-memory-on-aws-instance
 tags: [amazon web services, linux]
@@ -18,32 +18,32 @@ Do you have a _micro_ instance on Amazon Web Services and you run out of RAM and
 AWS instances comes without a swap partition so we will create a new temporary swap file in the root:
 
 
-    
-    
+
+
     $ sudo dd if=/dev/zero of=/swapfile bs=1M count=128
-    
+
 
 
 
 This creates a 128Mib file in the root, you can change the value of _count_ to create a bigger or smaller file. Now it's time to format it as a swap area and mount it:
 
 
-    
-    
+
+
     $ sudo mkswap /swapfile
     $ sudo swapon /swapfile
-    
+
 
 
 
 Now that we have an extra 128Mib of memory swap memory we can run our memory hungry process (in my case the compilation of Numpy, Scipy and Pandas) without running out of memory. On finishing you can remove the swap file by just deactivating and deleting it:
 
 
-    
-    
+
+
     $ sudo swapoff /swapfile
     $ sudo rm /swapfile
-    
+
 
 
 

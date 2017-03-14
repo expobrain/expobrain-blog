@@ -3,7 +3,7 @@ author: admin
 categories: [Guides]
 comments: true
 date: 2012-10-18
-image: {url: /media/2012/10/iOS-4-1-4-0-3-May-Arrive-as-Early-as-This-Week-2.png}
+image: {url: /media/iOS-4-1-4-0-3-May-Arrive-as-Early-as-This-Week-2.png}
 layout: post
 slug: use-custom-sqlite-database-with-ios
 tags: [c/c++, ios, object-c, sqlite]
@@ -19,16 +19,16 @@ The scope of Core Data is to separate the data from the storage system and, in c
 A more easy solution is to distribute your SQLite database bundled with your app and access it directly by the [SQLite C API](http://www.sqlite.org/capi3ref.html)s bypassing the Core Data framework.
 First in Xcode open the project settings, switch to the _Build Phases_ tab and expand the _Link Binary With Libraries_ section:
 
-[![]({{ site.url }}/media/2012/10/ios_sqlite_01-300x251.png)]({{ site.url }}/media/2012/10/ios_sqlite_01.png)
+[![]({{ site.url }}/media/ios_sqlite_01-300x251.png)]({{ site.url }}/media/ios_sqlite_01.png)
 
 Now press the _+_ button and search for the SQLite dynamic library in the list:
 
-[![]({{ site.url }}/media/2012/10/ios_sqlite_02-300x258.png)]({{ site.url }}/media/2012/10/ios_sqlite_02.png)
+[![]({{ site.url }}/media/ios_sqlite_02-300x258.png)]({{ site.url }}/media/ios_sqlite_02.png)
 
 Select the _libsqlite3.dylib_ library and press the _Add_ button.
 Expand the _Copy Bundle Resources_ section and add your SQLite database to the list:
 
-[![]({{ site.url }}/media/2012/10/ios_sqlite_03-300x251.png)]({{ site.url }}/media/2012/10/ios_sqlite_03.png)
+[![]({{ site.url }}/media/ios_sqlite_03-300x251.png)]({{ site.url }}/media/ios_sqlite_03.png)
 
 Now we need a method to retrieve the full path and filename of our database from the app bundle:
 

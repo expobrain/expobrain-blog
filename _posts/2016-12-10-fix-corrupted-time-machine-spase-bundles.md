@@ -2,7 +2,7 @@
 author: expbrain
 comments: true
 date: 2016-12-10
-image: {url: /media/2016/12/os_x_time_machine.png}
+image: {url: /media/os_x_time_machine.png}
 layout: post
 slug: fix-corrupted-time-machine-spase-bundles
 tags: [timemachine, mac-os-x]

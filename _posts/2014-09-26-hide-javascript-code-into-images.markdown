@@ -3,7 +3,7 @@ author: expobrain
 categories: [Various things]
 comments: true
 date: 2014-09-26
-image: {url: /media/2014/01/javascript_code.jpg}
+image: {url: /media/javascript_code.jpg}
 layout: post
 slug: hide-javascript-code-into-images
 tags: [go, hacking, html5, javascript]

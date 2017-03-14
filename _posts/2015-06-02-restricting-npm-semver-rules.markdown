@@ -3,7 +3,7 @@ author: expobrain
 categories: [Troubleshooting]
 comments: true
 date: 2015-06-02 18:28:51
-image: {url: /media/2015/06/wombat-by-night.png}
+image: {url: /media/wombat-by-night.png}
 layout: post
 slug: restricting-npm-semver-rules
 tags: [javascript, npm, semver]

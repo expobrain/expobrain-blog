@@ -3,7 +3,7 @@ author: admin
 categories: [Troubleshooting]
 comments: true
 date: 2013-06-21 14:36:19
-image: {url: /media/2013/05/algorithms_small_logo.png}
+image: {url: /media/algorithms_small_logo.png}
 layout: post
 slug: count-elements-in-an-iterator
 tags: [iterators, python]
@@ -18,20 +18,20 @@ Counting elements in a list, tuple or dictionary in Python is trivial, count the
 As pointed out in [this](http://stackoverflow.com/questions/3345785/getting-number-of-elements-in-an-iterator-in-python) thread on StackOverflow the best efficient way to count the elements form an iterator is this:
 
 
-    
-    
+
+
     C = sum(1 for _ in <iterator>)
-    
+
 
 
 
 instead of:
 
 
-    
-    
+
+
     C = len(tuple(<iterator>))
-    
+
 
 
 
@@ -42,11 +42,11 @@ We are good law abiding developers and we don't like bad and/or poor solutions.
 To understand how the first code works and why is so memory efficient we expand the code in two steps:
 
 
-    
-    
+
+
     A = (1 for _ in <iterator>)
     C = sum(A)
-    
+
 
 
 
@@ -55,13 +55,13 @@ The first line creates a new iterator from the original one but for every elemen
 The second line simply apply the `sum()` function to the A iterator which returns 1 for every element returned by the original iterator. If N is the number of element returned by the original iterator C will be:
 
 
-    
-    
+
+
     C = N * 1 = N
-    
 
 
 
-which is the number of element in the original iterator. 
+
+which is the number of element in the original iterator.
 
 Space used for every iteration: the size of the integer 1 and the size of the element returned by the original iterator. Talking about speed the bottleneck is the original iterator, our code will be executed at C speed.

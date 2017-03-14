@@ -3,7 +3,7 @@ author: expobrain
 categories: [Guides]
 comments: true
 date: 2015-09-13 16:43:57
-image: {url: /media/2014/01/javascript_code.jpg}
+image: {url: /media/javascript_code.jpg}
 layout: post
 slug: create-a-plugin-for-google-protocol-buffer
 tags: [json, protocol buffers, python]

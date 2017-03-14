@@ -3,7 +3,7 @@ author: admin
 categories: [Troubleshooting]
 comments: true
 date: 2013-08-12 18:29:02
-image: {url: /media/2013/08/32-bit_64-bit.jpg}
+image: {url: /media/32-bit_64-bit.jpg}
 layout: post
 slug: cross-compile-64-bit-code-on-32-bit-machine
 tags: [32-bit, 64-bit, c/c++, disassembly, gcc, gdb]

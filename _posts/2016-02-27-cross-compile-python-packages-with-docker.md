@@ -2,7 +2,7 @@
 author: expobrain
 comments: true
 date: 2016-02-27
-image: {url: /media/2016/02/docker-logo.png}
+image: {url: /media/docker-logo.png}
 layout: post
 slug: cross-compile-python-packages-with-docker
 tags: [docker, python, compilation, pip, wheel]

@@ -3,7 +3,7 @@ author: admin
 categories: [Troubleshooting]
 comments: true
 date: 2013-07-04 20:51:15
-image: {url: /media/2013/07/regula_exp.jpg}
+image: {url: /media/regula_exp.jpg}
 layout: post
 slug: multiple-prefixes-match
 tags: [python, string manipulation]

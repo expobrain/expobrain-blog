@@ -19,15 +19,15 @@ tags:
 
 <!-- more -->Let's start creating a test Edge project with a simple animation (an rotating Adobe logo):
 
-[![]({{ site.url }}/media/2012/01/edge_js_1-300x175.png)]({{ site.url }}/media/2012/01/edge_js_1.png)
+[![]({{ site.url }}/media/edge_js_1-300x175.png)]({{ site.url }}/media/edge_js_1.png)
 
 Now click on the small icon on the left of _Actions_ in the _Timeline:_
 
-[![]({{ site.url }}/media/2012/01/edge_js_2-300x266.png)]({{ site.url }}/media/2012/01/edge_js_2.png)
+[![]({{ site.url }}/media/edge_js_2-300x266.png)]({{ site.url }}/media/edge_js_2.png)
 
 Select _complete_ and insert the code to call your external JavaScript code:
 
-[![]({{ site.url }}/media/2012/01/edge_js_3-300x203.png)]({{ site.url }}/media/2012/01/edge_js_3.png)Now the _myExternalFunction()_ function will be called at the end f the Edge movie but if you dispaly the page in the browser nothing will happend because we have not yet impemeted the function in the HTML page.
+[![]({{ site.url }}/media/edge_js_3-300x203.png)]({{ site.url }}/media/edge_js_3.png)Now the _myExternalFunction()_ function will be called at the end f the Edge movie but if you dispaly the page in the browser nothing will happend because we have not yet impemeted the function in the HTML page.
 
 So, save the project, open the _test.html _file and implement your JavaScript function:
 
@@ -63,6 +63,6 @@ So, save the project, open the _test.html _file and implement your JavaScript fu
 
 If you reload the page now at the and of the movie your JavaScript function will be called and the alert will be shown:
 
-[![]({{ site.url }}/media/2012/01/edge_js_4-300x272.png)]({{ site.url }}/media/2012/01/edge_js_4.png)
+[![]({{ site.url }}/media/edge_js_4-300x272.png)]({{ site.url }}/media/edge_js_4.png)
 
 This method can be applied for any case you need to call external JavaScript functions or run small portions of JavaScript code.

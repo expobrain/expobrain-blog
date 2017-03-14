@@ -3,7 +3,7 @@ author: admin
 categories: [Disassembly, Guides]
 comments: true
 date: 2013-07-02
-image: {url: /media/2013/09/assembler.gif}
+image: {url: /media/assembler.gif}
 layout: post
 slug: disassembly-c-code-for-fun-part-4-floats-and-sse2
 tags: [asm, c/c++, gdb, sse2, x86-64]

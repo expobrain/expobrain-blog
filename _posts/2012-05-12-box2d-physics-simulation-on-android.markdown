@@ -3,7 +3,7 @@ author: admin
 categories: [Guides]
 comments: true
 date: 2012-05-12 16:53:25
-image: {url: /media/2012/05/Google-Android.png}
+image: {url: /media/Google-Android.png}
 layout: post
 slug: box2d-physics-simulation-on-android
 tags: [android, box2d, cocos2d, java, phsysics]
@@ -340,6 +340,6 @@ I'm going to rotate the device so I need to fix the screen orientation; in the A
 
 
 
-That's all. If you want to play with this example just download the source code from [here]({{ site.url }}/media/2012/05/android2d.tar.gz).
+That's all. If you want to play with this example just download the source code from [here]({{ site.url }}/media/android2d.tar.gz).
 
 Enjoy it!

@@ -3,7 +3,7 @@ author: admin
 categories: [Disassembly, Guides]
 comments: true
 date: 2013-06-16 12:41:12
-image: {url: /media/2013/09/assembler.gif}
+image: {url: /media/assembler.gif}
 layout: post
 slug: disassembly-c-code-for-fun-part-1
 tags: [assembly code, c/c++, clang, gdb, source code, x86, x86-64]
