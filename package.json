@@ -2,7 +2,6 @@
   "name": "expobrain-blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "serve": "jekyll server -d build/dev --config _config_dev.yml",
     "build:media": "imagemin ./media/**/*.* --out-dir=./build/prod/media/",
