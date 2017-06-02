@@ -43,7 +43,7 @@ suggest is, in my case this was the key step of the whole recovering process.
 Edit the `com.apple.TimeMachine.MachineID.plist` file:
 
 {% highlight bash %}
-vi “/Volumes//.sparsbundle/com.apple.TimeMachine.MachineID.plist
+vim /Volumes/<network_share>/<backup_name>.sparsbundle/com.apple.TimeMachine.MachineID.plist
 {% endhighlight %}
 
 set the value of the key `VerificationState` to `0`:
