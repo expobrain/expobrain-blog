@@ -7,7 +7,8 @@
     "build:media": "imagemin ./media/**/*.* --out-dir=./build/prod/media/",
     "build:jekyll": "bundle exec jekyll build -d build/prod && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\;",
     "build": "rm -rf ./buid/prod/* && mkdir -p ./build/prod && npm run build:jekyll && npm run build:media",
-    "upload": "rsync -avSz --delete-after build/prod/"
+    "upload": "rsync -avSz --delete-after build/prod/",
+    "fmt": "prettier --write *.md"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
   },
   "author": "Daniele Esposti",
   "devDependencies": {
-    "imagemin-cli": "^4.0.0"
+    "imagemin-cli": "^4.0.0",
+    "prettier": "^1.19.1"
   }
 }
