@@ -18,7 +18,7 @@ disqus:           expobrain
 #   url:            https://google.com/+IanCamporezBrunelli
 
 paginate:         5
-gems:
+plugins:
 - jekyll-paginate
 - jekyll-sitemap
 
