@@ -7,7 +7,7 @@ permalink: /:year/:month/:day/:title/
 title:            Daniele Esposti's Blog
 # tagline:          'blog'
 description:      'My personal blog.'
-url:              http://www.expobrain.net
+url:              https://www.expobrain.net
 baseurl:
 commentsystem:    disqus
 disqus:           expobrain
