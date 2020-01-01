@@ -9,7 +9,7 @@ tags: [webdeldn]
 title: "WEBdeLDN: Horror stories"
 ---
 
-[WEBdeLDN](http://webdeldn.rocks/) is small but very cool monthly meetup organised in London. I recommend it to everyone, the top[ics ranges from technology to management to mental health, so everyone interested in the present and the future is highly welcome.
+[WEBdeLDN](http://webdeldn.rocks/) is small but very cool monthly meetup organised in London. I recommend it to everyone, the topics ranges from technology to management to mental health, so everyone interested in the present and the future is highly welcome.
 
 In the last session the topics was "Horror stories", stories about failures in tech and non-tech industries.
 
