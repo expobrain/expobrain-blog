@@ -1,8 +1,8 @@
 ---
 author: expbrain
 comments: true
-date: 2023-05-13
-# image: { url: /media/time.jpg }
+date: 2023-05-12
+image: { url: /media/prompt_engineering.jpeg }
 layout: post
 slug: prompt-engineering
 tags: [ai, engineering]
