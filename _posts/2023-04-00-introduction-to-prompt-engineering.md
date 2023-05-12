@@ -1,12 +1,12 @@
 ---
 author: expbrain
 comments: true
-date: 2023-04-01
+date: 2023-05-13
 # image: { url: /media/time.jpg }
 layout: post
 slug: prompt-engineering
 tags: [ai, engineering]
-# title: "Primer to Prompt Engineering"
+title: "Introduction to Prompt Engineering"
 ---
 
 # Introduction
