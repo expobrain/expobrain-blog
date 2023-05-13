@@ -16,5 +16,5 @@ bundle:
 		-it \
 		--volume=".:/srv/jekyll" \
 		-w /srv/jekyll \
-		ruby \
+		expobrain_blog \
 		bundle update --bundler
