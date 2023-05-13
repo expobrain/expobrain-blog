@@ -16,4 +16,4 @@ You can find more code and samples on my <span class="genericon genericon-github
 
 Follow me on <span class="genericon genericon-twitter"></span> [Twitter](https://twitter.com/expobrain)
 
-And of cours have a look at my <span class="genericon genericon-linkedin"></span> [Linkedin](https://www.linkedin.com/in/danieleesposti) profile.
+And of course have a look at my <span class="genericon genericon-linkedin"></span> [Linkedin](https://www.linkedin.com/in/danieleesposti) profile.
