@@ -31,36 +31,21 @@ However with asynchronous programming and the use of the `multiprocessing` packa
 
 <!-- more -->
 
-
-
 ### A note about threads and process and Python
-
-
 
 A little note beforehand: beacuse of the [GIL](http://wiki.python.org/moin/GlobalInterpreterLock) the CPython threads cannot be executed in parallel so starting _n_ number of threads will use always one core of the CPU (this is a side effect but it's a rough rule of thumb).
 
 To workaround to this limitation the [`multiprocessing`](http://docs.python.org/2/library/multiprocessing.html) starts multiple instance of the interpreter and execute the code in parallel circumventing the limitation of the GIL.
 
-
-
 ### The application
-
-
 
 To explain how to code an asynchronous multi-core data processor I will write a simple photo to thumbnail generator using a producer-consumer-sink pattern.
 
 It will scan recursively a given folder, generates a thumbnail representation of any image found and write a list of generated thumbnails into a text file.
 
-
-
 ### Step 1: The producer
 
-
-
 The scope of the producer is to producer walk the content of the given folder recursively  and generate a list of candidate files for the generation of the thumbnail:
-
-
-
 
     def filename_producer(root_folder, out_queue, consumers):
         # Walk into all subfolders and output every file found
@@ -77,25 +62,15 @@ The scope of the producer is to producer walk the content of the given folder re
         for i in xrange(consumers):
             out_queue.put(StopIteration)
 
-
-
-
 The function accepts the folder where to start the walk process, the output queue of the filenames and a number of consumers connected to the output queue.
 
 The first loop just iterates recursively from the root folder pushing any file found into the output queue; the next loop push a number of sentinels equal to the number of consumers connected to the queue.
 
 I'll explain why we need to pass the number of consumers and why we need to push sentinels into the output queue later in this post.
 
-
-
 ### Step 2: The consumer
 
-
-
 The consumer fetch a filename and generate a thumbnail if the file is a known image format thus push the thumbnail's filename into the sink's queue:
-
-
-
 
     def thumbnail_consumer(in_queue, out_queue, size, thumb_dir):
         # Create thumbnail directory if doesn.t exits
@@ -134,23 +109,13 @@ The consumer fetch a filename and generate a thumbnail if the file is a known im
         # Send a iteration's stop
         out_queue.put(StopIteration)
 
-
-
-
 The `while` loop iterates infinitely fetching a new filename form the producer's queue, generate and save the thumbnail using the hash of the thumbnail's content as the filename and push the original and the thumbnail's filenames into the sink's queue.
 
 If `PIL` fails to load the image (i.e. it's not a known image format) continue to the next filename. However if the item fetched from the producer queue is a stop iteration sentinel exist the loop and push the sentinel into the sink's queue.
 
-
-
 ### Step 3: The sink
 
-
-
 The last step saves the thumbnail filenames into a list in a text file:
-
-
-
 
     def sink_consumer(in_queue, filename, workers):
         # Create folder if doesn't exists
@@ -172,22 +137,13 @@ The last step saves the thumbnail filenames into a list in a text file:
 
                     f.write("{1}: {0}\n".format(filename, hash_))
 
-
-
 The functions creates a new empty file and writes all the filenames received from the sink's queue, decrementing the `workers` counter every time a sentinel value is received, exiting the loop when it reaches zero.
 
-
-
 ### Wire them together
-
-
 
 Time to wire all these functions together so the the data produced by exploring the folder will flow through the consumers and the result will be push into the sink.
 
 At first we get the number of workers from the command line or, if no number is given, we use the number of cores detected by `multiprocessing`:
-
-
-
 
     if __name__ == "__main__":
         # Save timestamp
@@ -199,24 +155,13 @@ At first we get the number of workers from the command line or, if no number is 
         else:
             workers = multiprocessing.cpu_count()
 
-
-
-
 We create the two [`Queue`](http://docs.python.org/2/library/multiprocessing.html#multiprocessing.Queue) objects to connect the producer to the consumers and the consumers to the sink.
-
-
-
 
         # Create queues
         producer_queue = Queue()
         sink_queue = Queue()
 
-
-
-
 Start the producer, the consumers (stored into a list) and the sink by instances of [`Process`](http://docs.python.org/2/library/multiprocessing.html#multiprocessing.Process).
-
-
 
         # Producer
         producer = Process(
@@ -238,13 +183,7 @@ Start the producer, the consumers (stored into a list) and the sink by instances
             target=sink_consumer, args=(sink_queue, "processed.txt", workers))
         sink.start()
 
-
-
-
 All the process are started, now we just need to wait for the sink to consume all the data flowing from the consumers (remember, the sink's function exits when all the workers had finished which means the producer had finished of emitting filenames to be processed)
-
-
-
 
         # Join the sink consumer
         sink.join()
@@ -252,14 +191,7 @@ All the process are started, now we just need to wait for the sink to consume al
         # Print elapsed time
         logger.info("Finished in %s", datetime.datetime.now() - start)
 
-
-
-
-
-
 ### Why the sentinel
-
-
 
 The sentinel value is necessary as a way to notify all the process that the producer had finished on generating data so e use a `StopIteration` exception object as an appropriate sentinel for a generator object as the producer.
 
@@ -267,16 +199,11 @@ We generate one sentinel for every worker otherwise the first worker which fetch
 
 The sink loop will decrease a worker's counter every time a sentinel is fetch from the queue (which means a worker had finished) and exits the loop when the counter of the active workers reaches zero.
 
-
-
 ### Performances
-
-
 
 How fast the code can process thumbnails with different number of active workers?
 
 I ran the code agains a folder of 188 pictures for a total of 540Mb on my MacBook Pro Core 2 Due 2.2GHz. I ran it a couple of time before recording timings to fill the OS cache so the execution time will be bound to sheer computational power completely excluding the disk I/O overhead.
-
 
 | Workers          | Time (s) |
 |------------------|:--------:|

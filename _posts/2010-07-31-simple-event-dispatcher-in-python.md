@@ -29,13 +29,9 @@ In this post I'll show you a simple event dispatcher implementation in Python. E
 
 This code is a simple example and I'm sure it's not a complete implementation. Instead, I think this example is a good starting point to implement your custom event-dispatcher mini-framework.
 
-
 ### The event
 
-
 Let's start from the basic unit of work: the Event class. Here the code:
-
-
 
     class Event( object ):
         """
@@ -63,17 +59,11 @@ Let's start from the basic unit of work: the Event class. Here the code:
             """
             return self._data
 
-
 As you can see this class is really straight-forward. The Event class as the purpose to carry on the type of the event and, optionally, the data associated to the event. The type property and the data property are read-only so they cannot be changed by error by the listeners.
-
-
 
 ### The event dispatcher
 
-
 Now is the time to take a look to the EventDispatcher class. This class is a little bit bigger but is really simple:
-
-
 
     class EventDispatcher( object ):
         """
@@ -140,17 +130,11 @@ Now is the time to take a look to the EventDispatcher class. This class is a lit
 
                     self._events[ event_type ] = listeners
 
-
 The constructor of the EventDispatcher class simply create an empty "protected" dictionary of event->listeners and set to None it when __del__() method is called. Because __del__() method is called when the class is about to be destroyed we are sure no reference to listeners are left in memory.
-
-
 
 ### The example
 
-
 In this example we create a simple event, MyEvent, and two classes: a class who send events. WhoAsk, and a class who listen for events and send a response back to the sender through another event, WhoRespond.
-
-
 
     class MyEvent( Event ):
         """
@@ -162,10 +146,7 @@ In this example we create a simple event, MyEvent, and two classes: a class who 
         ASK     = "askMyEvent"
         RESPOND = "respondMyEvent"
 
-
 The method is very simple, only two events are implemented, ASK and RESPOND.
-
-
 
     class WhoAsk( object ):
         """
@@ -196,10 +177,7 @@ The method is very simple, only two events are implemented, ASK and RESPOND.
             """
             print "<<< Thank you instance {0}".format( event.data )
 
-
 The WhoAsk class adds an event listener for the MyEvent.RESPOND event and implement and ask() method which dispatch and MyEvent.ASK.
-
-
 
     class WhoRespond( object ):
         """
@@ -222,12 +200,9 @@ The WhoAsk class adds an event listener for the MyEvent.RESPOND event and implem
                 MyEvent ( MyEvent.RESPOND, self )
             )
 
-
 WhoResponde class is similar to WhoAsk class except it has only the listener for the MyEvent.ASK event.
 Both WhoAsk and WhoRepsond classes accepts the instance of EventDispatcher class as a parameter for their constructors.
 Finally we test our example:
-
-
 
     # Create and instance of event dispatcher
     dispatcher = EventDispatcher()
@@ -240,23 +215,16 @@ Finally we test our example:
     # WhoAsk ask :-)
     who_ask.ask()
 
-
 We create an instance of EventDispatcher class, and instance of WhoAsk class and two instance of WhoRespond class, then we call the ask() method of WhoAsk class.
-
-
 
     $ python eventdispatcher.py
     >>> I`m instance <__main__.WhoAsk object at 0x100491ad0>. Who are listening to me ?
     <<< Thank you instance <__main__.WhoRespond object at 0x100491b10>
     <<< Thank you instance <__main__.WhoRespond object at 0x100491b50>
 
-
 As you can see we get two MyEvent.RESPOND events for the MyEvent.ASK event because we have two classes which listen to it.
 
-
-
 ### Conclusion
-
 
 Develop a simple event dispatcher mini-framework is really straight forward, and is some situations is more simple to use a custom event dispatcher system than try to adapt a third-party one.
 If you want to learn more about event driven system, take a look at PubSub, [Qt Signals and Slots](http://doc.trolltech.com/4.6/signalsandslots.html) and [wxPython](http://www.wxpython.org/tut-part1.php). The documentation for Qt Signals and Slots reports examples in C++ but if you use [PyQt](http://www.riverbankcomputing.co.uk) or [PySide](http://www.pyside.org/) the classes, methods and logic is the same.

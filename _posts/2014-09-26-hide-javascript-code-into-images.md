@@ -23,13 +23,9 @@ In this post I'm going to explain how it's possible to hide JavaScript code into
 
 <!-- more -->
 
-**TL;RL**
-
-
+TL;RL
 
 ## The idea
-
-
 
 The basic idea is to write the content of a text file, JavaScript code, as RGB triplets in a PNG image. The image is then loaded in a HTML document, the RGB triplets decrypted and the code executed in the browser.
 
@@ -39,29 +35,17 @@ For learning purposes the encoder is written in [Go](http://golang.org/) where t
 
 All the source code is available on [GitHub](https://github.com/expobrain/javascript-js2png).
 
-
-
 ## From code to PNG
-
-
 
 Let's start with the encoder in `src/net.expobrain/js2png/js2png.go`. First we need a buffer to store the bitmap in RGBA format:
 
-
-
-{% highlight go %}
+```go
 var buffer = new(bytes.Buffer)
-{% endhighlight %}
-
-
-
+```
 
 Now we need to write the size of the payload:
 
-
-
-
-{% highlight go %}
+```go
 var payload_sz = len(src)
 
 buffer.WriteByte(0)
@@ -76,10 +60,7 @@ buffer.WriteByte(uint8(payload_sz >> 16 & 0xff))
 buffer.WriteByte(uint8(payload_sz >> 8 & 0xff))
 buffer.WriteByte(uint8(payload_sz & 0xff))
 buffer.WriteByte(255)
-{% endhighlight %}
-
-
-
+```
 
 The payload's size is stored as a little-endian 64-bit unsigned integer right-aligned on 9 bytes and interleaved with a `255` byte which represent the alpha channel.
 
@@ -89,10 +70,7 @@ The alpha channel is set to `255` so on saving the bitmap the values of the RGB 
 
 Time to write the payload into the buffer, still interleaved by a `255` every 3 bytes:
 
-
-
-
-{% highlight go %}
+```go
 var data_sz = int(math.Ceil(float64(payload_sz) / 3))
 
 for i := 0; i < data_sz; i++ {
@@ -103,17 +81,11 @@ for i := 0; i < data_sz; i++ {
 
     buffer.WriteByte(255)
 }
-{% endhighlight %}
-
-
-
+```
 
 Now that we have the buffer complete with size and payload we can copy it into a square bitmap:
 
-
-
-
-{% highlight go %}
+```go
 // Create bitmap to fit the payload
 var bitmap_sz = int(buffer.Len() / 4)
 w := int(math.Ceil(math.Sqrt(float64(bitmap_sz))))
@@ -121,62 +93,41 @@ h := int(math.Ceil(float64(bitmap_sz) / float64(w)))
 
 rect := image.Rect(0, 0, w, h)
 img := image.NewNRGBA(rect)
-img.Pix = make([]uint8, w * h * 4)
+img.Pix = make([]uint8, w *h* 4)
 
 // Copy payload into bitmap
 copy(img.Pix, buffer.Bytes())
-{% endhighlight %}
-
-
-
+```
 
 The extra unused space in the final bitmap is padded with zeros. In theory the final image can have any shape you want, I just found a square image more attractive for my likes.
 
 Last step is writing the PNG to disk:
 
-
-
-{% highlight go %}
+```go
 dst, err := os.Create(dst_filename)
 if err != nil { panic(err) }
 defer dst.Close()
 
 png.Encode(dst, img)
-{% endhighlight %}
-
-
-
+```
 
 That's all for the encoder.
 
-
-
 ## From PNG to code
-
-
 
 The JavaScript loader in `html/js/loader.js` is triggered on the `load` event of the `payload` element aka our PNG image:
 
-
-
-
-{% highlight javascript %}
+```javascript
 var img = document.getElementById("payload");
 
 img.addEventListener("load", function () {
     ...loader...
 }
-{% endhighlight %}
-
-
-
+```
 
 We cannot read pixel data straight from the image so we render the image on a HTML5 `canvas` element:
 
-
-
-
-{% highlight javascript %}
+```javascript
 var context, canvas;
 
 canvas = document.createElement("canvas");
@@ -185,17 +136,11 @@ canvas.height = img.height;
 
 context = canvas.getContext("2d");
 context.drawImage(img, 0, 0);
-{% endhighlight %}
-
-
-
+```
 
 Reading back the size of the payload:
 
-
-
-
-{% highlight javascript %}
+```javascript
 // Read image's data
 var data;
 
@@ -212,17 +157,11 @@ size += data[6] << 24;
 size += data[8] << 16;
 size += data[9] << 8;
 size += data[10];
-{% endhighlight %}
-
-
-
+```
 
 and the payload itself:
 
-
-
-
-{% highlight javascript %}
+```javascript
 // Read payload into string
 var payload = '';
 
@@ -235,30 +174,17 @@ for (var i = 12; i < data.length; i++) {
         }
     }
 }
-{% endhighlight %}
-
-
-
+```
 
 Now that we have the original code stored into the `payload` variable we can execute it by a simple:
 
-
-
-
-{% highlight javascript %}
+```javascript
 eval(payload);
-{% endhighlight %}
-
-
-
+```
 
 By using `eval()` we can execute the code without leaving any trace into the DOM.
 
-
-
 ## Conclusion
-
-
 
 This is just a proof of concept. The code being injected into the image and the loader are just plain JavaScript files, no minification nor obfuscation is applied to reduce the size of the payload and hide the real scope of the code. Also JavaScript code is needed to extract the payload from the image.
 

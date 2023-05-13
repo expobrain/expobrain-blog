@@ -24,9 +24,9 @@ The `npm` package manager uses `semver` to declare the version of the external d
 
 To do that open the terminal and execute:
 
-{% highlight bash %}
+```bash
 npm config set save-prefix '~' --save
-{% endhighlight %}
+```
 
 This will set permanently the default package's version prefix to the tilde in all the future executions of `npm`, keeping us safe from potential code failure caused by wrong versions of the dependancies.
 

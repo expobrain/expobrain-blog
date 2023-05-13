@@ -31,41 +31,32 @@ When the download of the Qt4 package is done, open the .dmg file and install the
 
 Starting from the installation of SIP package, open the Terminal, move into the folder where the SIP's sources reside and type:
 
-
-
-
-    $ export MACOSX_DEPLOYMENT_TARGET=10.6
-    $ python configure.py -n  --arch=i386 -s MacOSX10.6.sdk
-    $ make
-    $ sudo make install
-
-
+```shell
+export MACOSX_DEPLOYMENT_TARGET=10.6
+python configure.py -n  --arch=i386 -s MacOSX10.6.sdk
+make
+sudo make install
+```
 
 Now move into the PyQt4 folder and type:
 
-
-
-
-    $ export QTDIR=/Developer/Applications/Qt
-    $ python configure.py --use-arch=i386
-    $ make
-    $ sudo make install
-
-
+```shell
+export QTDIR=/Developer/Applications/Qt
+python configure.py --use-arch=i386
+make
+sudo make install
+```
 
 After the long compilation and installation phase, just for testing if the PyQt4 package is installed correctly, from the Terminal type:
 
-
-
-
-    $ python
-    Python 2.6.5 (r265:79359, Mar 24 2010, 01:32:55)
-    [GCC 4.0.1 (Apple Inc. build 5493)] on darwin
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>> import PyQt4
-    >>>
-
-
+```shell
+$ python
+Python 2.6.5 (r265:79359, Mar 24 2010, 01:32:55)
+[GCC 4.0.1 (Apple Inc. build 5493)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import PyQt4
+>>>
+```
 
 No errors after `import` command means the PyQt4 package is installed.
 

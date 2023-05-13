@@ -22,9 +22,9 @@ In SQLAlchemy you can query the database returning ORM objects instead of raw da
 
 Object can be fetched by the value of their primary key:
 
-{% highlight python %}
+```python
 session.query(<class>).get(<primary_key_value>)
-{% endhighlight %}
+```
 
 which returns an instance of `class` with the given primary key's value.
 
@@ -36,7 +36,7 @@ It works only if you already know the object's class and its primary key's value
 
 I'll show how to do it in a minute but let's start with a basic ORM class setup:
 
-{% highlight python %}
+```python
 from __future__ import print_function, unicode_literals
 
 from sqlalchemy import create_engine, Column, Unicode, Integer
@@ -57,7 +57,7 @@ class Person(Base):
 
     def __unicode__(self):
         return "<Person {0.id}: {0.last_name} {0.first_name}>".format(self)
-{% endhighlight %}
+```
 
 I'm creating a simple `Person` class with a couple of fields and a better string representation when using the `print()` function.
 
@@ -69,8 +69,10 @@ I'm creating a simple `Person` class with a couple of fields and a better string
 
 Now we set up a in-memory SQLite database, create all the tables and commit two `Person`'s instances:
 
-{% highlight python %}
+```python
+
 # Set up engine and session factory
+
 engine = create_engine("sqlite:///:memory:")
 Session = sessionmaker(bind=engine)
 
@@ -78,24 +80,25 @@ Base.metadata.bind = engine
 Session.bind = engine
 
 # Create tables
+
 Base.metadata.create_all()
 
 # Add persons
+
 session = Session()
 
 person1 = Person(id=1, first_name="John", last_name="Smith")
 
 session.add(person1)
 session.commit()
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash
 >>> print(person1)
 <Person 1: Smith John>
-{% endhighlight %}
+```
 
 The set up is done.
-
 
 ### Get instance's primary key values
 
@@ -104,14 +107,14 @@ By the `Person`'s class definition the primary key is the `id` field and the val
 As I told before it's easy to retrieve the row form the database by querying for its primary key's value, but you need to know the class of the ORM instance and how the primary key is defined (usually the primary key is bound to only one column, but in some cases you can have classes with a composite primary key which is bound to multiple columns).
 The `Session` instance can return these informations by the [`identity_key()`](http://docs.sqlalchemy.org/en/rel_0_8/orm/session.html?highlight=identity_key#sqlalchemy.orm.session.Session.identity_key) function:
 
-{% highlight python %}
+```python
 ikey1 = session.identity_key(instance=person1)
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash
 >>> print(ikey1)
 (<class '__main__.Person'>, (1,))
-{% endhighlight %}
+```
 
 `identity_key()` returns a tuple where the first element is the class of the ORM instance and the second element is a tuple of its primary key's values.
 
@@ -119,24 +122,23 @@ This tuple is the session's instance key and it has the advantage to be complete
 
 Querying the database it will be much easier because you will not need to hardcode the ORM class in your query thus your code will be more flexible and robust in case of any changes in the ORM class's definition.
 
-
 ### Querying by the instance's key
 
 Time to put in practice what we talked about:
 
-{% highlight python %}
+```python
 del session, person1
 
 session = Session()
 cls1, pkey1 = ikey1
 person1 = session.query(cls1).get(pkey1)
-{% endhighlight %}
+```
 
 I'm deleting any reference to the previous session and `Person` instance, creating a new session from scratch, unpacking the instance's key tuple into class and primary key's value and using them to retrieve the person again from the database...
 
-{% highlight bash %}
+```bash
 >>> print(person1)
 <Person 1: Smith John>
-{% endhighlight %}
+```
 
 ..and there it is, nice and easy.

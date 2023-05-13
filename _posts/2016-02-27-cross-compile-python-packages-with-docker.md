@@ -19,19 +19,15 @@ title: Cross-compile Python packages with Docker
 
 Cross-compiling is the action of building a package or a binary for a different system thatn the current used for the compilation process; for example compiling ARM binaries on a x86 architecture. In this post I'm going to cross-compile Python packages for a specific Linux distribution using Docker as a virtualisation layer.
 
-
 ## Introduction
-
 
 One day I found myself in need to install Python packages on a production's server. The server in question didn't have any compiler nor development packages installed so it wasn't possible to install by [pip](https://pip.pypa.io/en/stable/) packages like [Scipy](http://www.scipy.org/) which requires to be compiled on installation; also there are no precompiled [wheel](https://wheel.readthedocs.org/en/latest/)s for the specific platform as well.
 
 The only solution was to replicate the server somewhere, compile the package into a `.whl` and deploy it into the target server. Using [Docker](https://www.docker.com) simplifies this process by providing a deterministic environment and the ability to threat the Docker container as a command line binary.
 
-
 ## Requirements
 
 To be able to follow this post the only requirement is to have `Docker` installed and running on your machine. I'm using Docker 1.10 but any version will do it.
-
 
 ## Dockerfile
 
@@ -45,43 +41,47 @@ Lets start from the [Dockerfile](https://docs.docker.com/engine/reference/builde
 
 Here all these requirements put together:
 
-{% highlight dockerfile %}
+```dockerfile
 FROM mstormo/suse:11.4
 
 # Updating the system
+
 RUN zypper --non-interactive --gpg-auto-import-keys refresh
 RUN zypper --non-interactive install git gcc-c++
 
 # Install libs to build Numpy/Scipy/Pandas
+
 RUN zypper --non-interactive install gcc-fortran
 RUN zypper --non-interactive install blas lapack
 
 # Installing Python
+
 RUN zypper --non-interactive install python python-devel
 
 # Set working dir
+
 WORKDIR /usr/src
 
 # Upgrade pip with wheel support
-ADD https://bootstrap.pypa.io/get-pip.py ./
+
+ADD <https://bootstrap.pypa.io/get-pip.py> ./
 RUN python ./get-pip.py
-{% endhighlight %}
+```
 
 This is a classic `Dockerfile` from the book, the interesting part is at the end of it where we download and install the latest copy of `pip` straight from the official repository.
 
 Before proceeding further lets test the build of our image:
 
-{% highlight bash %}
+```bash
 $ docker build -t cross-compile .
 ....
 ....
 .. some terminal output later ..
 ....
 Successfully built d7f8b3f12d7c
-{% endhighlight %}
+```
 
 Good, no errors, next step is to customise this image for cross-compile our packages.
-
 
 ## Setup of the command-line
 
@@ -89,12 +89,12 @@ The [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint)
 
 What we want is a container with can write the compiled package into our local directory and accept the package name and version as a parameter, here is how we are going to run our container:
 
-{% highlight bash %}
+```bash
 $ docker run \
     --rm \
     -v ./target:/usr/src/target \
     cross-compile "package_name==x.y.z"
-{% endhighlight %}
+```
 
 By decomposing this command we have:
 
@@ -105,72 +105,74 @@ By decomposing this command we have:
 
 We need now an `entrypoint.sh`, a shell script called by Docker during the instantiation of the container, which receive the package to be build as a first argument:
 
-{% highlight bash %}
-#!/bin/bash -e
+```bash
+# !/bin/bash -e
 
 WHEEL_DIR=/usr/src/target
 
 pip wheel --wheel-dir=$WHEEL_DIR $@
-{% endhighlight %}
+```
 
 Thi is a very simple which calls `pip wheel` which in turn will compile your package and generate the `.whl` file into `WHEEL_DIR`.
 
 Now we update the `Dockerfile` by adding our `entrypoint.sh` (I'll show just the extra lines):
 
-{% highlight dockerfile %}
+```dockerfile
+
 # Define mount point and set it as working dir
+
 VOLUME /usr/src/target
 WORKDIR /usr/src/target
 
 # Copy files
+
 COPY ./entrypoint.sh /
 
 # Start building process
+
 ENTRYPOINT ["/entrypoint.sh"]
-{% endhighlight %}
+```
 
 That's all, lets build again the image after this changes:
 
-{% highlight bash %}
-$ docker build -t cross-compile .
-{% endhighlight %}
+```bash
+docker build -t cross-compile .
+```
 
 and try to build a simple `.whl`:
 
-{% highlight bash %}
-$ docker run --rm cross-compile pip==8.0.2
-{% endhighlight %}
+```bash
+docker run --rm cross-compile pip==8.0.2
+```
 
 Done. We have now a `pip-8.0.2-py2.py3-none-any.whl` file in our `target` directory ready to be installed on the target server.
-
 
 ## Wrapping up
 
 We are come so far to have a nice image replicating our target environment plus a build environment and a container which builds Python's `wheel`s at runtime, however we still need to type a lot and we are lazy, what about simplify our process by wrapping the creation of the image and the execution of the container into a single shell script called `crosscompile`:
 
-{% highlight bash %}
-#!/bin/bash -e
+```bash
+# !/bin/bash -e
 
 cd $(dirname $0)
 
 docker build -t cross-compile .
 docker run --rm -v ./target:/usr/src/target cross-compile "$@"
-{% endhighlight %}
+```
 
 Now lets test it again by compiling our original Python dependancy, `scipy`:
 
-{% highlight bash %}
-$ ./crosscompile scipy==0.17.0
-{% endhighlight %}
+```bash
+./crosscompile scipy==0.17.0
+```
 
 and after some time here we have the `scipy-0.17.0-cp27-cp27mu-linux_x86_64.whl` file ready for deploy.
 
 And what about compiling multiple packages at once? Well, that's already supported, just pass the list of packages to be build in order on the command line:
 
-{% highlight bash %}
-$ ./crosscompile scipy==0.17.0 numpy==1.10.4
-{% endhighlight %}
-
+```bash
+./crosscompile scipy==0.17.0 numpy==1.10.4
+```
 
 ## Conclusion
 

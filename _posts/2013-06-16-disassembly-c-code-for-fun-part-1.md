@@ -35,11 +35,7 @@ I'm sure this will be the first of a serie of posts related to C code and x86 as
 
 <!-- more -->
 
-
-
 ## Preamble
-
-
 
 All the example and commands in these posts are issued on a Unix system, Mac OS X 10.7 to be precise, so on a different Unix system or on a Windows system the commands and the output can be different from mine.
 
@@ -47,43 +43,24 @@ You will aso need at least the `cc` compiler e the `gdb` debugger.
 
 In GNU/Linux systems this can be installed by the `build-essential` (or equivalent) meta-package; on Mac OS X you wil need to install [Xcode](https://developer.apple.com/xcode/) and the Command Line Tools and requires a free Apple Developer account.
 
-
-
 ## Introduction to simple disassembly
 
-
-
 Let's start with a very simple (and obviously useless) example:
-
-
-
 
     int main()
     {
         return 0;
     }
 
-
-
-
 A `main()` function which does nothing than returning 0 as a exit code (remember zero means no error in the execution of application and any value greater than zero is a application's defined error code).
 
 Save the code into `main.c` and build it:
 
-
-
-
-    $ cc -g main.c
-
-
-
+    cc -g main.c
 
 The code will be compiled into the default output file called `a.out`, you can specify a different output file by adding `-o <output-file>` to the `cc` command.
 
 Now we can fire up `gdb` and look ad disassemble our simple `main()` function:
-
-
-
 
     $ gdb a.out
     (gdb) disas main
@@ -96,43 +73,22 @@ Now we can fire up `gdb` and look ad disassemble our simple `main()` function:
     0x0000000100000f41 <main+17>:   retq
     End of assembler dump.
 
-
-
-
 Every function is encapsulated in a preamble and a epilogue. The instructions from `<main+0>` to `<main+1>` are part of the prologue:
-
-
-
 
     0x0000000100000f30 <main+0>:    push   %rbp
     0x0000000100000f31 <main+1>:    mov    %rsp,%rbp
 
-
-
-
 And the instructions from `<main+16>` to `<main+17>` are part of the epilogue:
-
-
-
 
     0x0000000100000f40 <main+16>:   pop    %rbp
     0x0000000100000f41 <main+17>:   retq
-
-
-
 
 A very good explanation about the prologue, epilogue and stack can be found in the post [C / C++ Low Level Curriculum Part 3: The Stack](http://web.archive.org/web/20140719092417/http://www.altdev.co/2011/12/14/c-c-low-level-curriculum-part-3-the-stack/).
 
 Now focus the attention to the body of the function:
 
-
-
-
     0x0000000100000f34 <main+4>:    mov    $0x0,%eax
     0x0000000100000f39 <main+9>:    movl   $0x0,-0x4(%rbp)
-
-
-
 
 By the [Intel's calling convention](http://en.wikipedia.org/wiki/X86_calling_conventions#Intel_ABI) the return vale of a function call is stored in the EAX register and the instruction at `<main+4>` does that, moving a zero into the EAX register.
 
@@ -142,40 +98,23 @@ Apparently clang creates automatically an hidden implicit local variable to stor
 
 And what's the location referenced by `-0x4(%rbp)`? `(%rbp)` is the memory location the base stack of the current frame and -4 is the offset equal to the size of the value to be stored; in this case our function returns a 32-bit integer which needs 4 bytes of memory to be stored.
 
-
-
 ## Optimisation
-
-
 
 But can this code be optimised in size and speed? By default the compiler translate source code into assembly with almost a 1:1 ration without interpreting the code and the flow of execution of the instruction. This generate more assembly but helps the developer during the debug.
 
 However in production you want fast and/or smaller code and the compiler can produce that by passing the level of optimisation you want to achieve. Every compiler can have a huge list of optimisation options to be passed at the command line but there is a common shortcut to a particular set of optimisation's flags which simplify interfacing with the compiler:
 
+* -O0 (default): optimisation for compilation time, reduce the compile time at minimum
 
+* -O1 or O: optimise for smaller and faster code
 
+* -O2: like -O1 but activate more optimisation techniques
 
+* -O3: maximum optimisation for code size and speed, can use more memory and time to generate the code
 
-  * -O0 (default): optimisation for compilation time, reduce the compile time at minimum
-
-
-  * -O1 or O: optimise for smaller and faster code
-
-
-  * -O2: like -O1 but activate more optimisation techniques
-
-
-  * -O3: maximum optimisation for code size and speed, can use more memory and time to generate the code
-
-
-  * -Os: optimise the generated code only for size
-
-
+* -Os: optimise the generated code only for size
 
 The previous code was compiled with the default optimisation level, now we will see the same C source code compiled with the best optimisation level:
-
-
-
 
     $ cc -O3 main.c
     $ gdb a.out
@@ -188,28 +127,17 @@ The previous code was compiled with the default optimisation level, now we will 
     0x0000000100000f47 <main+7>:    retq
     End of assembler dump.
 
-
-
-
 Skipping the prologue and epilogue section, our code now is just a single cryptic assembly instruction, where is gone the return value (the zero) of the function? We know by the calling conventions that EAX holds the return value of the function and in our case the return value is zero and the result of an XOR between to identical values is zero.
 
 So the compiler optimised the `mov 0x0,%eax` into a single XOR operation (I reckon because `xor` if faster than `mov`) and it doesn't care about the current content of EAX because it will be zero anyway after the XOR operation.
 
-
-
 ## Conclusion
-
-
 
 This first post is done, we learnt how to compile, disassembly and understand the assembly generate by the compiler and we saw the compiler optimisations in action even for a very simple example like the one used in this post.
 
 But then ost is not done yet, the follow sections explains some parts not covered by the above post but that are important to fully understand the disassembly.
 
-
-
 ## Extras
-
-
 
 In this post we saw a couple of CPU registers involved in the assembly code (a full list of x86 register can be found [here](http://en.wikipedia.org/wiki/X86#x86_registers)) in particular we encountered `rax`, `eax`, `rsp` and `rbp`.
 

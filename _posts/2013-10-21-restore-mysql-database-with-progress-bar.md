@@ -28,36 +28,18 @@ On Unix you can monitor the progress on the command line by using the `pv` utili
 
 The complete name of the utility is _Pipe Viewer_ and as the name suggest it's capable of display informations about a pipe. To install `pv`:
 
-
-
-
-    $ sudo apt-get install pv
-
-
-
+    sudo apt-get install pv
 
 In this pecific case we want to know how much data has been read from the database's dump file into the `mysql` command:
 
-
-
-
     $ pv dump.sql | mysql -u<username> -D <database>
     2.6GB 0:00:23 [2.3MB/s] [>           ] 2% ETA 0:32:39
-
-
-
 
 Thanks to `pv` now we know more or less how much time the restore will take, so we are sure there's enough time to have a hot coffe down to Starbucks :-).
 
 If your database's dump is compressed for example with Bzip2 you can add the decompression stage in the pipe:
 
-
-
-
     $ pv dump.sql.bz2 | bunzip2 -c | | mysql -u<username> -D <database>
     425MB 0:00:25 [845KB/s] [>           ] 1% ETA 0:31:45
-
-
-
 
 However this approach is not limited to this two examples, you can use `pv` in any situation where you can pipe the output of a command as an input of another command and you want to monitor the progress.

@@ -34,22 +34,14 @@ TL;DR
 
 In a society of equals the wealth is equally distributed, right? Wrong, a lot wrong. A didactic post who try to explain about the distribution of wealth.
 
-
-
 ## Introduction
-
-
 
 It's about a couple of months I'm perplexed observing the "debate" developed around the wealth's distribution in Italy. The main reason about my perplexity, and also the reason about the world "debate" is inside quotes, it because the discussion is proceeding by maintaning a tight and complete ignorance about both the main empiric evidences and elementary theoric observations. So I'd decided to write this post which it's not pretending to expose somenthing new or particularly cunning but simply remember obvious facts which anyone bothered to mention.
 
 The discussion, as far as I can say, started with a bizarre episode of late discovery of the data related to the family's economic balance in a Banca d'Italia's survey, in other words 10% of the families owns the 45% of the wealth. The episode, [as it was commented out by this post](http://www.noisefromamerika.org/index.php/articoli/2132), is bizarre because this figure was "re-discovered" months later at the same time during the publication of [another Banca d'Italia's survey specific on the country's wealth](http://www.bancaditalia.it/statistiche/stat_mon_cred_fin/banc_fin/ricfamit/2010/suppl_67_10.pdf). Anyway, excluding the bizarre or not bizarre way how the figure come out to the surface, since that moment that figure become at everyone's attention. The proposals about a property tax to pay back the public debt sprouted out automatically. As example one proposal was exposed in [this article of Peter Gomez on Il Fatto](http://www.ilfattoquotidiano.it/2010/12/20/una-tantum-per-la-crisi/82939/), which says:
 
-
-
 > We should thank the investigative offices of Banca d'Italia which today remembers us how
 > **the wealth** of our country since years is still **bad distributed**
-
-
 
 Using this statement as a starting point Gomez continues the article explaining how a property tax (and not anything else) can solve the problems of the country's public debt. However there are two trivial questions which no one didn't thought about, excluding the fact that Gomez is a very good journalist but it's clear he doesn't have economics skills. The first question is: if we want to evaluate the inequality in a society, is it a good idea to use the wealth as a parameter instead of other variables like the consumption or the income? And the second question is: if we use the wealth as a parameter, what how we can identify a normal inequality distribution?
 
@@ -57,11 +49,7 @@ Those questions, if true be told, are pretty difficult questions. The problems i
 
 In this post I'll introduce some examples which demonstrate why the answers to those questions are not easy to find. I want also to expose some extra theoric considerations about the wealth distribution and its relation with the welfare. I'll say it again, ti's nothing new and original, these should be well known concepts (but obviously they are not) to anyone who pretends to write articles on newspapers or blogs about these topics. I'll not argue, if not only marginally, about the empiric evidence. I'll do it in a next post.
 
-
-
 ## First example: the society of perfect equals
-
-
 
 Upper Rawlsand is a society where all citizens are perfect equals to each others. Every citizen lives exactly 80 years, in the first 20 years he doesn't form any family and doesn't earn any income (so we will not include the under-20 into the calculations of the wealth's distribution). In the frist 40 years he works and after that in the remaining 20 years he gets a pension. At then he dies and he's replaced with a brand new citizen which is a copy of the previous one (in economics this's called "overlapping generations model"). The currency of this country is the rawlso, I'll not tell the exchange rate with the euro because it's irrelevant.
 
@@ -83,11 +71,7 @@ Now lets try to calculate how much wealth is owned by the 10% richest citizens i
 
 So in this society of perfect equals the richest 10% has a wealth ridiculously larger (20 times larger!) than the poorest 10%. We can all agree that this inequality in wealth's distribution, in this society, should not raise any complains by anyone. In other words, using the wealth as a parameter in this society to measure the inequality is absolutely misleading.
 
-
-
 ## Second example: the society of dynamic equals
-
-
 
 In Lower Rawlsland the citizens are also equals but their wages are not constant during the whole life span. Their wages are lower when they are younger and increases during time with a rate of 1.5% per year. There are no other differences between Lower and Upper Rawlsland (a monetary union is in place; even in Lower Rawlsland the currency is the rawlso): same period of 40 years of work, same pension of 40 rawslo out of taxes.
 
@@ -107,11 +91,7 @@ In this society the concentration of the wealth is higher than the previous soci
 
 We saw how a rising salary profile its a good "trick" to increase the inequality of wealth in a society of equals. Another "trick" to increase the concentration of wealth if this set of examples is to suppose the population will increase instead of to remain static. If the population does increase there will be more younger than older citizens. The effect is just an "optical effect". The society is still a society of equals.
 
-
-
 ## Last example: the society of not equals
-
-
 
 I don't want to feed the sensation that the distribution of wealth can't never be used as an useful index of inequality in a country. So considerate this next example, more informal than the previous ones but more explanatory.
 
@@ -119,11 +99,7 @@ In the [Lacandonia](http://it.wikipedia.org/wiki/Chiapas_%28stato%29) country th
 
 This is clearly an deep not equal society. If we were able to measure the inequality in this society the result would show a big disparity between the consumptions and the incomes. But suppose the consumption and the income cannot be easily measured, for example because most people consume their own production or because a presence of a trading system between citizens. In this case using the wealth's distribution correlated to the amount of land owned produce a good guess of the level of inequality in that country.
 
-
-
 ## The richest societies are not necessarily the ones with a better quality of life
-
-
 
 It's time to draw some conclusions from our examples. The first, which is unexpected, is it's not true more wealth is equal to more welfare. Watch out I'm not saying that "the important things in the life are love, art and beauty" or some other [Tremonti](http://www.ilsole24ore.com/art/SoleOnLine4/Economia%20e%20Lavoro/2010/01/tremonti-pil-aspen-salgado.shtml?uuid=9d89820e-012f-11df-be5e-5810c4efc474&%3BDocRulesView=Libero)-Kennedy trivialty ([in the sense of Robert Kennedy](http://www.youtube.com/watch?v=QtReBtYIlEg)). I'm talking only about the leve of consumption that every member of a society can achieve.
 
@@ -141,11 +117,7 @@ Another important set of examples where the wealth is inversely correlated to th
 
 Now suppose that while earning 100 in the first life cycle is certain, there is uncertainty about the next life cycle. With a probability of 50% the income will be zero or the income will be 200. So, the income's expectation in the second life cycle is always equal to 100, but now there is uncertainty. Under rather general circumstances our citizen will avoid to consume all the wealth in the first period and he'll start to save monies in case of a zero income. This means the wealth is higher. But obviously anyone not used to afford risks will prefere to live in the first society, the one with null wealth, instead of living in the second one, the one with positive wealth.
 
-
-
 ## Conclusion
-
-
 
 The question related to the usefulness to look at the Italy wealth's distribution in 2011 can be reduced to this question: is Italy more like Rawlsland or Lacandonia? That is, it's a country where the wealth is mainly obtained by savings or by inheritance? We'll discuss more deeply about it in the next post about empirical evidence, here I'll raise just a simple observation.
 
@@ -159,7 +131,6 @@ In Rawlsland the wealth is proportional to the age of the citizen: it grows unti
 | from 55 to 64 years |                   211,200 |
 | from 35 to 44 years |                   131,172 |
 | after 65            |                   155,391 |
-
 
 The wealth's variance between ages is easy to spot: they start young and poor, they reach the maximum accumulation of wealth around the pension age, and the they de-accumulate. Obviously we must analyse this data keeping in mind all the available empirical evidence before reaching any conclusion, but this data shows that building wealth through savings is not an irrelevant part of the process.
 

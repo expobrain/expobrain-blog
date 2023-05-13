@@ -29,21 +29,21 @@ Let's set up my Ubuntu for 64-bit cross-compilation.
 
 The trick is to install the `gcc` and `gdb` packages to do cross-compilation. On an Ubuntu system you can just issue:
 
-{% highlight bash %}
-$ sudo apt-get install gcc-multilib gdb-multiarch
-{% endhighlight %}
+```bash
+sudo apt-get install gcc-multilib gdb-multiarch
+```
 
 After the installation of the packages you can build an disassembly your 64-bit even on a 32-bit hardware. For example this code:
 
-{% highlight c %}
+```c
 int main {
     return 0;
 }
-{% endhighlight %}
+```
 
 will be compiled and disassembled with this:
 
-{% highlight bash %}
+```bash
 $ cc -g -m64 main.c
 $ gdb-multiarch a.out
 GNU gdb (Ubuntu/Linaro 7.4-2012.04-0ubuntu2.1) 7.4-2012.04
@@ -65,6 +65,6 @@ Dump of assembler code for function main:
    0x00000000004004be <+10>:    retq
 End of assembler dump.
 
-{% endhighlight %}
+```
 
 Note the extra `-m64` argument of `cc` which tells the compiler to produce 64-bit code and the use of `gdb-multiarch` instead of the plain `gdb` to be able to interpreter the 64-bit debug symbols.

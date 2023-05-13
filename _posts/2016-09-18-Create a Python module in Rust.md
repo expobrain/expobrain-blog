@@ -19,7 +19,6 @@ title: Create a Python module in Rust
 
 Thanks to the [rust-cpython](https://github.com/dgrunwald/rust-cpython) project it's possible to execute Python code from Rust and vice-versa build a module in Rust for Python. However the given examples and documentation shows you only how to execute Python from Rust, where in this post I'll show you how to build a module in Rust to be called by Python code.
 
-
 ## Requirements
 
 The code examples in this post uses Python 2.7 or 3.x indifferently and Rust 1.11+.
@@ -28,16 +27,15 @@ If you need to compile this code for Python 2.7 a small change must be made in t
 
 I'll assume that you already have a shallow knowledge about Rust and its [pattern matching](https://doc.rust-lang.org/book/patterns.html), if not don't be scared and have a look at the official [documentation](https://doc.rust-lang.org/book/).
 
-
 ## The first trivial example
 
 Let's start with a simple example, a function which return an *"Hello World"* string, implemented in Rust and saved in `src/lib.rs`:
 
-{% highlight rust %}
+```rust
 fn hello(py: Python) -> PyResult<PyString> {
     Ok(PyString::new(py, "Rust says: Hello world"))
 }
-{% endhighlight %}
+```
 
 The first notable thing is that all the functions which will be called by the Python code needs to receive as the first parameter an instance of the current Python interpreter (argument `py` of type `Python` and if they return a value it should be wrapped in a `PyResult` type (an alias to the `Result` type). Other functions not exposed to the Python code don't need these constraints.
 
@@ -45,16 +43,16 @@ The second thing is that the return value is a Python string and not a Rust `Str
 
 Now we need to expose this function as part of the module, this can be done with the `py_module_initializer!` and `py_fn!` macros:
 
-{% highlight rust %}
+```rust
 py_module_initializer!(example, initexample, PyInit_example, |py, m| {
     try!(m.add(py, "hello", py_fn!(py, hello())));
     Ok(())
 });
-{% endhighlight %}
+```
 
 To conclude the setup let's define the `Cargo.toml` file:
 
-{% highlight toml %}
+```toml
 [package]
 name = "python-rust-example"
 version = "0.1.0"
@@ -65,12 +63,12 @@ name = "example"
 crate-type = ["dylib"]
 
 [dependencies.cpython]
-git = "https://github.com/dgrunwald/rust-cpython.git"
-{% endhighlight %}
+git = "<https://github.com/dgrunwald/rust-cpython.git>"
+```
 
 Now we are ready to compile our dynamic library and call the `hello()` function from Python:
 
-{% highlight bash %}
+```bash
 $ cargo build
 $ cp ./target/debug/libexample.so ./example.so
 $ python
@@ -80,10 +78,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import example
 >>> example.hello()
 'Rust says: Hello world'
-{% endhighlight %}
+```
 
 As you can see to use our `example` module is the same as importing any other Python module, no difference at all except the fact that the executed code is native C code.
-
 
 ## A more complete example
 
@@ -91,7 +88,7 @@ Now that we know hot to degine, implement and call a function written in Rust fr
 
 For this example I'm going to implement a function `greetings()` which accept a string as parameter and returns a formatted greeting; all the strings will be Unicode strings and if the string passed as function's argument contains an invalid codepoint an `UnicodeDecodeError` will be raised. Here the implementation:
 
-{% highlight rust %}
+```rust
 fn greetings(py: Python, name: PyString) -> PyResult<PyString> {
     match name.to_string(py) {
         Ok(name_str) => {
@@ -103,7 +100,7 @@ fn greetings(py: Python, name: PyString) -> PyResult<PyString> {
         Err(e) => Err(e)
     }
 }
-{% endhighlight %}
+```
 
 As you notice the conversion from Python's string type to a Rust's String type is done by pattern matching.
 
@@ -113,17 +110,17 @@ In the `Err()` case we just propagate the error out of the function and up into 
 
 The last step is to expose the `greetings()` function as part of the Python module (here alongside the previous `hello()` function:
 
-{% highlight rust %}
+```rust
 py_module_initializer!(example, initexample, PyInit_example, |py, m| {
     try!(m.add(py, "hello", py_fn!(py, hello())));
     try!(m.add(py, "greetings", py_fn!(py, greetings(name: PyString))));
     Ok(())
 });
-{% endhighlight %}
+```
 
 Compiling the library, importing it and calling the function, including calling it with an invalid Unicode codepoint will raise the Python exception as expected:
 
-{% highlight python %}
+```python
 >>> import example
 >>> print(example.greetings('John'))
 Rust says: Greetings John !
@@ -131,20 +128,18 @@ Rust says: Greetings John !
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 UnicodeDecodeError: 'utf-16' codec can't decode bytes in position 0-1: invalid utf-16
-{% endhighlight %}
-
+```
 
 ## Targeting different Python version
 
 By default `rust-cpython` compiles against Python 3.4 or 3.5 but it's possible to compile it agains Python 2.7 as well. To be able to do that we need to specify the correct feature for the `rust-cpython` crate in our `.toml` file:
 
-{% highlight toml %}
+```toml
 [dependencies.cpython]
-git = "https://github.com/dgrunwald/rust-cpython.git"
+git = "<https://github.com/dgrunwald/rust-cpython.git>"
 default-features = false
 features = ["python27-sys"]
-{% endhighlight %}
-
+```
 
 ## Conclusion
 

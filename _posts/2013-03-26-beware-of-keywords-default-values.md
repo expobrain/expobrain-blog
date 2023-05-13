@@ -21,25 +21,15 @@ Look this class definition, do you see what's is wrong and potentially generate 
 
 <!-- more -->
 
-
-    
-    
     class Foo(object):
-        
+
         def __init__(self, bars=[]):
             self.bars = bars
-            
-    
-
-
 
 <!--more--!>
 
 Before jumping straight to the solution lets play with some instances of that class:
 
-
-    
-    
     >>> foo1=Foo([1, 2, 3])
     >>> foo2=Foo([3, 4, 5])
     >>> foo1.bars
@@ -52,19 +42,13 @@ Before jumping straight to the solution lets play with some instances of that cl
     [1, 2, 3, 10]
     >>> foo2.bars
     [3, 4, 5, 20]
-    
-
-
 
 Nothing really interesting here: I created two instances of `Foo` class passing two different list of numbers and added a value to both `bars` attributes.
 
-Boring and useless. 
+Boring and useless.
 
 I'll try now using the default value for `bars` attribute defined in the class' constructor:
 
-
-    
-    
     >>> foo3=Foo()
     >>> foo4=Foo()
     >>> foo3.bars
@@ -77,9 +61,6 @@ I'll try now using the default value for `bars` attribute defined in the class' 
     [10, 20]
     >>> foo4.bars
     [10, 20]
-    
-
-
 
 Wait a sec! I've added a single number to each attribute to each class but why both of them have the same content?
 
@@ -90,18 +71,11 @@ So both parameters in `foo3` and `foo4` instances are using the same `list` inst
 
 As a rule of thumb when you are defining default values for methods/function keywords pay attention at the type of the default value. It's safe to use immutable types (strings, integers, floats, None) but mutable types can lead to bugs in your application difficult to track down.
 
-Coming back to my example here a safer way to implement the class: 
+Coming back to my example here a safer way to implement the class:
 
-
-    
-    
     class Foo(object):
-        
+
         def __init__(self, bars=None):
             self.bars = bars if bars is None else []
-            
-    
-
-
 
 This way a new `list` instance will be created in case the `bars` keyword is null.

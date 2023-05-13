@@ -25,27 +25,14 @@ This solution looked too naive, I was sure a better and faster solution was avai
 
 Suppose you want to match the string:
 
-
-
     foo.user.add
 
-
-
 with the prefixes:
-
-
-
 
     foor.user
     bar.user
 
-
-
-
 a naive implementation can be:
-
-
-
 
     prefixes = ("foo.user", "bar.user")
     path = "foo.user.add"
@@ -56,20 +43,12 @@ a naive implementation can be:
 
     return False
 
-
-
 Bad solution, verbose and slow because involves a for loop executed by the Python VM.
 
 I'll never be tired to say RTFM is the way to go, i this case [startswith()](http://docs.python.org/2/library/stdtypes.html#str.startswith) and related method [endswith()](http://docs.python.org/2/library/stdtypes.html#str.endswith) doesn't accept only the prefix to match, but can accept also a tuple of prefixes and returns True if at least one prefix matches.
 
 The code above can be rewritten in a single line:
 
-
-
-
     return path.startswith(prefixes)
-
-
-
 
 Concise, clean, faster because executed as C code instead interpreted by the Python VM.

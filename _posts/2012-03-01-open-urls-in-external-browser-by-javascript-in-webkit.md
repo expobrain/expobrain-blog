@@ -22,23 +22,19 @@ It's very simple with the QtWebKit APIs to open an link with your default browse
 
 <!-- more -->
 
-
-
 Let's start with a simple window with a WebKit view:
 
+```cpp
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent)
+{
+    browser = new QWebView(this);
 
+    browser->setHtml("<button onclick="window.open('http://www.google.com')">click me</button>");
 
-    MainWindow::MainWindow(QWidget *parent) :
-    	QMainWindow(parent)
-    {
-    	browser = new QWebView(this);
-
-    	browser->setHtml("<button onclick="window.open('http://www.google.com')">click me</button>");
-
-    	setCentralWidget(browser);
-    }
-
-
+    setCentralWidget(browser);
+}
+```
 
 This is just a page with a button which should open Google's website into a new window. In our needs the new windows should be the default browser on our system.
 
@@ -46,66 +42,55 @@ QWebPage has a `createWindow()` called when navigating to a new link (`<a>` elem
 
 Before showing the code, lets recap the sequence when a `window.open()` function is called:
 
-
-
-
   1. The user clicks the button and the `onclick()` event's code will be executed
 
-
-  2. QWebView calls `QWebPage::createWindow()` which returns a new QWebPage instance to be used to load the URL http://google.com
-
+  2. QWebView calls `QWebPage::createWindow()` which returns a new QWebPage instance to be used to load the URL <http://google.com>
 
   3. QWebView calls `QWebPage::acceptNavigationRequest()` to proceed or abort the URL loading by the boolean value returned by the method
 
-
   4. If returns true it loads the URL else abort
-
 
 We create a new `Page` class and override both `QWebPage::createWindow()` and `QWebPage::acceptNavigationRequest()`. The header file:
 
+```cpp
+#include <qwebpage>
 
+class Page : public QWebPage
+{
+    Q_OBJECT
+public:
+    explicit Page(QWidget *parent = 0);
 
-    #include <qwebpage>
+    bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request;, NavigationType type);
+    QWebPage * createWindow(WebWindowType type);
 
-    class Page : public QWebPage
-    {
-    	Q_OBJECT
-    public:
-    	explicit Page(QWidget *parent = 0);
-
-    	bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request;, NavigationType type);
-    	QWebPage * createWindow(WebWindowType type);
-
-    };
-
-
+};
+```
 
 And the source file:
 
+```cpp
+#include <qnetworkrequest>
+#include <qdesktopservices>
 
+Page::Page(QWidget *parent) :
+    QWebPage(parent)
+{
+}
 
-    #include <qnetworkrequest>
-    #include <qdesktopservices>
-
-    Page::Page(QWidget *parent) :
-    	QWebPage(parent)
-    {
+bool Page::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request;, NavigationType type) {
+    if (type == NavigationTypeOther) {
+        QDesktopServices::openUrl(request.url());
+        return false;
+    } else {
+        return true;
     }
+}
 
-    bool Page::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request;, NavigationType type) {
-    	if (type == NavigationTypeOther) {
-    		QDesktopServices::openUrl(request.url());
-    		return false;
-    	} else {
-    		return true;
-    	}
-    }
-
-    QWebPage * Page::createWindow(WebWindowType type) {
-    	return new Page();
-    }
-
-
+QWebPage * Page::createWindow(WebWindowType type) {
+    return new Page();
+}
+```
 
 The `createWindow()` method simply returns a new `Page` instance.
 

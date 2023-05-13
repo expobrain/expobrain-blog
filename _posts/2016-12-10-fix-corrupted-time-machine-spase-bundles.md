@@ -31,66 +31,66 @@ I cannot guarantee that it'll work with the previous and future versions of the 
 
 First become `root` to speed up the next steps:
 
-{% highlight bash %}
+```bash
 sudo su -
-{% endhighlight %}
+```
 
 then reset the immutable flags in your sparsebundle, replacing `network_share` with where your
 sparsebundle resides and `backup_name` with the name of the spasebundle to fix:
 
-{% highlight bash %}
+```bash
 chflags -R nouchg /Volumes/<network_share>/<backup_name>.sparsebundle
-{% endhighlight %}
+```
 
 Now, this step is the one missing in the most on the solutions I found and only in some posts they
 suggest is, in my case this was the key step of the whole recovering process.
 
 Edit the `com.apple.TimeMachine.MachineID.plist` file:
 
-{% highlight bash %}
+```bash
 vim /Volumes/<network_share>/<backup_name>.sparsbundle/com.apple.TimeMachine.MachineID.plist
-{% endhighlight %}
+```
 
 set the value of the key `VerificationState` to `0`:
 
-{% highlight xml %}
+```xml
 <key>VerificationState</key>
 <integer>0</integer>
-{% endhighlight %}
+```
 
 and delete the `RecoveryBackupDeclinedDate` key:
 
-{% highlight xml %}
+```xml
 <key>RecoveryBackupDeclinedDate</key>
 <date>2012-09-16T01:38:43Z</date>
-{% endhighlight %}
+```
 
 We are at the final stage when we first mount the sparse bundle:
 
-{% highlight xml %}
+```xml
 hdiutil attach -nomount -noverify -noautofsck /Volumes/<network_share>/<backup_name>.sparsebundle
-{% endhighlight %}
+```
 
 then looking at the output search for the `Apple_HFSX` entry:
 
-{% highlight xml %}
+```xml
 /dev/diskx Apple_partition_scheme
 /dev/diskXs1 Apple_partition_map
 /dev/diskXs2 Apple_HFSX
-{% endhighlight %}
+```
 
 and launch the filesystem recovery tool against `/dev/diskXs2`, note that this step will take hours
 to complete so it's better to let it run overnight:
 
-{% highlight xml %}
+```xml
 fsck_hfs -drfy /dev/diskXs2
-{% endhighlight %}
+```
 
 Once the verification is complete and the filesystem is fixed unmount the sparse bundle:
 
-{% highlight xml %}
+```xml
 hdiutil detach /dev/diskXs2
-{% endhighlight %}
+```
 
 At this point the Time Machine backup should be repaired and if you run the backup it will complete
 without issues.

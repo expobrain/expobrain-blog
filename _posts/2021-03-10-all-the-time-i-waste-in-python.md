@@ -25,9 +25,9 @@ Lately I found myself "wasting" my time on setting up the proper development env
 
 Here I'm going to list what features and tooling I'm using today on the Python projects I'm working on and their pro and cons.
 
-# Annotations
+## Annotations
 
-![Python type annotations example](/media/python_type_annotations.png)
+![Python type annotations example]({{ site.url }}/media/python_type_annotations.png)
 
 [Annotations](https://www.python.org/dev/peps/pep-0484/) where a very big deal when they were released in Python 3.5, without them we will not have all the amazing tooling we use today for automatically generate documentation, API specs and statically analyse our codebase with [Mypy](https://mypy.readthedocs.io/).
 
@@ -35,9 +35,9 @@ They are not an overhead when writing Python code, on the contrary they helps on
 
 Because annotations are not enforced at runtime (for obvious reasons) they are not a waste of developer's time if and only if the proper tooling is set up in the development environment to ensure that the annotations matches the actual code and any mismatch is fixed. Otherwise they usefulness is limited, they will be just an extension of the code's documentation and nothing else.
 
-# Mypy
+## Mypy
 
-![Mypy](/media/mypy.svg)
+![Mypy]({{ site.url }}/media/mypy.svg)
 
 Mypy is the most important tool of the list, it's a static code analyser which leverages the Python annotations to analyse the code before execution and identify places where the types of values in variables and in function's arguments don't match the annotations.
 
@@ -49,9 +49,9 @@ Third party packages need to esplicitly support Mypy by [different ways](https:/
 
 Also checking code with Mypy becomes really effective only if this tool is run as part of the CI pipeline and the build fails if Mypy reports any error.
 
-# Flake8
+## Flake8
 
-![Flake8](/media/flake8.jpg)
+![Flake8]({{ site.url }}/media/flake8.jpg)
 
 [Flake8](https://flake8.pycqa.org/en/latest/) is a tool to enforce style guides on your code, it's not a mandatory tool for your productivity except for a couple of features.
 
@@ -61,14 +61,14 @@ The second is that it can be [extended with plugins](https://github.com/expobrai
 
 It would be nice if Mypy would integrate this features during the static code analysis so to not have to rely on another tool.
 
-# Vulture
+## Vulture
 
-![Python Vulture example](/media/python_vulture_example.png)
+![Python Vulture example]({{ site.url }}/media/python_vulture_example.png)
 All the tools and features mentioned above do a great job to ensure that in your code you are using the correct types in variables and function parameters. However of course this is not enough and you still need one last tool to detect unused code and function arguments like [Vulture](https://github.com/jendrikseipp/vulture).
 
 Again, this kind of check could have been performed by one of the tools mentioned above (the most obvious candidate is Mypy) instead of having another tool in the pipeline.
 
-# Conclusions
+## Conclusions
 
 I'm wondering if the problem is not in the awesome tools themselves or in their fragmentation but in the way we using the Python language nowadays. We are writing code with a fully dynamic language but we are pretending that it's a fully statically typed language with types, which are just optional annotations to the core, and a compiler in the form of Mypy, which is just a tool that checks your optional annotations.
 

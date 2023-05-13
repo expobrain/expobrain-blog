@@ -24,18 +24,11 @@ It was a rainy and cold afternoon and I had nothing to do except to play around 
 <!-- more -->
 For this example you will need to download these libraries:
 
+* Cocos2D for Android: you can donwload the source code or the precompiled jar file from the [GitHUB](https://github.com/ZhouWeikuan/cocos2d) repository. In my case I preferred to use the precompiled jat file available under [cocos2d-android/libs](https://github.com/ZhouWeikuan/cocos2d/tree/master/cocos2d-android/libs)
 
-
-
-  * Cocos2D for Android: you can donwload the source code or the precompiled jar file from the [GitHUB](https://github.com/ZhouWeikuan/cocos2d) repository. In my case I preferred to use the precompiled jat file available under [cocos2d-android/libs](https://github.com/ZhouWeikuan/cocos2d/tree/master/cocos2d-android/libs)
-
-
-  * JBox2D: it's the java port of the famous [Box2D](http://box2d.org/) library developed by Erin Catto, the project website is hosted [here](http://code.google.com/p/jbox2d/). Unfortunately you need to download the source code and remove or fix manually all the references to `org.apache.log4j` which is not available in the Android SDK.
-
+* JBox2D: it's the java port of the famous [Box2D](http://box2d.org/) library developed by Erin Catto, the project website is hosted [here](http://code.google.com/p/jbox2d/). Unfortunately you need to download the source code and remove or fix manually all the references to `org.apache.log4j` which is not available in the Android SDK.
 
 I'll skip all the tedious steps to create a new Android project (I can find easily millions of how-to on Google) and I'll go straigh to the source code. Firts of all, the activity:
-
-
 
     public final class Android2dActivity extends Activity {
         public static final int TARGET_FPS = 60;
@@ -99,8 +92,6 @@ I'll skip all the tedious steps to create a new Android project (I can find easi
         }
     }
 
-
-
 I'm overriding the [`onCreate()`](http://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) method to set up the application's window (no title, full screen, keep screen on) and create a new Cocos2D surface.
 
 In the [`onStart()`](http://developer.android.com/reference/android/app/Activity.html#onStart()) method I'm finalising the OpenGL surface and attaching the main scene. If you want to see your fps value on the screen just pass `true` to `setDisplayFPS()`; if you want to change the target fps rate change the `TARGET_FPS` constant (the target fps in this example is 60).
@@ -108,8 +99,6 @@ In the [`onStart()`](http://developer.android.com/reference/android/app/Activity
 The overridden methods [`onPause()`](http://developer.android.com/reference/android/app/Activity.html#onStop()), [`onResume()`](http://developer.android.com/reference/android/app/Activity.html#onResume()) and [`onStop()`](http://developer.android.com/reference/android/app/Activity.html#onStop()) just calls the respective [`CCDirector`](http://www.cocos2d-iphone.org/api-ref/0.99.5/interface_c_c_director.html)'s `pause()`, `resume()` and `end()` methods.
 
 The main (and only one) scene is trivial:
-
-
 
     public final class MainScene extends CCLayer {
         public static CCScene scene() {
@@ -124,13 +113,9 @@ The main (and only one) scene is trivial:
         }
     }
 
-
-
 Nothing here needs to be explained :).
 
 And now the interesting part: the main sceene's layer where all the magic happens. I'll explaining it step by step starting from some constant's declarations:
-
-
 
     public final class MainLayer extends CCLayer {
         private static final float TIMESTEP = 1.0f / Android2dActivity.TARGET_FPS;
@@ -150,29 +135,18 @@ And now the interesting part: the main sceene's layer where all the magic happen
 
         public World world;
 
-
-
 In the first part I'm setting some physics simulator's parameters, you can find the meaning of those parameters in the Box2D documentation. However I'll explaining some of these because they are important to understand how the example works:
 
+* `TIMESTEP` is the time delta in millisecond used by Box2D to simulate the world's physics, it's set as 1/60th of second. To understand the importance of the timestep in physics simulation read this post [Fix your Timestep!](http://gafferongames.com/game-physics/fix-your-timestep/)
 
+* `DEFAULT_GRAVITY` is zero when the simultation starts because it'll be updated by the reading from the device's accellerometer
 
+* `ALLOW_SLEEP` usually is set to `true` to allow Box2D to ignore the simulatio on objects in a rest state; because I'm changing the gravity during the simulation I'm setting it to `false` to continuosly simulate the position of the objects
 
-  * `TIMESTEP` is the time delta in millisecond used by Box2D to simulate the world's physics, it's set as 1/60th of second. To understand the importance of the timestep in physics simulation read this post [Fix your Timestep!](http://gafferongames.com/game-physics/fix-your-timestep/)
-
-
-  * `DEFAULT_GRAVITY` is zero when the simultation starts because it'll be updated by the reading from the device's accellerometer
-
-
-  * `ALLOW_SLEEP` usually is set to `true` to allow Box2D to ignore the simulatio on objects in a rest state; because I'm changing the gravity during the simulation I'm setting it to `false` to continuosly simulate the position of the objects
-
-
-  * `SCREEN_TO_WORLD_RATIO` translate the screen coordinates into physical coordinates; in this example the scale is 2000px/1meter
-
+* `SCREEN_TO_WORLD_RATIO` translate the screen coordinates into physical coordinates; in this example the scale is 2000px/1meter
 
 The second pars defines the ball's sprite and some physical properties. The simulated ball will have a radius of 1.3 centimeters (26(px) / 2000(px/m) = 0.013(m))
 The last section defines how many bodies I'm putting on the screen for a mor funny simulation.
-
-
 
         public MainLayer() {
             // Setup world and body
@@ -186,11 +160,7 @@ The last section defines how many bodies I'm putting on the screen for a mor fun
             schedule("tick");
         }
 
-
-
 In the layer's constructor I set up the world and the simulated bodies, enabling the device's accellerometer and schedule the callback to run the simulation a every frame.
-
-
 
         private void setUpWorld() {
             // Set up world
@@ -235,11 +205,7 @@ In the layer's constructor I set up the world and the simulated bodies, enabling
             boxBody.createFixture(bottomShape, 0.0f);
         }
 
-
-
 The world's setup creates a box around the screen's edge so our bodies will not escape outside the screen.
-
-
 
         private void setUpBodies() {
             // Get start position
@@ -282,11 +248,7 @@ The world's setup creates a box around the screen's edge so our bodies will not 
             }
         }
 
-
-
 All the bodies are created on the center of the screen with the physical attributes I defined before. For every body I'm attaching a new smile's sprite by the `setUserData()` method; this way I can retrieve and update the sprite's later during the physics simulation's step.
-
-
 
         public void tick(float dt) {
             // Update Physics World
@@ -305,11 +267,7 @@ All the bodies are created on the center of the screen with the physical attribu
             }
         }
 
-
-
 For every frame I'm simulate the world's physics in the given timestep and update the sprite position and rotation for every body which has a sprite attached. As you'd noticed I'm wrapping the `step()` into a `synchronized` statement, that because, as shown in the next code snipet, I'm updating the worlds gravity by the accellerometer's change event. If the update happens during the simulation step the result of the simulation can be inprecise or, in the worst case, corrupt the world's state (the real world is corrupted enough, we don't need to corrupt our virtual world too :-D).
-
-
 
         public void ccAccelerometerChanged(float x, float y, float z) {
             synchronized (world) {
@@ -317,11 +275,7 @@ For every frame I'm simulate the world's physics in the given timestep and updat
             }
         }
 
-
-
 Setting the gravity is trivial, just remember it's a force which points down so I'm inverting the sign of the accellerometer's values. As described before, the `setGravity()` method is wrapped in a `synchronized` to avoid concurrent access to the world instance.
-
-
 
         private CGPoint worldToScreen(final Vec2 coord) {
             return CGPoint.make(coord.x * SCREEN_TO_WORLD_RATIO, coord.y
@@ -337,17 +291,11 @@ Setting the gravity is trivial, just remember it's a force which points down so 
         }
     }
 
-
-
 We close the class deifnition with some helpful methods to convert screen coordinates to world coordinates and vice versa.
 
 I'm going to rotate the device so I need to fix the screen orientation; in the AndroidManifest.xml I'm setting a portrait orientation:
 
-
-
     <activity android:name=".Android2dActivity" android:screenorientation="portrait">
-
-
 
 That's all. If you want to play with this example just download the source code from [here]({{ site.url }}/media/android2d.tar.gz).
 

@@ -26,8 +26,6 @@ Testing Qt code with the Python `unittest` module is simple as ever.
 
 <!-- more -->Take a look to this unittest code:
 
-
-
     from PyQt4 import QtGui
     import sys
     import unittest
@@ -54,8 +52,6 @@ Testing Qt code with the Python `unittest` module is simple as ever.
 
     if __name__ == '__main__':
         unittest.main()
-
-
 
 This example just test the creation of two `QMainWindow` instances, not very useful, but it's enough for our purposes.
 

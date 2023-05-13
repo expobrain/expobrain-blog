@@ -28,9 +28,6 @@ The idea is to read the content of `requirements.txt` and execute `easy_install`
 
 The final script looks like this:
 
-
-
-
     for /f "tokens=*" %%p in (requirements.txt) do (
         easy_install %%p
 
@@ -39,8 +36,5 @@ The final script looks like this:
             exit /b 2
         )
     )
-
-
-
 
 Really is looking different than any standard for loop you can find in any programming language but don't forget the for loop is a real built-in command line application which needs arguments and command line's options in order to work.
