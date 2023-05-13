@@ -1,77 +1,76 @@
-# Dependencies
-markdown:	kramdown
+# Jekyll configuration
 host: 0.0.0.0
+markdown: kramdown
+highlighter: rouge
+paginate: 5
+language: "en-uk"
+words_per_minute: 200
+
+# Website info
+title: Daniele Esposti's Blog
+description: My personal blog.
+url: https://expobrain.net
+baseurl: /
+cover: assets/images/cover2.jpg
+# logo: assets/images/blog-icon.png
+# logo_dark: assets/images/favicon.png
+favicon: assets/images/favicon.png
+CNAME: expobrain.net
+
+# Social info
+navigation: True # show the navbar links
+# subscribers: True # you need to connect an external service for this to work,
+# if 'True' the submit button is disabled for now, but you can change that
+# by editing `_includes/subscribe-form.html`
+twitter: expobrain
+# github: expobrain
+# linkedin: https://www.linkedin.com/in/danieleesposti
+
+# Disqus
+disqus: true
+disqus_shortname: expobrain
+
+# Google Analytics
+google_analytics: UA-423458-1
+
 # Permalinks
 permalink: /:year/:month/:day/:title/
 
-# Setup
-title:            Daniele Esposti's Blog
-# tagline:          'blog'
-description:      'My personal blog.'
-url:              https://expobrain.net
-baseurl:
-commentsystem:    disqus
-disqus:           expobrain
+# Authors' info in `_data/authors.yml`
+# Tags' info in `_data/tags_info.yml`
 
-# author:
-#   name:           Ian Brunelli
-#   url:            https://google.com/+IanCamporezBrunelli
-
-paginate:         5
+# gems and other configs
+plugins_dir:
+  - _plugins
 plugins:
-- jekyll-paginate
-- jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-feed
 
-# Custom vars
-icon:             /assets/images/profile.jpg
-cover:            /assets/images/cover2.jpg
+feed:
+  path: feed.xml
 
-social:
-  - icon:         twitter
-    url:          https://twitter.com/expobrain
-    desc:         Follow me on twitter
+# Additional settings available on the front-matter
+# Site logo in the index.html (as in demo.ghost.io)
+# Author's page cover in _layouts/author.html
+# The same for page.html and tag.html layouts
+# Post's page cover as a per-post basis _posts/...
+# Disqus comments as a per-post basis
+# ...
 
-  - icon:         github
-    url:          https://github.com/expobrain
-    desc:         Fork me on github
-
-  - icon:         linkedin
-    url:          https://www.linkedin.com/in/danieleesposti
-    desc:         Look at me on linkedin
-
-  # - icon:         googleplus-alt
-  #   url:          https://google.com/+IanCamporezBrunelli
-  #   desc:         Add me on google+
-
-  # - icon:         feed
-  #   url:          http://camporez.github.io/atom.xml
-  #   desc:         Subscribe to my feed
-
-menu:
-  - title:        Home
-    url:          /
-
-  - title:        About
-    url:          /about
-
-# copyright:
-#   author:         Camporez
-#   url:            http://camporez.github.io
-#   type_title:     Some rights reserved
-#   type_url:       http://creativecommons.org/licenses/by-nc/2.5
-
-parallax:         false
-
-# Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
-google_analytics:  UA-423458-1
-
-# Default Theme Color for Chrome on Android Lollipop (Use RGB ColorCode without `#`, e.g.: `db5945`)
-theme_color:       '000000'
-
-# Tagging
-tag_page_layout:  tag_page
-tag_page_dir:     tag
-
-exclude:          ['Gemfile', 'Gemfile.lock',
-                   'package.json', 'npm-debug.log', 'yarn.lock',
-                   'node_modules/']
+exclude:
+  - assets/css
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - GHOST.txt
+  - gulpfile.js
+  - LICENSE
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README.md
+  - changelog.md
+  - .git*
+  - Dockerfile
+  - Makefile
+  - jasper2

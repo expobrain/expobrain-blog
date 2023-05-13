@@ -1,38 +1,49 @@
 ---
-layout: default
 title: Home
+layout: default
+current: home
+class: "home-template"
+navigation: True
 ---
 
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="5d15b64b-21d9-492e-811c-bfb9be0185c8" data-blockingmode="auto" type="text/javascript"></script>
-<header class="clean" style="height: 350px; background-image: url({{ site.cover }}); {% if site.parallax != true %}background-attachment: scroll;{% endif %}" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
-	{% include top.html %}
-	<div class="site-title-home">
-		<h1>{{ site.title }}</h1>
-	</div>
+<script
+  id="Cookiebot"
+  src="https://consent.cookiebot.com/uc.js"
+  data-cbid="5d15b64b-21d9-492e-811c-bfb9be0185c8"
+  data-blockingmode="auto"
+  type="text/javascript"
+></script>
+
+<header
+  class="site-header outer {% if page.cover or site.cover %}"
+  style="background-image:  url({{ site.baseurl }}{% if page.cover %}{{ page.cover }}{% elsif site.cover %}{{ site.cover }}{% endif %}) {% else %}no-cover{% endif %}"
+>
+  <div class="inner">
+    <div class="site-header-content">
+      <h1 class="site-title">
+        {% if site.logo %}
+        <img
+          class="site-logo"
+          src="{{ site.baseurl }}{{ site.logo }}"
+          alt="{{ site.title }}"
+        />
+        {% else %} {{ site.title }} {% endif %}
+      </h1>
+      <h2 class="site-description">
+        {% if page.description %}{{ page.description }}{% else %}{{
+        site.description }}{% endif %}
+      </h2>
+    </div>
+    {% include site-nav.html %}
+  </div>
 </header>
-<div id="middle">
-<div id="post-list">
-	{% for post in paginator.posts %}
-		<div>
-			<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-			<span class="post-date">{{ post.date | date_to_long_string }}</span>
-			<p class="post-description">{% if post.quote %}{{ post.quote }}{% else %}{{ post.content | strip_html | truncatewords: 50 }}{% endif %}</p>
-		</div>
-		<hr class="post" />
-	{% endfor %}
-</div>
-<nav class="pagination" role="navigation">
-	{% if paginator.next_page %}
-		<a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">&larr; Older posts</a>
-	{% endif %}
-	<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-	{% if paginator.previous_page %}
-		{% if paginator.page == 2 %}
-			<a class="older-posts" href="{{ site.baseurl }}/">Newer posts &rarr;</a>
-		{% else %}
-			<a class="older-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer posts &rarr;</a>
-		{% endif %}
-	{% endif %}
-</nav>
-</div>
-{% include footer.html %}
+
+<!-- The main content area -->
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    <div class="post-feed">
+      <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+      {% include post-card.html %}
+    </div>
+  </div>
+</main>

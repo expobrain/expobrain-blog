@@ -1,9 +1,12 @@
 ---
-author: expobrain
 comments: true
 date: 2023-05-12
-image: { url: /media/prompt_engineering.jpeg }
+cover: media/prompt_engineering.jpeg
 layout: post
+current: post
+navigation: True
+subclass: post
+class: post-template
 slug: prompt-engineering
 tags: [ai, engineering]
 title: "Introduction to Prompt Engineering"
