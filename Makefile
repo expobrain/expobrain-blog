@@ -8,7 +8,7 @@ serve: build
 		--volume=".:/srv/jekyll" \
 		-p 4000:4000 \
 		expobrain_blog \
-		bundle exec jekyll serve
+		bundle exec jekyll serve --incremental
 
 bundle:
 	docker run \
