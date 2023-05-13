@@ -10,10 +10,11 @@ serve: build
 		expobrain_blog \
 		bundle exec jekyll serve
 
-bundle: build
+bundle:
 	docker run \
 		--rm \
 		-it \
 		--volume=".:/srv/jekyll" \
-		expobrain_blog \
+		-w /srv/jekyll \
+		ruby \
 		bundle update --bundler
