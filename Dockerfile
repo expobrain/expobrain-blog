@@ -8,4 +8,4 @@ WORKDIR /srv/jekyll
 COPY Gemfile .
 COPY Gemfile.lock .
 
-RUN bundle install
+RUN --mount=type=cache,target=/usr/local/bundle/cache/ bundle install
