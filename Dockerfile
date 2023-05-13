@@ -1,4 +1,4 @@
-FROM ruby:3.2
+FROM ruby
 
 RUN gem update --system
 RUN gem install jekyll bundler
