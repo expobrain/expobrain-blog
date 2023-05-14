@@ -1,13 +1,22 @@
 ---
-author: admin
-categories: [Disassembly, Guides]
+categories:
+- Disassembly
+- Guides
+class: post-template
 comments: true
+cover: media/assembler.gif
+current: post
 date: 2013-09-01
-image: {url: /media/assembler.gif}
 layout: post
+navigation: true
 slug: disassembly-c-code-for-fun-part-9-arrays
-tags: [asm, c/c++, disassembly, gdb]
-title: "Disassembly C code for fun \u2013 Part 9: arrays"
+subclass: post
+tags:
+- asm
+- c/c++
+- disassembly
+- gdb
+title: 'Disassembly C code for fun – Part 9: arrays'
 wordpress_id: 1628
 ---
 

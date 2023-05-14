@@ -1,13 +1,14 @@
 ---
-author: admin
-comments: true
-date: 2013-01-23 21:10:43+00:00
-layout: post
-slug: build-pyqt4-into-your-virtualenv
-title: 'Build PyQt4 into your virtualenv '
-wordpress_id: 1202
 categories:
 - Guides
+class: post-template
+comments: true
+current: post
+date: 2013-01-23 21:10:43+00:00
+layout: post
+navigation: true
+slug: build-pyqt4-into-your-virtualenv
+subclass: post
 tags:
 - linux
 - mac os x
@@ -15,6 +16,8 @@ tags:
 - python
 - qt
 - virtualenv
+title: 'Build PyQt4 into your virtualenv '
+wordpress_id: 1202
 ---
 
 Here I'll show the steps to build and install PyQt4 inside a virtualenv.

@@ -1,18 +1,21 @@
 ---
-author: admin
-comments: true
-date: 2012-03-01
-layout: post
-slug: open-urls-in-external-browser-by-javascript-in-webkit
-title: Open URLs in external browser by Javascript in WebKit
-wordpress_id: 774
 categories:
 - Troubleshooting
+class: post-template
+comments: true
+current: post
+date: 2012-03-01
+layout: post
+navigation: true
+slug: open-urls-in-external-browser-by-javascript-in-webkit
+subclass: post
 tags:
 - c/c++
 - javascript
 - qt
 - webkit
+title: Open URLs in external browser by Javascript in WebKit
+wordpress_id: 774
 ---
 
 It's very simple with the QtWebKit APIs to open an link with your default browser from a QWebView (you can find some solutions like [this](http://stackoverflow.com/questions/6951199/qwebview-doesnt-open-links-in-new-window-and-not-start-external-application-for) in [StackOverflow](http://stackoverflow.com/) about that) but that works well only with `<a>` elements. If you are opening an external browser by a `window.open()` JavaScript function you need a whole different approach.

@@ -1,12 +1,20 @@
 ---
-author: admin
-categories: [Guides]
+categories:
+- Guides
+class: post-template
 comments: true
+cover: media/iOS-4-1-4-0-3-May-Arrive-as-Early-as-This-Week-2.png
+current: post
 date: 2012-10-18
-image: {url: /media/iOS-4-1-4-0-3-May-Arrive-as-Early-as-This-Week-2.png}
 layout: post
+navigation: true
 slug: use-custom-sqlite-database-with-ios
-tags: [c/c++, ios, object-c, sqlite]
+subclass: post
+tags:
+- c/c++
+- ios
+- object-c
+- sqlite
 title: 'Use custom SQLite database with iOS '
 wordpress_id: 919
 ---

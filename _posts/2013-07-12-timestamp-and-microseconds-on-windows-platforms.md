@@ -1,12 +1,19 @@
 ---
-author: admin
-categories: [Troubleshooting]
+categories:
+- Troubleshooting
+class: post-template
 comments: true
+cover: media/date_and_time.jpg
+current: post
 date: 2013-07-12 20:05:52
-image: {url: /media/date_and_time.jpg}
 layout: post
+navigation: true
 slug: timestamp-and-microseconds-on-windows-platforms
-tags: ['2.7', python, timestamp]
+subclass: post
+tags:
+- '2.7'
+- python
+- timestamp
 title: Timestamp and microseconds on Windows platforms
 wordpress_id: 1487
 ---

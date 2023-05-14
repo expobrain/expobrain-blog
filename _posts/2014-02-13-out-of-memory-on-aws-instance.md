@@ -1,12 +1,18 @@
 ---
-author: expobrain
-categories: [Troubleshooting]
+categories:
+- Troubleshooting
+class: post-template
 comments: true
+cover: media/aws_cloud.png
+current: post
 date: 2014-02-13 00:51:29
-image: {url: /media/aws_cloud.png}
 layout: post
+navigation: true
 slug: out-of-memory-on-aws-instance
-tags: [amazon web services, linux]
+subclass: post
+tags:
+- amazon web services
+- linux
 title: Out of Memory on AWS instance
 wordpress_id: 1897
 ---

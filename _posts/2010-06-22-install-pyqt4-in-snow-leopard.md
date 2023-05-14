@@ -1,19 +1,22 @@
 ---
-author: admin
-comments: true
-date: 2010-06-22 19:41:12+00:00
-layout: post
-slug: install-pyqt4-in-snow-leopard
-title: Install PyQt4 in Snow Leopard
-wordpress_id: 307
 categories:
 - Guides
+class: post-template
+comments: true
+current: post
+date: 2010-06-22 19:41:12+00:00
+layout: post
+navigation: true
+slug: install-pyqt4-in-snow-leopard
+subclass: post
 tags:
 - mac os x
 - pyqt
 - python
 - qt
 - snow leopard
+title: Install PyQt4 in Snow Leopard
+wordpress_id: 307
 ---
 
 New country, new life style, new spoken language and new GUI toolkit ! After 5 years of wxPython toolkit now it's the time to move to PyQt4. Let's see how install this GUI toolkit under Mac OS X Snow Leopard.

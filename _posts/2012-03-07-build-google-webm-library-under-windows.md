@@ -1,12 +1,18 @@
 ---
-author: admin
-categories: [Troubleshooting]
+categories:
+- Troubleshooting
+class: post-template
 comments: true
+cover: media/webm.png
+current: post
 date: 2012-03-07 19:03:28
-image: {url: /media/webm.png}
 layout: post
+navigation: true
 slug: build-google-webm-library-under-windows
-tags: [visual studio 2008, webm]
+subclass: post
+tags:
+- visual studio 2008
+- webm
 title: Build Google WebM library under Windows
 wordpress_id: 781
 ---

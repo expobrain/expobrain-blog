@@ -1,15 +1,18 @@
 ---
-author: expobrain
+class: post-template
 comments: true
+cover: media/prompt_engineering.jpeg
+current: post
 date: 2023-05-12
-image: { url: /media/prompt_engineering.jpeg }
 layout: post
+navigation: true
 slug: prompt-engineering
-tags: [ai, engineering]
-title: "Introduction to Prompt Engineering"
+subclass: post
+tags:
+- ai
+- engineering
+title: Introduction to Prompt Engineering
 ---
-
-# Introduction
 
 Over the past month, there has been a surge in the use of AI models such as [ChatGPT](https://chat.openai.com/chat), [DALL-E](https://openai.com/product/dall-e-2), and [Midjourney](https://www.midjourney.com/) across both the tech and non-tech communities. This has resulted in the emergence of a new branch of engineering focused on human-readable text input, commonly known as a prompt, to control AI output.
 

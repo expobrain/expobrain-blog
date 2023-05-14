@@ -1,12 +1,20 @@
 ---
-author: admin
-categories: [Guides]
+categories:
+- Guides
+class: post-template
 comments: true
+cover: media/hardening.jpg
+current: post
 date: 2013-09-04 16:30:03
-image: {url: /media/hardening.jpg}
 layout: post
+navigation: true
 slug: simple-hardening-of-the-python-interpreter
-tags: [bytecode, hardening, python, reverse engineering]
+subclass: post
+tags:
+- bytecode
+- hardening
+- python
+- reverse engineering
 title: Simple hardening of the Python interpreter
 wordpress_id: 1644
 ---
@@ -175,4 +183,3 @@ However this is only the first step, scrambling the op-codes is not enough to pr
 
 
 So this is only the top of the iceberg, if really your code should be protected creating a custom hardened Python interpreter can be a pretty time consuming job and it needs a good understanding of the internals of the interpreter itself.
-

@@ -1,17 +1,20 @@
 ---
-author: admin
-comments: true
-date: 2012-06-24 11:17:24+00:00
-layout: post
-slug: use-macbook-air-superdrive-with-a-macbook-pro
-title: Use MacBook Air SuperDrive with a MacBook Pro
-wordpress_id: 899
 categories:
 - Guides
 - Troubleshooting
+class: post-template
+comments: true
+current: post
+date: 2012-06-24 11:17:24+00:00
+layout: post
+navigation: true
+slug: use-macbook-air-superdrive-with-a-macbook-pro
+subclass: post
 tags:
 - macbook
 - superdrive
+title: Use MacBook Air SuperDrive with a MacBook Pro
+wordpress_id: 899
 ---
 
 Apple inconsistency strikes again: if you have a MacBook Air USB SuperDrive you cannot use it with a normal MacBook Pro. Why, damn Apple, why?

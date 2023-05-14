@@ -1,12 +1,19 @@
 ---
-author: admin
-categories: [Various things]
+categories:
+- Various things
+class: post-template
 comments: true
+cover: media/unequal_soup.jpg
+current: post
 date: 2013-07-09
-image: {url: /media/unequal_soup.jpg}
 layout: post
+navigation: true
 slug: distribution-of-wealth-in-a-society-of-equals
-tags: [distribution of wealth, economics, scientific method]
+subclass: post
+tags:
+- distribution of wealth
+- economics
+- scientific method
 title: Distribution of wealth in a society of equals
 wordpress_id: 1417
 ---

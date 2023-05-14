@@ -1,11 +1,16 @@
 ---
-author: expbrain
+class: post-template
 comments: true
+cover: media/os_x_time_machine.png
+current: post
 date: 2016-12-10
-image: {url: /media/os_x_time_machine.png}
 layout: post
+navigation: true
 slug: fix-corrupted-time-machine-spase-bundles
-tags: [timemachine, mac-os-x]
+subclass: post
+tags:
+- timemachine
+- mac-os-x
 title: Fix corrupted Time Machine sparse bundles
 ---
 

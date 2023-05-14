@@ -1,13 +1,22 @@
 ---
-author: admin
-categories: [Disassembly, Guides]
+categories:
+- Disassembly
+- Guides
+class: post-template
 comments: true
+cover: media/assembler.gif
+current: post
 date: 2013-07-02 20:38:27
-image: {url: /media/assembler.gif}
 layout: post
+navigation: true
 slug: disassembly-c-code-for-fun-part-5-if-statement
-tags: [asm, c/c++, gdb, x86-64]
-title: "Disassembly C code for fun \u2013 Part 5: if statement"
+subclass: post
+tags:
+- asm
+- c/c++
+- gdb
+- x86-64
+title: 'Disassembly C code for fun – Part 5: if statement'
 wordpress_id: 1414
 ---
 

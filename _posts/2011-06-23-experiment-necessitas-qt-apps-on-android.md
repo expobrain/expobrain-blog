@@ -1,19 +1,22 @@
 ---
-author: admin
-comments: true
-date: 2011-06-23 23:26:11+00:00
-layout: post
-slug: experiment-necessitas-qt-apps-on-android
-title: 'Experiment Necessitas: Qt apps on Android'
-wordpress_id: 637
 categories:
 - Guides
+class: post-template
+comments: true
+current: post
+date: 2011-06-23 23:26:11+00:00
+layout: post
+navigation: true
+slug: experiment-necessitas-qt-apps-on-android
+subclass: post
 tags:
 - android
 - c/c++
 - mac os x
 - necessitas
 - qt
+title: 'Experiment Necessitas: Qt apps on Android'
+wordpress_id: 637
 ---
 
 Some weeks ago I read about the [Necessitas](http://sourceforge.net/p/necessitas/home/necessitas/) project on the [Qt Labs Blog](http://labs.qt.nokia.com/2011/02/28/necessitas/) which let you able to run Qt application on the Android platform. It was very interesting and now I'm going to try it.
