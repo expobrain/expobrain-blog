@@ -13,8 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
     <link rel="stylesheet" type="text/css" href="{{ "assets/built/screen.css" | absolute_url }}" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="{{ "assets/built/screen.edited.css" | absolute_url }}" />
+    <link rel="stylesheet" type="text/css" href="{{ "assets/built/syntax.css" | absolute_url }}" />
     <!-- highlight.js -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <style>.hljs { background: none; }</style>
@@ -58,12 +58,12 @@
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a> &copy; {{  site.time | date: '%Y' }}</section>
+                <section class="copyright"><a href="{{ "" | absolute_url }}">{{ site.title }}</a> &copy; {{  site.time | date: '%Y' }}</section>
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
                 <nav class="site-footer-nav">
-                    <a href="{{ site.baseurl }}">Latest Posts</a>
+                    <a href="{{ "" | absolute_url }}">Latest Posts</a>
                     {% if site.facebook %}<a href="https://facebook.com/{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
                     {% if site.twitter %}<a href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">Twitter</a>{% endif %}
                 </nav>
@@ -78,7 +78,7 @@
             <a class="subscribe-overlay-close" href="#"></a>
             <div class="subscribe-overlay-content">
                 {% if site.logo %}
-                    <img class="subscribe-overlay-logo" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.title }}" />
+                    <img class="subscribe-overlay-logo" src="{{ site.logo | absolute_url }}" alt="{{ site.title }}" />
                 {% endif %}
                 <h1 class="subscribe-overlay-title">Subscribe to {{ site.title }}</h1>
                 <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
@@ -101,7 +101,7 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="{{ site.baseurl }}assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="{{ "assets/js/jquery.fitvids.js" | absolute_url }}"></script>
     <!-- <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script> -->
 
 
@@ -110,14 +110,14 @@
     <!-- <script>
         var maxPages = parseInt('{{ paginator.total_pages }}');
     </script>
-    <script src="{{ site.baseurl }}assets/js/infinitescroll.js"></script> -->
+    <script src="{{ "assets/js/infinitescroll.js" | absolute_url }}"></script> -->
     <!-- /endif -->
 
     {% if paginator.total_pages > site.paginate %}
     <script>
         var maxPages = parseInt('{{ paginator.total_pages }}');
     </script>
-    <script src="{{ site.baseurl }}assets/js/infinitescroll.js"></script>
+    <script src="{{ "assets/js/infinitescroll.js" | absolute_url }}"></script>
     {% endif %}
 
 
