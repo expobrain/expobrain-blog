@@ -9,7 +9,7 @@ words_per_minute: 200
 # Website info
 title: Daniele Esposti's Blog
 description: My personal blog.
-url: https://expobrain.net
+url: https://expobrain.net/
 baseurl: /
 cover: assets/images/cover2.jpg
 # logo: assets/images/blog-icon.png
