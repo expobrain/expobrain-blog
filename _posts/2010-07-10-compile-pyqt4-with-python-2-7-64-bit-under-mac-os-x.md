@@ -1,13 +1,14 @@
 ---
-author: admin
-comments: true
-date: 2010-07-10 22:34:07+00:00
-layout: post
-slug: compile-pyqt4-with-python-2-7-64-bit-under-mac-os-x
-title: Compile PyQt4 with Python 2.7 64-bit under Mac OS X
-wordpress_id: 328
 categories:
 - Guides
+class: post-template
+comments: true
+current: post
+date: 2010-07-10 22:34:07+00:00
+layout: post
+navigation: true
+slug: compile-pyqt4-with-python-2-7-64-bit-under-mac-os-x
+subclass: post
 tags:
 - '2.7'
 - 64-bit
@@ -17,6 +18,8 @@ tags:
 - python
 - qt
 - snow leopard
+title: Compile PyQt4 with Python 2.7 64-bit under Mac OS X
+wordpress_id: 328
 ---
 
 ![]({{ site.url }}/media/extra64bit.png)

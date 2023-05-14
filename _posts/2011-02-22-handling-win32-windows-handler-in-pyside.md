@@ -1,19 +1,22 @@
 ---
-author: admin
-comments: true
-date: 2011-02-22 09:40:21+00:00
-layout: post
-slug: handling-win32-windows-handler-in-pyside
-title: Handling Win32 window handler in PySide
-wordpress_id: 593
 categories:
 - Troubleshooting
+class: post-template
+comments: true
+current: post
+date: 2011-02-22 09:40:21+00:00
+layout: post
+navigation: true
+slug: handling-win32-windows-handler-in-pyside
+subclass: post
 tags:
 - c/c++
 - pyqt
 - pyside
 - python
 - windows
+title: Handling Win32 window handler in PySide
+wordpress_id: 593
 ---
 
 To pass a Win32 window handler from a PySide object to a `[win32gui.GetDC()](http://docs.activestate.com/activepython/2.7/pywin32/win32gui__GetDC_meth.html)` method is not so simple as with PyQt4 or wxPython.

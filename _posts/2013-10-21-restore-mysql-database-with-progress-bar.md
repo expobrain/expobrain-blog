@@ -1,12 +1,21 @@
 ---
-author: admin
-categories: [Guides, Troubleshooting]
+categories:
+- Guides
+- Troubleshooting
+class: post-template
 comments: true
+cover: media/busy1.png
+current: post
 date: 2013-10-21 18:10:22
-image: {url: /media/busy1.png}
 layout: post
+navigation: true
 slug: restore-mysql-database-with-progress-bar
-tags: [command line, mysql, pipe, unix]
+subclass: post
+tags:
+- command line
+- mysql
+- pipe
+- unix
 title: Restore MySQL database with progress bar
 wordpress_id: 1743
 ---

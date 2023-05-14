@@ -1,13 +1,23 @@
 ---
-author: admin
-categories: [Disassembly, Guides]
+categories:
+- Disassembly
+- Guides
+class: post-template
 comments: true
+cover: media/assembler.gif
+current: post
 date: 2013-07-02
-image: {url: /media/assembler.gif}
 layout: post
+navigation: true
 slug: disassembly-c-code-for-fun-part-4-floats-and-sse2
-tags: [asm, c/c++, gdb, sse2, x86-64]
-title: "Disassembly C code for fun \u2013 Part 4: floats and SSE2"
+subclass: post
+tags:
+- asm
+- c/c++
+- gdb
+- sse2
+- x86-64
+title: 'Disassembly C code for fun – Part 4: floats and SSE2'
 wordpress_id: 1394
 ---
 

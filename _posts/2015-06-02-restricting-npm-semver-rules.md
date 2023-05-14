@@ -1,12 +1,19 @@
 ---
-author: expobrain
-categories: [Troubleshooting]
+categories:
+- Troubleshooting
+class: post-template
 comments: true
+cover: media/wombat-by-night.png
+current: post
 date: 2015-06-02 18:28:51
-image: {url: /media/wombat-by-night.png}
 layout: post
+navigation: true
 slug: restricting-npm-semver-rules
-tags: [javascript, npm, semver]
+subclass: post
+tags:
+- javascript
+- npm
+- semver
 title: Restricting npm semver rules
 wordpress_id: 2023
 ---

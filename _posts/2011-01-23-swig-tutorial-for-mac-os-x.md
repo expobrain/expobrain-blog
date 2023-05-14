@@ -1,19 +1,22 @@
 ---
-author: admin
-comments: true
-date: 2011-01-23
-layout: post
-slug: swig-tutorial-for-mac-os-x
-title: SWIG tutorial for Mac OS X
-wordpress_id: 571
 categories:
 - Guides
+class: post-template
+comments: true
+current: post
+date: 2011-01-23
+layout: post
+navigation: true
+slug: swig-tutorial-for-mac-os-x
+subclass: post
 tags:
 - c/c++
 - mac os x
 - python
 - swig
 - tutorial
+title: SWIG tutorial for Mac OS X
+wordpress_id: 571
 ---
 
 In this post I'll show an updated version of the  [SWIG tutorial](http://www.swig.org/tutorial.html) to build a Python module on top of a C library which works under Mac OS X.

@@ -1,12 +1,24 @@
 ---
-author: admin
-categories: [Disassembly, Guides]
+categories:
+- Disassembly
+- Guides
+class: post-template
 comments: true
+cover: media/assembler.gif
+current: post
 date: 2013-06-16 12:41:12
-image: {url: /media/assembler.gif}
 layout: post
+navigation: true
 slug: disassembly-c-code-for-fun-part-1
-tags: [assembly code, c/c++, clang, gdb, source code, x86, x86-64]
+subclass: post
+tags:
+- assembly code
+- c/c++
+- clang
+- gdb
+- source code
+- x86
+- x86-64
 title: 'Disassembly C code for fun: part 1'
 wordpress_id: 1316
 ---

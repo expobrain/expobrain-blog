@@ -1,12 +1,19 @@
 ---
-author: admin
-categories: [Guides]
+categories:
+- Guides
+class: post-template
 comments: true
+cover: media/unit_test_mocking.jpg
+current: post
 date: 2013-08-27 18:49:31
-image: {url: /media/unit_test_mocking.jpg}
 layout: post
+navigation: true
 slug: mocking-objects-in-unit-tests
-tags: [mock, python, unit tests]
+subclass: post
+tags:
+- mock
+- python
+- unit tests
 title: Mocking objects in unit tests
 wordpress_id: 1542
 ---

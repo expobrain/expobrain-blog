@@ -1,12 +1,19 @@
 ---
-author: admin
-categories: [Guides]
+categories:
+- Guides
+class: post-template
 comments: true
+cover: media/batch-files-command.png
+current: post
 date: 2013-07-12 16:00:32
-image: {url: /media/batch-files-command.png}
 layout: post
+navigation: true
 slug: for-loops-in-windows-command-line
-tags: [batch files, command line, windows]
+subclass: post
+tags:
+- batch files
+- command line
+- windows
 title: For loops in Windows command line
 wordpress_id: 1494
 ---

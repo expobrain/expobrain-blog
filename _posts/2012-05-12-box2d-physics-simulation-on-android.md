@@ -1,12 +1,21 @@
 ---
-author: admin
-categories: [Guides]
+categories:
+- Guides
+class: post-template
 comments: true
+cover: media/Google-Android.png
+current: post
 date: 2012-05-12 16:53:25
-image: {url: /media/Google-Android.png}
 layout: post
+navigation: true
 slug: box2d-physics-simulation-on-android
-tags: [android, box2d, cocos2d, java, phsysics]
+subclass: post
+tags:
+- android
+- box2d
+- cocos2d
+- java
+- phsysics
 title: Box2D physics simulation on Android
 wordpress_id: 849
 ---

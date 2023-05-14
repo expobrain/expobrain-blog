@@ -1,12 +1,22 @@
 ---
-author: admin
-categories: [Troubleshooting]
+categories:
+- Troubleshooting
+class: post-template
 comments: true
+cover: media/32-bit_64-bit.jpg
+current: post
 date: 2013-08-12 18:29:02
-image: {url: /media/32-bit_64-bit.jpg}
 layout: post
+navigation: true
 slug: cross-compile-64-bit-code-on-32-bit-machine
-tags: [32-bit, 64-bit, c/c++, disassembly, gcc, gdb]
+subclass: post
+tags:
+- 32-bit
+- 64-bit
+- c/c++
+- disassembly
+- gcc
+- gdb
 title: Cross-compile 64-bit code on 32-bit machine
 wordpress_id: 1571
 ---

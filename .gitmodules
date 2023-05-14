@@ -1,0 +1,3 @@
+[submodule "jasper2"]
+	path = jasper2
+	url = git@github.com:jekyllt/jasper2.git

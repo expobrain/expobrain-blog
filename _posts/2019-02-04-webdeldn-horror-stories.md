@@ -1,12 +1,16 @@
 ---
-author: expbrain
+class: post-template
 comments: true
+cover: media/nightmare_before_xmas.jpg
+current: post
 date: 2019-02-04
-image: { url: /media/nightmare_before_xmas.jpg }
 layout: post
+navigation: true
 slug: webdeldn-horror-stories
-tags: [webdeldn]
-title: "WEBdeLDN: Horror stories"
+subclass: post
+tags:
+- webdeldn
+title: 'WEBdeLDN: Horror stories'
 ---
 
 [WEBdeLDN](http://webdeldn.rocks/) is small but very cool monthly meetup organised in London. I recommend it to everyone, the topics ranges from technology to management to mental health, so everyone interested in the present and the future is highly welcome.

@@ -1,12 +1,21 @@
 ---
-author: admin
-categories: [Guides, Troubleshooting]
+categories:
+- Guides
+- Troubleshooting
+class: post-template
 comments: true
+cover: media/pylogo.png
+current: post
 date: 2012-02-16
-image: {url: /media/pylogo.png}
 layout: post
+navigation: true
 slug: ctypes-and-incomplete-types
-tags: [c/c++, ctypes, incomplete types, python]
+subclass: post
+tags:
+- c/c++
+- ctypes
+- incomplete types
+- python
 title: CTypes and Incomplete Types
 wordpress_id: 770
 ---
@@ -35,4 +44,3 @@ Finally, `FILEHandle` is pointer to an instance of `_FILEHandle` so it will be d
 
 
     FILEHandle = POINTER(_FILEHandle)
-
