@@ -1,22 +1,12 @@
 ---
-categories:
-- Guides
-- Troubleshooting
-class: post-template
+author: admin
+categories: [Guides, Troubleshooting]
 comments: true
-cover: media/ubuntu_install.png
-current: post
 date: 2013-08-11 10:35:43
+image: {url: /media/ubuntu_install.png}
 layout: post
-navigation: true
 slug: install-ubuntu-without-pae-support
-subclass: post
-tags:
-- 32-bit
-- old hardware
-- pae
-- pentium-m
-- ubuntu
+tags: [32-bit, old hardware, pae, pentium-m, ubuntu]
 title: Install Ubuntu without PAE support
 wordpress_id: 1560
 ---

@@ -1,23 +1,21 @@
 ---
-categories:
-- Troubleshooting
-class: post-template
+author: admin
 comments: true
-current: post
 date: 2010-07-29 13:01:52+00:00
 layout: post
-navigation: true
 slug: let-babel-works-with-py2exe
-subclass: post
+title: Let Babel works with py2exe
+wordpress_id: 399
+categories:
+- Troubleshooting
 tags:
 - babel
 - bug
 - patch
 - py2exe
 - python
-title: Let Babel works with py2exe
-wordpress_id: 399
 ---
+
 
 [Babel](http://babel.edgewall.org/) is a framework to translate date, times, numbers and currency in all the languages of the world. Unfortunately the package is not py2exe-friendly but with a little patch we can let Babel works when is embedded with py2exe.
 

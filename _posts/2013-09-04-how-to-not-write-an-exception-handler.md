@@ -1,19 +1,12 @@
 ---
-categories:
-- Troubleshooting
-class: post-template
+author: admin
+categories: [Troubleshooting]
 comments: true
-cover: media/try_catch_fail.png
-current: post
 date: 2013-09-04 16:28:18
+image: {url: /media/try_catch_fail.png}
 layout: post
-navigation: true
 slug: how-to-not-write-an-exception-handler
-subclass: post
-tags:
-- bugs
-- exceptions
-- python
+tags: [bugs, exceptions, python]
 title: How to NOT write an exception handler
 wordpress_id: 1643
 ---

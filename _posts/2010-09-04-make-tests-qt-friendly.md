@@ -1,23 +1,20 @@
 ---
+author: admin
+comments: true
+date: 2010-09-04 17:17:22+00:00
+layout: post
+slug: make-tests-qt-friendly
+title: Make tests Qt-friendly
+wordpress_id: 489
 categories:
 - Guides
 - Troubleshooting
-class: post-template
-comments: true
-current: post
-date: 2010-09-04 17:17:22+00:00
-layout: post
-navigation: true
-slug: make-tests-qt-friendly
-subclass: post
 tags:
 - pyqt
 - python
 - qt
 - segmentation fault
 - unittest
-title: Make tests Qt-friendly
-wordpress_id: 489
 ---
 
 ![]({{ site.url }}/media/QT4Logo.jpg)

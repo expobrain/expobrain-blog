@@ -1,18 +1,12 @@
 ---
-categories:
-- Guides
-class: post-template
+author: expobrain
+categories: [Guides]
 comments: true
-cover: media/0377-02_git_tip_learn_branching.png
-current: post
 date: 2014-10-14
+image: {url: /media/0377-02_git_tip_learn_branching.png}
 layout: post
-navigation: true
 slug: customised-git-flow
-subclass: post
-tags:
-- git
-- github
+tags: [git, github]
 title: Customised Git flow
 wordpress_id: 1987
 ---

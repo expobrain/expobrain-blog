@@ -1,17 +1,15 @@
 ---
-class: post-template
+author: expbrain
 comments: true
-cover: media/time.jpg
-current: post
 date: 2019-03-10
+image: { url: /media/time.jpg }
 layout: post
-navigation: true
 slug: all-the-time-i-waste-in-python
-subclass: post
-tags:
-- python
-title: All the time I waste in Python
+tags: [python]
+title: "All the time I waste in Python"
 ---
+
+# Introduction
 
 It's now almost 20 year that I'm using Python as my main programming language. I used it for both small or pet project to big long lasting commercial products with ease and satisfaction.
 

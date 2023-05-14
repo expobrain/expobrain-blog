@@ -1,20 +1,12 @@
 ---
-categories:
-- Various things
-class: post-template
+author: expobrain
+categories: [Various things]
 comments: true
-cover: media/javascript_code.jpg
-current: post
 date: 2014-09-26
+image: {url: /media/javascript_code.jpg}
 layout: post
-navigation: true
 slug: hide-javascript-code-into-images
-subclass: post
-tags:
-- go
-- hacking
-- html5
-- javascript
+tags: [go, hacking, html5, javascript]
 title: Hide JavaScript code into images
 wordpress_id: 1896
 ---
@@ -263,3 +255,4 @@ By using `eval()` we can execute the code without leaving any trace into the DOM
 This is just a proof of concept. The code being injected into the image and the loader are just plain JavaScript files, no minification nor obfuscation is applied to reduce the size of the payload and hide the real scope of the code. Also JavaScript code is needed to extract the payload from the image.
 
 However even this technique is simple detecting hidden code in a image is hard; the only possible weak point is the loader which is the only clue of the existence of a hidden payload.
+

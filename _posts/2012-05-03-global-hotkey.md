@@ -1,19 +1,16 @@
 ---
-categories:
-- Troubleshooting
-class: post-template
+author: admin
 comments: true
-current: post
 date: 2012-05-03 00:06:30+00:00
 layout: post
-navigation: true
 slug: global-hotkey
-subclass: post
+title: Global hotkey
+wordpress_id: 826
+categories:
+- Troubleshooting
 tags:
 - c/c++
 - qt
-title: Global hotkey
-wordpress_id: 826
 ---
 
 Let start by explaining the goal: we want to send a custom signal when the user press a combination of keys. Sound pretty easy, your are already thinking to override the `keyPressEvent()` and `keyReleaseEvent()` virtual methods of your `QMainWindow` with your custom code.

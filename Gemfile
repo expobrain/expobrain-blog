@@ -1,7 +1,9 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
+gem 'html-proofer', '>=1.4.0'
 gem 'jekyll', '~>4.3.2'
 gem 'jekyll-paginate', '~>1.1.0'
-gem "jekyll-feed"
-gem "slugify", "~> 1.0.7"
-gem 'kramdown-parser-gfm'
+gem 'jekyll-tagging', '~>1.1.0'
+gem 'jekyll-sitemap', '~>1.4.0'
+gem 'listen', '~>3.8.0'
+gem "kramdown-parser-gfm", "~> 1.1"

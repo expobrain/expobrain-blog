@@ -1,18 +1,12 @@
 ---
-categories:
-- Troubleshooting
-class: post-template
+author: admin
+categories: [Troubleshooting]
 comments: true
-cover: media/regula_exp.jpg
-current: post
 date: 2013-07-04 20:51:15
+image: {url: /media/regula_exp.jpg}
 layout: post
-navigation: true
 slug: multiple-prefixes-match
-subclass: post
-tags:
-- python
-- string manipulation
+tags: [python, string manipulation]
 title: Multiple prefixes match
 wordpress_id: 1429
 ---

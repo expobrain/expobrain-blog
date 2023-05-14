@@ -1,19 +1,12 @@
 ---
-categories:
-- Troubleshooting
-class: post-template
+author: admin
+categories: [Troubleshooting]
 comments: true
-cover: media/circuit.gif
-current: post
 date: 2013-07-29 18:45:31
+image: {url: /media/circuit.gif}
 layout: post
-navigation: true
 slug: hamming-weights-python-implementation
-subclass: post
-tags:
-- hamming weight
-- popcount
-- python
+tags: [hamming weight, popcount, python]
 title: Hamming weight's Python implementation
 wordpress_id: 1544
 ---

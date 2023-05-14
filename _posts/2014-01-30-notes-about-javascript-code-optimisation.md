@@ -1,21 +1,12 @@
 ---
-categories:
-- Guides
-class: post-template
+author: expobrain
+categories: [Guides]
 comments: true
-cover: media/javascript_code.jpg
-current: post
 date: 2014-01-30 18:55:47
+image: {url: /media/javascript_code.jpg}
 layout: post
-navigation: true
 slug: notes-about-javascript-code-optimisation
-subclass: post
-tags:
-- garbage collector
-- google chrome
-- javascript
-- performances
-- talk
+tags: [garbage collector, google chrome, javascript, performances, talk]
 title: Notes about JavaScript code optimisation
 wordpress_id: 1894
 ---

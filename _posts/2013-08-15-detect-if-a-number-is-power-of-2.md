@@ -1,20 +1,12 @@
 ---
-categories:
-- Troubleshooting
-- Various things
-class: post-template
+author: admin
+categories: [Troubleshooting, Various things]
 comments: true
-cover: media/power_of_2.jpg
-current: post
 date: 2013-08-15 11:43:45
+image: {url: /media/power_of_2.jpg}
 layout: post
-navigation: true
 slug: detect-if-a-number-is-power-of-2
-subclass: post
-tags:
-- algorithm
-- c/c++
-- complexity
+tags: [algorithm, c/c++, complexity]
 title: Detect if a number is power of 2
 wordpress_id: 1557
 ---

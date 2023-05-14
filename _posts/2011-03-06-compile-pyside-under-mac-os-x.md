@@ -1,14 +1,13 @@
 ---
-categories:
-- Guides
-class: post-template
+author: admin
 comments: true
-current: post
 date: 2011-03-06 18:01:08+00:00
 layout: post
-navigation: true
 slug: compile-pyside-under-mac-os-x
-subclass: post
+title: Compile PySide under Mac OS X
+wordpress_id: 605
+categories:
+- Guides
 tags:
 - 64-bit
 - git
@@ -17,8 +16,6 @@ tags:
 - python
 - qt
 - xcode
-title: Compile PySide under Mac OS X
-wordpress_id: 605
 ---
 
 How to setup and compile the latest source code of [PySide](http://www.pyside.org) under Mac OS X
@@ -195,3 +192,4 @@ Now open the Python console end try to import the PySize module:
     >>> import PySide
     >>> PySide.__version__
     '1.0.1'
+

@@ -1,19 +1,12 @@
 ---
-categories:
-- Various things
-class: post-template
+author: admin
+categories: [Various things]
 comments: true
-cover: media/32-bit_64-bit.jpg
-current: post
 date: 2013-05-05 19:14:24
+image: {url: /media/32-bit_64-bit.jpg}
 layout: post
-navigation: true
 slug: build-64-bit-skia-on-mac-os-x
-subclass: post
-tags:
-- 64-bit
-- mac os x
-- skia
+tags: [64-bit, mac os x, skia]
 title: Build 64-bit Skia on Mac OS X
 wordpress_id: 1263
 ---

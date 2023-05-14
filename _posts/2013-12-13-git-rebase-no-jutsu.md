@@ -1,20 +1,12 @@
 ---
-categories:
-- Guides
-- Troubleshooting
-class: post-template
+author: admin
+categories: [Guides, Troubleshooting]
 comments: true
-cover: media/git-logo.jpg
-current: post
 date: 2013-12-13 00:38:12
+image: {url: /media/git-logo.jpg}
 layout: post
-navigation: true
 slug: git-rebase-no-jutsu
-subclass: post
-tags:
-- command line
-- git
-- rebase
+tags: [command line, git, rebase]
 title: Git-rebase no jutsu
 wordpress_id: 1787
 ---

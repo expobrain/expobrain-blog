@@ -1,22 +1,19 @@
 ---
-categories:
-- Main
-class: post-template
+author: admin
 comments: true
-current: post
 date: 2012-02-12 20:42:24+00:00
 layout: post
-navigation: true
 slug: best-compressible-serialisation-format
-subclass: post
+title: Best compressible serialisation format
+wordpress_id: 763
+categories:
+- Main
 tags:
 - json
 - pickle
 - protocol buffers
 - python
 - xml
-title: Best compressible serialisation format
-wordpress_id: 763
 ---
 
 For my next project I need to serialise a list of classes using the technology which fits those requirements:

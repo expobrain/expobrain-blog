@@ -1,21 +1,18 @@
 ---
+author: admin
+comments: true
+date: 2012-12-29 14:05:09+00:00
+layout: post
+slug: objects-instance-key-in-sqlalchemy
+title: 'Object''s instance key in SQLAlchemy '
+wordpress_id: 1011
 categories:
 - Guides
 - Troubleshooting
-class: post-template
-comments: true
-current: post
-date: 2012-12-29 14:05:09+00:00
-layout: post
-navigation: true
-slug: objects-instance-key-in-sqlalchemy
-subclass: post
 tags:
 - orm
 - python
 - sqlalchemy
-title: 'Object''s instance key in SQLAlchemy '
-wordpress_id: 1011
 ---
 
 In SQLAlchemy you can query the database returning ORM objects instead of raw data from the SQL statement (if you don't know about it [this](http://docs.sqlalchemy.org/en/rel_0_8/orm/tutorial.html) is a good starting point).

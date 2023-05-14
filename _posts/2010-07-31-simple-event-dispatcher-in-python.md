@@ -1,14 +1,13 @@
 ---
-categories:
-- Guides
-class: post-template
+author: admin
 comments: true
-current: post
 date: 2010-07-31 13:54:38+00:00
 layout: post
-navigation: true
 slug: simple-event-dispatcher-in-python
-subclass: post
+title: Simple event dispatcher in Python
+wordpress_id: 375
+categories:
+- Guides
 tags:
 - dispatcher
 - event
@@ -19,8 +18,6 @@ tags:
 - pyside
 - python
 - wxpython
-title: Simple event dispatcher in Python
-wordpress_id: 375
 ---
 
 In this post I'll show you a simple event dispatcher implementation in Python. Every big UI frameworks can play with events an listener without reinvent the wheel but sometimes you need a very simple way to dispatch and receive events in you application without involve in megabytes of an external framework.

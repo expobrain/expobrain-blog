@@ -1,17 +1,11 @@
 ---
-class: post-template
+author: expobrain
 comments: true
-cover: media/rust-code.png
-current: post
 date: 2016-09-18
+image: {url: /media/rust-code.png}
 layout: post
-navigation: true
 slug: create-python-module-in-rust
-subclass: post
-tags:
-- rust
-- python
-- compilation
+tags: [rust, python, compilation]
 title: Create a Python module in Rust
 ---
 

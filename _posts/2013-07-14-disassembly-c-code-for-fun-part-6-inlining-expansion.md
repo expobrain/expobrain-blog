@@ -1,23 +1,13 @@
 ---
-categories:
-- Disassembly
-- Guides
-class: post-template
+author: admin
+categories: [Disassembly, Guides]
 comments: true
-cover: media/assembler.gif
-current: post
 date: 2013-07-14 16:56:35
+image: {url: /media/assembler.gif}
 layout: post
-navigation: true
 slug: disassembly-c-code-for-fun-part-6-inlining-expansion
-subclass: post
-tags:
-- asm
-- c/c++
-- gdb
-- inline expansion
-- x86-64
-title: 'Disassembly C code for fun – Part 6: inlining expansion'
+tags: [asm, c/c++, gdb, inline expansion, x86-64]
+title: "Disassembly C code for fun \u2013 Part 6: inlining expansion"
 wordpress_id: 1515
 ---
 

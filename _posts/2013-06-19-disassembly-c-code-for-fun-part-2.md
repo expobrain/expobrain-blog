@@ -1,24 +1,12 @@
 ---
-categories:
-- Disassembly
-- Guides
-class: post-template
+author: admin
+categories: [Disassembly, Guides]
 comments: true
-cover: media/assembler.gif
-current: post
 date: 2013-06-19
+image: {url: /media/assembler.gif}
 layout: post
-navigation: true
 slug: disassembly-c-code-for-fun-part-2
-subclass: post
-tags:
-- asm
-- c/c++
-- clang
-- gdb
-- hello world
-- instruction pointer
-- x86-64
+tags: [asm, c/c++, clang, gdb, hello world, instruction pointer, x86-64]
 title: 'Disassembly C code for fun: part 2'
 wordpress_id: 1344
 ---

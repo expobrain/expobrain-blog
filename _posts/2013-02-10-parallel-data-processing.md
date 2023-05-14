@@ -1,24 +1,12 @@
 ---
-categories:
-- Guides
-class: post-template
+author: admin
+categories: [Guides]
 comments: true
-cover: media/algorithms_small_logo.png
-current: post
 date: 2013-02-10 00:34:45
+image: {url: /media/algorithms_small_logo.png}
 layout: post
-navigation: true
 slug: parallel-data-processing
-subclass: post
-tags:
-- consumer
-- gil
-- multicore
-- multiprocessing
-- producer
-- python
-- queues
-- threads
+tags: [consumer, gil, multicore, multiprocessing, producer, python, queues, threads]
 title: Parallel data processing
 wordpress_id: 1219
 ---

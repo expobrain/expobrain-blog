@@ -1,19 +1,12 @@
 ---
-categories:
-- Various things
-class: post-template
+author: expobrain
+categories: [Various things]
 comments: true
-cover: media/logo_og.png
-current: post
 date: 2015-03-20
+image: {url: /media/logo_og.png}
 layout: post
-navigation: true
 slug: html-augmentation-with-react
-subclass: post
-tags:
-- html
-- javascript
-- react
+tags: [html, javascript, react]
 title: HTML augmentation with React
 wordpress_id: 1999
 ---
@@ -133,3 +126,4 @@ Something happened to our HTML: the original content `div` element is replaced w
 So yes, React can augment a server-side rendered page transparently without the need to drastically modify the page (except to add the HTML load the scripts) or to choose a specific technology on the backend to be compatible with React.
 
 This will allow you to be able to be index by the search engines and have improve the UX of your website at the same time, also on browser not supported by React of with Javascript disabled your website will be still usable by the user as well.
+

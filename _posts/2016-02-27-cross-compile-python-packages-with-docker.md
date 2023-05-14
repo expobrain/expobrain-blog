@@ -1,19 +1,11 @@
 ---
-class: post-template
+author: expobrain
 comments: true
-cover: media/docker-logo.png
-current: post
 date: 2016-02-27
+image: {url: /media/docker-logo.png}
 layout: post
-navigation: true
 slug: cross-compile-python-packages-with-docker
-subclass: post
-tags:
-- docker
-- python
-- compilation
-- pip
-- wheel
+tags: [docker, python, compilation, pip, wheel]
 title: Cross-compile Python packages with Docker
 ---
 
