@@ -23,8 +23,8 @@ navigation: True # show the navbar links
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
 twitter: expobrain
-# github: expobrain
-# linkedin: https://www.linkedin.com/in/danieleesposti
+linkedin: danieleesposti
+github: expobrain
 
 # Disqus
 disqus: true
