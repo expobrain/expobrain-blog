@@ -14,8 +14,6 @@ tags:
 title: Introduction to Prompt Engineering
 ---
 
-# Introduction
-
 Over the past month, there has been a surge in the use of AI models such as [ChatGPT](https://chat.openai.com/chat), [DALL-E](https://openai.com/product/dall-e-2), and [Midjourney](https://www.midjourney.com/) across both the tech and non-tech communities. This has resulted in the emergence of a new branch of engineering focused on human-readable text input, commonly known as a prompt, to control AI output.
 
 This new field is called Prompt Engineering, and while it doesn't require the steep learning curve or complexity of computer science and system architecture, it still requires a minimum amount of technical knowledge and skills to create good, secure, and performant prompts.

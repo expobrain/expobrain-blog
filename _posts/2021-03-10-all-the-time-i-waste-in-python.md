@@ -13,8 +13,6 @@ tags:
 title: All the time I waste in Python
 ---
 
-# Introduction
-
 It's now almost 20 year that I'm using Python as my main programming language. I used it for both small or pet project to big long lasting commercial products with ease and satisfaction.
 
 I learned it back in the days when version 2.4 was around and I really liked how easy was to write a program in a very elegant and clean way, the ability to quickly prototyping applications, the active community and a vast selection of high quality packages.
