@@ -1,12 +1,18 @@
 ---
-author: admin
-categories: [Troubleshooting]
+categories:
+- Troubleshooting
+class: post-template
 comments: true
+cover: media/algorithms_small_logo.png
+current: post
 date: 2013-06-21 14:36:19
-image: {url: /media/algorithms_small_logo.png}
 layout: post
+navigation: true
 slug: count-elements-in-an-iterator
-tags: [iterators, python]
+subclass: post
+tags:
+- iterators
+- python
 title: Count elements in an iterator
 wordpress_id: 1373
 ---

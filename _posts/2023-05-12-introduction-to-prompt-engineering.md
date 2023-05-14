@@ -1,15 +1,17 @@
 ---
-comments: true
-date: 2023-05-12
-cover: media/prompt_engineering.jpeg
-layout: post
-current: post
-navigation: True
-subclass: post
 class: post-template
+comments: true
+cover: media/prompt_engineering.jpeg
+current: post
+date: 2023-05-12
+layout: post
+navigation: true
 slug: prompt-engineering
-tags: [ai, engineering]
-title: "Introduction to Prompt Engineering"
+subclass: post
+tags:
+- ai
+- engineering
+title: Introduction to Prompt Engineering
 ---
 
 # Introduction

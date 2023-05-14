@@ -1,12 +1,21 @@
 ---
-author: admin
-categories: [Disassembly, Guides]
+categories:
+- Disassembly
+- Guides
+class: post-template
 comments: true
+cover: media/assembler.gif
+current: post
 date: 2013-06-20
-image: {url: /media/assembler.gif}
 layout: post
+navigation: true
 slug: disassembly-c-code-for-fun-part-3-for-loop
-tags: [asm, c/c++, gdb, loop unwindig]
+subclass: post
+tags:
+- asm
+- c/c++
+- gdb
+- loop unwindig
 title: 'Disassembly C code for fun - Part 3: for loop'
 wordpress_id: 1363
 ---

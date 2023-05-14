@@ -1,17 +1,20 @@
 ---
-author: admin
-comments: true
-date: 2013-03-26 19:09:42+00:00
-layout: post
-slug: beware-of-keywords-default-values
-title: Beware of keyword's default values
-wordpress_id: 1250
 categories:
 - Troubleshooting
+class: post-template
+comments: true
+current: post
+date: 2013-03-26 19:09:42+00:00
+layout: post
+navigation: true
+slug: beware-of-keywords-default-values
+subclass: post
 tags:
 - bugs
 - mutable types
 - python
+title: Beware of keyword's default values
+wordpress_id: 1250
 ---
 
 Look this class definition, do you see what's is wrong and potentially generate big problems in you code?
@@ -102,4 +105,3 @@ Coming back to my example here a safer way to implement the class:
 
 
 This way a new `list` instance will be created in case the `bars` keyword is null.
-

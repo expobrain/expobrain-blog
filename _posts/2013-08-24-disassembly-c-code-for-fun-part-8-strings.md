@@ -1,13 +1,23 @@
 ---
-author: admin
-categories: [Disassembly, Guides]
+categories:
+- Disassembly
+- Guides
+class: post-template
 comments: true
+cover: media/assembler.gif
+current: post
 date: 2013-08-24
-image: {url: /media/assembler.gif}
 layout: post
+navigation: true
 slug: disassembly-c-code-for-fun-part-8-strings
-tags: [asm, c/c++, disassembly, hello world, x86-64]
-title: "Disassembly C code for fun \u2013 Part 8: strings"
+subclass: post
+tags:
+- asm
+- c/c++
+- disassembly
+- hello world
+- x86-64
+title: 'Disassembly C code for fun – Part 8: strings'
 wordpress_id: 1583
 ---
 

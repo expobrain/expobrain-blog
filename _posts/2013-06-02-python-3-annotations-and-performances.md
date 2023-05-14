@@ -1,12 +1,20 @@
 ---
-author: admin
-categories: [Guides]
+categories:
+- Guides
+class: post-template
 comments: true
+cover: media/unnamed.png
+current: post
 date: 2013-06-02 21:31:39
-image: {url: /media/unnamed.png}
 layout: post
+navigation: true
 slug: python-3-annotations-and-performances
-tags: [byte code, performances, python, type annotations]
+subclass: post
+tags:
+- byte code
+- performances
+- python
+- type annotations
 title: Python 3 annotations and performances
 wordpress_id: 1295
 ---

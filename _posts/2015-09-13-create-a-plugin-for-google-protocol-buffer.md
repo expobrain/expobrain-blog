@@ -1,12 +1,19 @@
 ---
-author: expobrain
-categories: [Guides]
+categories:
+- Guides
+class: post-template
 comments: true
+cover: media/javascript_code.jpg
+current: post
 date: 2015-09-13 16:43:57
-image: {url: /media/javascript_code.jpg}
 layout: post
+navigation: true
 slug: create-a-plugin-for-google-protocol-buffer
-tags: [json, protocol buffers, python]
+subclass: post
+tags:
+- json
+- protocol buffers
+- python
 title: Create a plugin for Google Protocol Buffer
 wordpress_id: 2029
 ---
@@ -300,6 +307,3 @@ In this post we walked through the creation of a Protocol Buffer plugin to compi
 
 
 However you are not limited in just transforming the input into another format but you can use the request to output any code in any language, you can parse a `.proto` file and output code for a RESTful API in Node.js, converting the message and enum definitions into a XML file or even generate another `.proto` file i. e. without the [deprecated](https://developers.google.com/protocol-buffers/docs/proto#options) fields.
-
-
-

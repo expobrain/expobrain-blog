@@ -1,13 +1,22 @@
 ---
-author: admin
-categories: [Disassembly, Guides]
+categories:
+- Disassembly
+- Guides
+class: post-template
 comments: true
+cover: media/assembler.gif
+current: post
 date: 2013-07-19
-image: {url: /media/assembler.gif}
 layout: post
+navigation: true
 slug: disassembly-c-code-for-fun-part-7-buffer-overflow-protection
-tags: [asm, buffer overflow protection, c/c++, gdb]
-title: "Disassembly C code for fun \u2013 Part 7: buffer overflow protection"
+subclass: post
+tags:
+- asm
+- buffer overflow protection
+- c/c++
+- gdb
+title: 'Disassembly C code for fun – Part 7: buffer overflow protection'
 wordpress_id: 1534
 ---
 

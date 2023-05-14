@@ -1,18 +1,21 @@
 ---
-author: admin
-comments: true
-date: 2012-01-07 11:23:03+00:00
-layout: post
-slug: execute-javascript-code-at-the-end-of-an-adobe-edge-movie
-title: Execute JavaScript code at the end of an Adobe Edge movie
-wordpress_id: 744
 categories:
 - Guides
+class: post-template
+comments: true
+current: post
+date: 2012-01-07 11:23:03+00:00
+layout: post
+navigation: true
+slug: execute-javascript-code-at-the-end-of-an-adobe-edge-movie
+subclass: post
 tags:
 - adobe edge
 - flash
 - html5
 - javascript
+title: Execute JavaScript code at the end of an Adobe Edge movie
+wordpress_id: 744
 ---
 
 [Adobe Edge](http://labs.adobe.com/technologies/edge/) is the new product form Adobe which will aim to replicate the features of Flash using HTML5 technology. I'm using Adobe Edge to create an animated introduction for a small GWT project and I ended up with the need to execute code at the end of the movie.
