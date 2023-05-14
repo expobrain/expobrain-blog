@@ -1,5 +1,5 @@
 ---
-author: expbrain
+author: expobrain
 comments: true
 date: 2023-05-12
 image: { url: /media/prompt_engineering.jpeg }
