@@ -18,3 +18,6 @@ bundle:
 		-w /srv/jekyll \
 		expobrain_blog \
 		bundle update --bundler
+
+minify:
+	npm run gulp minify
