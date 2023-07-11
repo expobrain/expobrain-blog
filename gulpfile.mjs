@@ -1,10 +1,6 @@
-import del from "del";
-
+import { deleteAsync } from "del";
 import gulp from "gulp";
 import imagemin from "gulp-imagemin";
-import gulpLoadPlugins from "gulp-load-plugins";
-
-const plugins = gulpLoadPlugins();
 
 // ----------------------------------------------------------------------------
 // Helpers
@@ -15,8 +11,7 @@ gulp.task("minimise:media", (done) => {
     .src("src/media/*.*")
     .pipe(imagemin())
     .on("error", (error) => done(error))
-    .pipe(gulp.dest("media"))
-    .pipe(plugins.size());
+    .pipe(gulp.dest("media"));
 });
 
 gulp.task("minimise:assets", (done) => {
@@ -24,15 +19,14 @@ gulp.task("minimise:assets", (done) => {
     .src("src/assets/images/*.*")
     .pipe(imagemin())
     .on("error", (error) => done(error))
-    .pipe(gulp.dest("assets/images"))
-    .pipe(plugins.size());
+    .pipe(gulp.dest("assets/images"));
 });
 
 gulp.task("clean:media", () => {
-  return del(["./media/*"]);
+  return deleteAsync(["./media/*"]);
 });
 gulp.task("clean:assets", () => {
-  return del(["./assets/iamges/*"]);
+  return deleteAsync(["./assets/iamges/*"]);
 });
 
 // ----------------------------------------------------------------------------
