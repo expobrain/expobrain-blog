@@ -141,7 +141,7 @@ In the first part I'm setting some physics simulator's parameters, you can find 
 
 * `DEFAULT_GRAVITY` is zero when the simultation starts because it'll be updated by the reading from the device's accellerometer
 
-* `ALLOW_SLEEP` usually is set to `true` to allow Box2D to ignore the simulatio on objects in a rest state; because I'm changing the gravity during the simulation I'm setting it to `false` to continuosly simulate the position of the objects
+* `ALLOW_SLEEP` usually is set to `true` to allow Box2D to ignore the simulatio on objects in a rest state; because I'm changing the gravity during the simulation I'm setting it to `false` to continuously simulate the position of the objects
 
 * `SCREEN_TO_WORLD_RATIO` translate the screen coordinates into physical coordinates; in this example the scale is 2000px/1meter
 

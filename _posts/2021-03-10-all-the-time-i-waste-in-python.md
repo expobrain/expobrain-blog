@@ -41,7 +41,7 @@ Because annotations are not enforced at runtime (for obvious reasons) they are n
 
 Mypy is the most important tool of the list, it's a static code analyser which leverages the Python annotations to analyse the code before execution and identify places where the types of values in variables and in function's arguments don't match the annotations.
 
-Mypy is still continuosly improving in every release so more and more cases and checks are added to improve the quality of the analysis and detecting more issues. It's mandatory for every project from small to big size.
+Mypy is still continuously improving in every release so more and more cases and checks are added to improve the quality of the analysis and detecting more issues. It's mandatory for every project from small to big size.
 
 On the other hand because it was build to progressively analyse existing codebases with or without annotations it can be configured to be less strict on certain situaions and able to exclude entire packages from the static code analisys with all the potential consequences.
 
