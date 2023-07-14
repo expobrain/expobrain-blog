@@ -95,12 +95,12 @@ Lets look at the disassembly, but this time I'll skip the instructions to compil
     0x0000000100000f18 <main+104>:  jmpq   0x100000ec6 <main+22>
     0x0000000100000f1d <main+109>:  mov    $0x0,%eax
 
-The first instructions from 0x100000eb8 to 0x100000ebf stores the return value of the `main()` function and the initial value and the initial value of the `fahr` variable (which is also the initialisation of the for-loop).
+The first instructions from 0x100000eb8 to 0x100000ebf stores the return value of the `main()` function and the initial value and the initial value of the `fahr` variable (which is also the initialisation of the for-loop):
 
     0x0000000100000ec6 <main+22>:   cmpl   $0x12c,-0x8(%rbp)
     0x0000000100000ecd <main+29>:   jg     0x100000f19 <main+105>
 
-This is the termination's condition of the loop, the current value of `fahr` (RBP-8) is compared with 0x12c (300 base 10) and if it's greater jump to the end of the main loop at 0x100000f19.
+This is the termination's condition of the loop, the current value of `fahr` (RBP-8) is compared with 0x12c (300 base 10) and if it's greater jump to the end of the main loop at 0x100000f19:
 
     0x0000000100000eda <main+42>:   movsd  0x76(%rip),%xmm0        # 0x100000f58
     0x0000000100000ee2 <main+50>:   mov    -0x8(%rbp),%eax

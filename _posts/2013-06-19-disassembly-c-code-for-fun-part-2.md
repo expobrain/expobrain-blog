@@ -81,18 +81,18 @@ Time to analyse the function call:
 
 This loads the address obtained by the sum of the instruction pointer register RIP plus an offset of 81 (0x51) bytes into the RDI register. The content of the RDI register is the first location of memory where the string "Hello World!" is stored and it's the first argument of the `printf()` function (remember that the first argument of the `printf()` is a pointer to the first element of the array of chars).
 
-However if you put breakpoint at 0x100000f08 and do the math RIP+0x51 the result will be 0x100000f59 instead of 0x100000f60, one byte missing! The CPU had stopped the execution of the code before loading the instruction stored into the location 0x100000f08, so it's natural to have the value 0x100000f08 in the RIP register. When the instruction in 0x100000f08 will be loaded into the CPU the RIP register will advance by 1 byte and the result of the address calculation will be coherent.
+However if you put breakpoint at 0x100000f08 and do the math RIP+0x51 the result will be 0x100000f59 instead of 0x100000f60, one byte missing! The CPU had stopped the execution of the code before loading the instruction stored into the location 0x100000f08, so it's natural to have the value 0x100000f08 in the RIP register. When the instruction in 0x100000f08 will be loaded into the CPU the RIP register will advance by 1 byte and the result of the address calculation will be coherent:
 
     0x0000000100000f0f <main+15>:   movl   $0x0,-0x4(%rbp)
     0x0000000100000f16 <main+22>:   mov    $0x0,%al
 
 The first instruction loads the return value of the `main()` function, we were expecting this instruction just after the stack frame setup (after `sub $0x10,%rsp`) so it looks like out of place.
 
-The second instruction set the number of variable arguments to be passed to the function, in this case no values will be formatted by the `printf()` function so a zero will be stored into AL (which is the lower 8 bits of the RAX register).
+The second instruction set the number of variable arguments to be passed to the function, in this case no values will be formatted by the `printf()` function so a zero will be stored into AL (which is the lower 8 bits of the RAX register):
 
     0x0000000100000f18 <main+24>:   callq  0x100000f34 <dyld_stub_printf>
 
-Is the real call to `printf()` on the Mac OS X system.
+Is the real call to `printf()` on the Mac OS X system:
 
     0x0000000100000f1d <main+29>:   mov    $0x0,%ecx
     0x0000000100000f22 <main+34>:   mov    %eax,-0x8(%rbp)

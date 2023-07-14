@@ -69,16 +69,16 @@ and now the disassembly:
     0x0000000100000f31 <main+81>:   retq
     End of assembler dump.
 
-We skip the prologue (0x100000ee0-0x100000ee1) the frame stack allocation (0x100000ee4) and the set up of the `main()`'s return value (0x100000ee8).
+We skip the prologue (0x100000ee0-0x100000ee1) the frame stack allocation (0x100000ee4) and the set up of the `main()`'s return value (0x100000ee8):
 
     0x0000000100000eef <main+15>:   movl   $0x0,-0x8(%rbp)
 
-This instruction initialise the variable `i` declared in the loop and stores it into RBP-8.
+This instruction initialise the variable `i` declared in the loop and stores it into RBP-8:
 
     0x0000000100000ef6 <main+22>:   cmpl   $0xa,-0x8(%rbp)
     0x0000000100000efd <main+29>:   jge    0x100000f27 <main+71>
 
-The `cmpl` (CoMPare Long) instruction compare the value 10(0xa) with the content of RBP-8. The `jge` (Jump Greater/Equal) set the instruction pointer to the location 0x100000f27 if the content of RBP-8 is greater or equal to 10(0xa). This means the exit of the loop; the loop's body is enclosed between 0x100000f03 to 0x100000f22.
+The `cmpl` (CoMPare Long) instruction compare the value 10(0xa) with the content of RBP-8. The `jge` (Jump Greater/Equal) set the instruction pointer to the location 0x100000f27 if the content of RBP-8 is greater or equal to 10(0xa). This means the exit of the loop; the loop's body is enclosed between 0x100000f03 to 0x100000f22:
 
     0x0000000100000f03 <main+35>:   lea    0x5a(%rip),%rdi        # 0x100000f64
     0x0000000100000f0a <main+42>:   mov    -0x8(%rbp),%esi
@@ -86,7 +86,7 @@ The `cmpl` (CoMPare Long) instruction compare the value 10(0xa) with the content
     0x0000000100000f0f <main+47>:   callq  0x100000f38 <dyld_stub_printf>
     0x0000000100000f14 <main+52>:   mov    %eax,-0xc(%rbp)
 
-This calls the `printf` function passing the content of RBP-8 as the second argument and storing the result of the function call into RBP-12(0xc).
+This calls the `printf` function passing the content of RBP-8 as the second argument and storing the result of the function call into RBP-12(0xc):
 
     0x0000000100000f17 <main+55>:   mov    -0x8(%rbp),%eax
     0x0000000100000f1a <main+58>:   add    $0x1,%eax

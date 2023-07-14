@@ -82,7 +82,7 @@ As you already had noticed nothing new to worry about. Lets start with the initi
     0x0000000100000ede <main+30>:   cmp    $0xffffffff,%eax
     0x0000000100000ee3 <main+35>:   je     0x100000f06 <main+70>
 
-The location at RBP-12 is the value of the `nl` (our new-line counter) and it's initialised with 0 (zero). The next instructions calls the `getchar()` function, compare the result with EOF (0xffffffff) and jumps to the end of the `while` loop if it's equal (which means the code reached the end of the file).
+The location at RBP-12 is the value of the `nl` (our new-line counter) and it's initialised with 0 (zero). The next instructions calls the `getchar()` function, compare the result with EOF (0xffffffff) and jumps to the end of the `while` loop if it's equal (which means the code reached the end of the file):
 
     0x0000000100000ee9 <main+41>:   cmpl   $0xa,-0x8(%rbp)
     0x0000000100000ef0 <main+48>:   jne    0x100000f01 <main+65>
@@ -92,13 +92,13 @@ The location at RBP-12 is the value of the `nl` (our new-line counter) and it's 
 
 This is the body of the loop, the current character is compared against the new-line (0xa) character and if it's equal increase the content of RBP-12 by 1 or skip the increment if the character is not a new-line.
 
-The loop end swith an unconditional jump back to to the termination condition:
+The loop ends with an unconditional jump back to to the termination condition:
 
     0x0000000100000f01 <main+65>:   jmpq   0x100000ed6 <main+22>
 
 I'll not explain again the next instructions which set up and call the `printf()` function because we already discussed that before; I'll also automatically skip that in the next posts as well.
 
-Disassembly optimised code
+## Disassembly optimised code
 
 Lets enable the higher level of optimisation and disassembly the output:
 
@@ -113,19 +113,19 @@ Lets enable the higher level of optimisation and disassembly the output:
     0x0000000100000f0d <main+29>:   jne    0x100000f00 <main+16>
     0x0000000100000f0f <main+31>:   jmp    0x100000efa <main+10>
 
-The function's body is now much shorter, the loop is still there but the incremet of the `nl` variable is now in a different place. No memory location is used in this version, the new-line counter is stored into the EBX register (faster than a memory location) and the character read from the tandard input is stored into EAX. The new-line counter is initialised to 0 (zero) by the XOR instruction and after that the execution jumps to the `getchar()` function's call.
+The function's body is now much shorter, the loop is still there but the incremet of the `nl` variable is now in a different place. No memory location is used in this version, the new-line counter is stored into the EBX register (faster than a memory location) and the character read from the tandard input is stored into EAX. The new-line counter is initialised to 0 (zero) by the XOR instruction and after that the execution jumps to the `getchar()` function's call:
 
     0x0000000100000f00 <main+16>:   callq  0x100000f30 <dyld_stub_getchar>
     0x0000000100000f05 <main+21>:   cmp    $0xffffffffffffffff,%eax
     0x0000000100000f08 <main+24>:   je     0x100000f11 <main+33>
 
-Just a couple of instructions to compare the character returned by the function and jump outside the loop's body (0x100000f11) if it's equal to EOF.
+Just a couple of instructions to compare the character returned by the function and jump outside the loop's body (0x100000f11) if it's equal to EOF:
 
     0x0000000100000f0a <main+26>:   cmp    $0xa,%eax
     0x0000000100000f0d <main+29>:   jne    0x100000f00 <main+16>
     0x0000000100000f0f <main+31>:   jmp    0x100000efa <main+10>
 
-Compares the character with new-line, jumps to the `getchar()` function's call if not equal (0x100000f00) or jumps uncnditionally to the code to increment the new-line counter (0x100000efa).
+Compares the character with new-line, jumps to the `getchar()` function's call if not equal (0x100000f00) or jumps uncnditionally to the code to increment the new-line counter (0x100000efa):
 
     0x0000000100000efa <main+10>:   inc    %ebx
     0x0000000100000efc <main+12>:   nopl   0x0(%rax)
