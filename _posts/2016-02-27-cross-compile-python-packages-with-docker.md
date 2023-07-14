@@ -17,7 +17,7 @@ tags:
 title: Cross-compile Python packages with Docker
 ---
 
-Cross-compiling is the action of building a package or a binary for a different system thatn the current used for the compilation process; for example compiling ARM binaries on a x86 architecture. In this post I'm going to cross-compile Python packages for a specific Linux distribution using Docker as a virtualisation layer.
+Cross-compiling is the action of building a package or a binary for a different system than the current used for the compilation process; for example compiling ARM binaries on a x86 architecture. In this post I'm going to cross-compile Python packages for a specific Linux distribution using Docker as a virtualisation layer.
 
 ## Introduction
 
@@ -176,6 +176,6 @@ And what about compiling multiple packages at once? Well, that's already support
 
 ## Conclusion
 
-Thanks to Docker it's possible to startup a very lightweight virtual environment which allow us to crosso-compile a Python package regardeless of the host environment. Also it allow us to expose a command line tool which can be easily integrated into CI scripts for automatic deployement.
+Thanks to Docker it's possible to startup a very lightweight virtual environment which allow us to cross-compile a Python package regardless of the host environment. Also it allow us to expose a command line tool which can be easily integrated into CI scripts for automatic deployment.
 
 All the code in this post is available on [GitHub](https://github.com/expobrain/cross-compile-docker) ready to be forked.
