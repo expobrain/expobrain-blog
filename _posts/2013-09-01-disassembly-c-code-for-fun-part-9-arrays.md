@@ -108,7 +108,7 @@ The first two terms of the operation (RBP-0x28) is the memory location of the fi
 
 The number 4 is the size of a single element of the array witch in our case is the size of an 64-bit `int`. If an array of `short` or `char` was defined a 2 or 1 were used as second term of the offset's multiplication.
 
-Optimisations
+## Optimisations
 
 The code generated with the `-O3` is not exciting, the loop is completely unrolled and the array's values are hardcoded. However building the code with the `-O1` optimisation is a little more interesting:
 
