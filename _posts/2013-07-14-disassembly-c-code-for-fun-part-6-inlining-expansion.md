@@ -27,7 +27,7 @@ Today we will talk about code inlining which means the ability of the compiler t
 
 ## The sample code and disassembly
 
-The code outputs the power of two between 0 to 9 by colling a `power()` function:
+The code outputs the power of two between 0 to 9 by calling a `power()` function:
 
     #include <stdio.h>
 
@@ -151,7 +151,7 @@ Some point of interests:
 
 which is just incrementing the content of EBX by 1 using a LEA (Load Effective Address) instruction to use 3 bytes of memory instead of 2 bytes of INC to align the next instruction to a memory address multiple of 16.
 
-Same think for:
+Same thing for:
 
     0x0000000100000eae <+30>:   xchg   %ax,%ax
 
