@@ -109,11 +109,7 @@ The optimised assembly of the code below doesn't show any surprise (I added the 
         return 0;
     }
 
-
-
-
-
-
+disassembled:
 
     0x0000000100000ed0 <main+0>:    push   %rbp
     0x0000000100000ed1 <main+1>:    mov    %rsp,%rbp
