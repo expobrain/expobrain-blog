@@ -84,7 +84,7 @@ As you can see to use our `example` module is the same as importing any other Py
 
 ## A more complete example
 
-Now that we know hot to degine, implement and call a function written in Rust from Python code let's move to something a little more complex which involves data convertion betwfrom Python to Rust and vice-versa and a little bit of error handling.
+Now that we have learned how to define, implement, and call a function written in Rust from Python code, let's explore a slightly more complex topic: data conversion between Python and Rust, error handling, and handling data transfer in both directions.
 
 For this example I'm going to implement a function `greetings()` which accept a string as parameter and returns a formatted greeting; all the strings will be Unicode strings and if the string passed as function's argument contains an invalid codepoint an `UnicodeDecodeError` will be raised. Here the implementation:
 
