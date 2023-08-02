@@ -3,15 +3,13 @@ class: post-template
 comments: true
 cover: media/incident_management.png
 current: post
-# fixme: can we remove the date?
-# date: 2023-08-01
 layout: post
 navigation: true
 slug: enhancing_business_resilience_the_vital_role_of_incident_management_for_startups_and_scaleups
 subclass: post
 tags:
   - engineering
-  # fixme: any other
+  - processes
 title: |
   Enhancing Business Resilience: The Vital Role of Incident Management for Startups and Scaleups
 ---
