@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.22.9",
-    "@babel/core": "^7.22.8",
+    "@babel/core": "^7.22.11",
     "@babel/preset-env": "^7.22.9",
     "@babel/register": "^7.22.5",
     "del": "^7.0.0",
