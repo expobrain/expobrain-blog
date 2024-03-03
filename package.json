@@ -8,7 +8,7 @@
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.22.11",
     "@babel/preset-env": "^7.24.0",
-    "@babel/register": "^7.22.5",
+    "@babel/register": "^7.23.7",
     "del": "^7.1.0",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^8.0.0",
