@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-case-conflict
       - id: check-executables-have-shebangs
@@ -18,10 +18,10 @@ repos:
           - --autofix
       - id: trailing-whitespace
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.35.0
+    rev: v0.39.0
     hooks:
       - id: markdownlint-fix
   - repo: https://github.com/klieret/jekyll-relative-url-check
-    rev: v2.0.1
+    rev: v2.0.2
     hooks:
       - id: jekyll-relative-url-check-markdown
