@@ -1172,6 +1172,26 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
+"@types/expect@^1.20.4":
+  version "1.20.4"
+  resolved "https://registry.yarnpkg.com/@types/expect/-/expect-1.20.4.tgz#8288e51737bf7e3ab5d7c77bfa695883745264e5"
+  integrity sha512-Q5Vn3yjTDyCMV50TB6VRIbQNxSE4OmZR86VSbGaNpfUolm0iePBB4KdEEHmxoY5sT2+2DIvXW0rvMDP2nHZ4Mg==
+
+"@types/node@*":
+  version "20.11.24"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.24.tgz#cc207511104694e84e9fb17f9a0c4c42d4517792"
+  integrity sha512-Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==
+  dependencies:
+    undici-types "~5.26.4"
+
+"@types/vinyl@^2.0.9":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@types/vinyl/-/vinyl-2.0.11.tgz#b95a5bb007e7a0a61dad5a8971dc9922abbc2629"
+  integrity sha512-vPXzCLmRp74e9LsP8oltnWKTH+jBwt86WgRUb4Pc9Lf3pkMVGyvIo2gm9bODeGfCay2DBB/hAWDuvf07JcK4rw==
+  dependencies:
+    "@types/expect" "^1.20.4"
+    "@types/node" "*"
+
 aggregate-error@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/aggregate-error/-/aggregate-error-4.0.1.tgz#25091fe1573b9e0be892aeda15c7c66a545f758e"
@@ -1657,13 +1677,18 @@ chalk@^2.4.2:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@^4.1.1, chalk@^4.1.2:
+chalk@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
+
+chalk@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.3.0.tgz#67c20a7ebef70e7f3970a01f90fa210cb6860385"
+  integrity sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==
 
 chokidar@^2.0.0:
   version "2.1.8"
@@ -2223,6 +2248,11 @@ each-props@^1.3.2:
   dependencies:
     is-plain-object "^2.0.1"
     object.defaults "^1.1.0"
+
+easy-transform-stream@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/easy-transform-stream/-/easy-transform-stream-1.0.1.tgz#faffdd1839a03d14d76e694bd2e6315551a6a215"
+  integrity sha512-ktkaa6XR7COAR3oj02CF3IOgz2m1hCaY3SfzvKT4Svt2MhHw9XCt+ncJNWfe2TGz31iqzNGZ8spdKQflj+Rlog==
 
 electron-to-chromium@^1.4.668:
   version "1.4.690"
@@ -3049,19 +3079,26 @@ gulp-load-plugins@^2.0.8:
     micromatch "^4.0.2"
     resolve "^1.17.0"
 
-gulp-size@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/gulp-size/-/gulp-size-4.0.1.tgz#018ad1b34bd18bba4c36bcefe2d5fbdbeae73918"
-  integrity sha512-yNf5uGUKe2YAMZwHDFgnkp2o9fLp3WLUMZ+Gd23IIbav0TAVsr5Ek6So8gwjlSimPwR2p05Gg7zsjASYXZtt3g==
+gulp-plugin-extras@^0.2.1:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/gulp-plugin-extras/-/gulp-plugin-extras-0.2.2.tgz#8f4af2c0acdc95aaac9dcd86e54f200a6e2842c4"
+  integrity sha512-0gssXzTNrrOocYBWN4qOZqd03cz3bxhjxVUPZV9iJdBR0ZZbwMQO/OT8hZChYoc9GjKaA5meaqDr6CjkmKA7BA==
+  dependencies:
+    "@types/vinyl" "^2.0.9"
+    chalk "^5.3.0"
+    easy-transform-stream "^1.0.1"
+
+gulp-size@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-size/-/gulp-size-5.0.0.tgz#db78bf0290ca318f7a55abc3321ac4dbbeede9ea"
+  integrity sha512-iyyl9Dd1dHjXJnqxPfA5mZ5kPlaI+FRXklfXrfu/RoP3gHyT1n0IiEAHass5jvBCcBlatSx/JomkpTwnynyhkg==
   dependencies:
     brotli-size "^4.0.0"
-    chalk "^4.1.1"
-    fancy-log "^1.3.3"
-    gzip-size "^6.0.0"
-    plugin-error "^1.0.1"
-    pretty-bytes "^5.6.0"
-    stream-counter "^1.0.0"
-    through2 "^4.0.2"
+    chalk "^5.3.0"
+    fancy-log "^2.0.0"
+    gulp-plugin-extras "^0.2.1"
+    gzip-size "^7.0.0"
+    pretty-bytes "^6.1.1"
 
 gulp@^4.0.2:
   version "4.0.2"
@@ -3087,10 +3124,10 @@ gulplog@^2.0.0:
   dependencies:
     glogg "^2.0.0"
 
-gzip-size@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-6.0.0.tgz#065367fd50c239c0671cbcbad5be3e2eeb10e462"
-  integrity sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==
+gzip-size@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-7.0.0.tgz#9f9644251f15bc78460fccef4055ae5a5562ac60"
+  integrity sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==
   dependencies:
     duplexer "^0.1.2"
 
@@ -4398,6 +4435,11 @@ pretty-bytes@^5.6.0:
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
   integrity sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==
 
+pretty-bytes@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-6.1.1.tgz#38cd6bb46f47afbf667c202cfc754bffd2016a3b"
+  integrity sha512-mQUvGU6aUFQ+rNvTIAcZuWGRT9a6f6Yrg9bHs4ImKF+HZCEK+plBvnAZYSIQztknZF2qnzNtr6F8s0+IuptdlQ==
+
 pretty-hrtime@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
@@ -4474,15 +4516,6 @@ read-pkg@^1.0.0:
     normalize-package-data "^2.3.2"
     path-type "^1.0.0"
 
-readable-stream@3, readable-stream@^3.6.0:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.6.2.tgz#56a9b36ea965c00c5a93ef31eb111a0f11056967"
-  integrity sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==
-  dependencies:
-    inherits "^2.0.3"
-    string_decoder "^1.1.1"
-    util-deprecate "^1.0.1"
-
 readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.0, readable-stream@^2.3.3, readable-stream@^2.3.5, readable-stream@^2.3.6, readable-stream@~2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.8.tgz#91125e8042bba1b9887f49345f6277027ce8be9b"
@@ -4495,6 +4528,15 @@ readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable
     safe-buffer "~5.1.1"
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
+
+readable-stream@^3.6.0:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.6.2.tgz#56a9b36ea965c00c5a93ef31eb111a0f11056967"
+  integrity sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==
+  dependencies:
+    inherits "^2.0.3"
+    string_decoder "^1.1.1"
+    util-deprecate "^1.0.1"
 
 readable-web-to-node-stream@^3.0.0:
   version "3.0.2"
@@ -4970,11 +5012,6 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-stream-counter@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/stream-counter/-/stream-counter-1.0.0.tgz#91cf2569ce4dc5061febcd7acb26394a5a114751"
-  integrity sha512-4nfHc1016AhNOs0CFDR3S0FNeqnYbT7xZ408coajcx2Msj8malNNjvFHzWYIfIAXNK5i0eaKIVfgBYPOkyOTIg==
-
 stream-exhaust@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/stream-exhaust/-/stream-exhaust-1.0.2.tgz#acdac8da59ef2bc1e17a2c0ccf6c320d120e555d"
@@ -5153,13 +5190,6 @@ through2@^2.0.0, through2@^2.0.3, through2@~2.0.0:
     readable-stream "~2.3.6"
     xtend "~4.0.1"
 
-through2@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/through2/-/through2-4.0.2.tgz#a7ce3ac2a7a8b0b966c80e7c49f0484c3b239764"
-  integrity sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==
-  dependencies:
-    readable-stream "3"
-
 through@^2.3.8:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
@@ -5302,6 +5332,11 @@ undertaker@^1.2.1:
     object.defaults "^1.0.0"
     object.reduce "^1.0.0"
     undertaker-registry "^1.0.0"
+
+undici-types@~5.26.4:
+  version "5.26.5"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
+  integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"
