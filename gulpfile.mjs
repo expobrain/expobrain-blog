@@ -8,7 +8,7 @@ import imagemin from "gulp-imagemin";
 
 gulp.task("minimise:media", (done) => {
   return gulp
-    .src("src/media/*.*")
+    .src("src/media/*.*", { encoding: false })
     .pipe(imagemin())
     .on("error", (error) => done(error))
     .pipe(gulp.dest("media"));
@@ -16,7 +16,7 @@ gulp.task("minimise:media", (done) => {
 
 gulp.task("minimise:assets", (done) => {
   return gulp
-    .src("src/assets/images/*.*")
+    .src("src/assets/images/*.*", { encoding: false })
     .pipe(imagemin())
     .on("error", (error) => done(error))
     .pipe(gulp.dest("assets/images"));

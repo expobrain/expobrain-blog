@@ -10,7 +10,7 @@
     "@babel/preset-env": "^7.24.0",
     "@babel/register": "^7.23.7",
     "del": "^7.1.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-imagemin": "^9.0.0",
     "gulp-load-plugins": "^2.0.8",
     "gulp-size": "^5.0.0"
