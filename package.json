@@ -11,7 +11,7 @@
     "@babel/register": "^7.24.6",
     "del": "^7.1.0",
     "gulp": "^5.0.0",
-    "gulp-imagemin": "^9.0.0",
+    "gulp-imagemin": "^9.1.0",
     "gulp-load-plugins": "^2.0.8",
     "gulp-size": "^5.0.0"
   },
