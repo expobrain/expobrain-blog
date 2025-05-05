@@ -7,6 +7,7 @@ serve: build
 		-it \
 		--volume=".:/srv/jekyll" \
 		-p 4000:4000 \
+		--name expobrain_blog \
 		expobrain_blog \
 		bundle exec jekyll serve --incremental
 
