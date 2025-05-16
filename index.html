@@ -16,7 +16,7 @@ navigation: True
 
 <header
   class="site-header outer {% if page.cover or site.cover %}"
-  style="background-image:  url({% if page.cover %}{{ page.cover | absolute_url }}{% elsif site.cover %}{{ site.cover | absolute_url }}{% endif %}) {% else %}no-cover{% endif %}"
+  style="background-image:  url({% if page.cover %}{{ page.cover | relative_url }}{% elsif site.cover %}{{ site.cover | relative_url }}{% endif %}) {% else %}no-cover{% endif %}"
 >
   <div class="inner">
     <div class="site-header-content">
@@ -24,7 +24,7 @@ navigation: True
         {% if site.logo %}
         <img
           class="site-logo"
-          src="{{ site.logo | absolute_url }}"
+          src="{{ site.logo | relative_url }}"
           alt="{{ site.title }}"
         />
         {% else %} {{ site.title }} {% endif %}
