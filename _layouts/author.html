@@ -15,7 +15,7 @@ logo: 'assets/images/ghost.png'
 <!-- Everything inside the #author tags pulls data from the author -->
 {% for author in site.data.authors %}
     {% if author[1].username == page.author %}
-    <header class="site-header outer {% if author[1].cover or page.cover %}" style="background-image: url({% if author[1].cover | relative_url %}{{ author[1].cover }}{% elsif page.cover %}{{ page.cover }}{% endif %}) {% else %}no-cover{% endif %}">
+    <header class="site-header outer {% if author[1].cover or page.cover %}" style="background-image: url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url }}{% endif %})">
         <div class="inner">
             {% include site-nav.html %}
             <div class="site-header-content">
