@@ -3,7 +3,7 @@ host: 0.0.0.0
 markdown: kramdown
 highlighter: rouge
 paginate: 5
-language: "en-uk"
+language: "en-gb"
 words_per_minute: 200
 
 # Website info
