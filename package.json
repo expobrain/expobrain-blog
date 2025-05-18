@@ -5,15 +5,8 @@
     "url": "https://expobrain.net"
   },
   "devDependencies": {
-    "@babel/cli": "^7.27.1",
-    "@babel/core": "^7.27.1",
-    "@babel/preset-env": "^7.27.1",
-    "@babel/register": "^7.27.1",
-    "del": "^8.0.0",
-    "gulp": "^5.0.0",
-    "gulp-imagemin": "^9.1.0",
-    "gulp-load-plugins": "^2.0.8",
-    "gulp-size": "^5.0.0"
+    "imagemin-cli": "^8.0.0",
+    "rimraf": "^6.0.1"
   },
   "license": "MIT",
   "name": "expobrain-blog",
@@ -22,6 +15,9 @@
     "url": "https://github.com/expobrain/expobrain-blog.git"
   },
   "scripts": {
-    "gulp": "gulp"
+    "minify": "npm run minify:media && npm run minify:images",
+    "minify:images": "imagemin src/assets/images/**/*.* --out-dir=assets/images",
+    "minify:media": "imagemin src/media/**/*.* --out-dir=media",
+    "preminify": "rimraf media assets/images"
   }
 }

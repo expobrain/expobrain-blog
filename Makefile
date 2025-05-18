@@ -21,4 +21,4 @@ bundle:
 		bundle update --bundler
 
 minify:
-	npm run gulp minify
+	yarn minify
