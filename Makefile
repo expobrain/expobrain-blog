@@ -21,4 +21,4 @@ bundle:
 		bundle update --bundler
 
 minify:
-	yarn minify
+	npm run minify
